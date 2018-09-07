@@ -1,0 +1,15 @@
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\Assignment_1a.exe.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\Assignment_1a.exe
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\Assignment_1a.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csprojResolveAssemblyReference.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\MainWindow.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\App.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a_MarkupCompile.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a_MarkupCompile.lref
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\MainWindow.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.g.resources
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.Properties.Resources.resources
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csproj.GenerateResource.Cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csproj.CoreCompileInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.exe
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.pdb
