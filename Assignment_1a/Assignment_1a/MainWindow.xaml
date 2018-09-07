@@ -4,9 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_1a"
+        xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Window.Resources>
+        <ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
         
-    </Grid>
+    </Window.Resources>
+    <DockPanel DataContext="{StaticResource MainViewModel}">
+        <ListView DockPanel.Dock="Left" ItemsSource="{Binding Houses}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="{Binding ID}"/>
+                        <Label Grid.Column="1" Content="{Binding Category}"/>
+                        <Label Grid.Column="2" Content="{Binding ResidentialBuldings}"/>
+                        <Label Grid.Column="3" Content="{Binding CommercialBuilding}"/>
+                        <Label Grid.Column="4" Content="{Binding LegalForm}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+    </DockPanel>
 </Window>

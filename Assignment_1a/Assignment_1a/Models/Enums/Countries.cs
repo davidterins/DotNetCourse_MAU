@@ -10,8 +10,8 @@ namespace Assignment_1a.Models.Enums
     ///The countries of the world.
     /// </summary>
 
-    public static class Countries
-    {
+    //public static class Countries
+    //{
         public enum Country
         {
             Afghanistan,
@@ -213,4 +213,4 @@ namespace Assignment_1a.Models.Enums
 
 
 
-}
+//}
