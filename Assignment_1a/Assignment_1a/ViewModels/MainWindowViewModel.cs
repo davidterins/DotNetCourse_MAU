@@ -14,6 +14,63 @@ namespace Assignment_1a.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        string _category;
+        public string Category
+        {
+            get => _category;
+            set
+            {
+                _category = value;
+                OnPropertyChanged(nameof(Category));
+            }
+        }
+
+        string _residentialBuildings;
+        public string ResidentialBuildings
+        {
+            get => _residentialBuildings;
+            set
+            {
+                _residentialBuildings = value;
+                OnPropertyChanged(nameof(ResidentialBuildings));
+            }
+        }
+
+        string _commercialBuilding;
+        public string CommercialBuilding
+        {
+            get => _commercialBuilding;
+            set
+            {
+                _commercialBuilding = value;
+                OnPropertyChanged(nameof(CommercialBuilding));
+            }
+        }
+
+        string _legalForm;
+        public string LegalForm
+        {
+            get => _legalForm;
+            set
+            {
+                _legalForm = value;
+                OnPropertyChanged(nameof(LegalForm));
+            }
+        }
+
+        string _id;
+        public string ID
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(ID));
+            }
+        }
+
+        public Adress HouseAdress { get; set; }
+
         public MainWindowViewModel()
         {
             houses = new ObservableCollection<BaseHouseModel>();
@@ -25,7 +82,7 @@ namespace Assignment_1a.ViewModels
                 CommercialBuilding = "Ship",
                 LegalForm = "OwnerShip"
             };
-           
+
             houses.Add(house);
 
             AddHouseCommand = new ActionCommand(AddHouse);
@@ -42,7 +99,15 @@ namespace Assignment_1a.ViewModels
 
         void AddHouse()
         {
-            Console.WriteLine("AddHouseButton pressed!");
+            var house = new House(_id)
+            {
+                Category = _category,
+                ResidentialBuldings = _residentialBuildings,
+                CommercialBuilding = _commercialBuilding,
+                LegalForm = _legalForm
+            };
+
+            Houses.Add(house);
         }
     }
 }

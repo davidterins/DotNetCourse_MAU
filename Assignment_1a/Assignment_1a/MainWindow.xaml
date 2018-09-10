@@ -7,33 +7,58 @@
         xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" >
     <Window.Resources>
         <ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
-        
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Wheat"/>
+        </Style>
+
     </Window.Resources>
-    <DockPanel DataContext="{StaticResource MainViewModel}">
+    <DockPanel DataContext="{StaticResource MainViewModel}"  Background="#77474747">
+       
         <ListView DockPanel.Dock="Left" ItemsSource="{Binding Houses}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="{Binding ID}"/>
-                        <Label Grid.Column="1" Content="{Binding Category}"/>
-                        <Label Grid.Column="2" Content="{Binding ResidentialBuldings}"/>
-                        <Label Grid.Column="3" Content="{Binding CommercialBuilding}"/>
-                        <Label Grid.Column="4" Content="{Binding LegalForm}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
+                    <GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
+                    <GridViewColumn Width="Auto" Header="Commercial" DisplayMemberBinding="{Binding CommercialBuilding}"/>
+                    <GridViewColumn Width="Auto" Header="Legal form" DisplayMemberBinding="{Binding LegalForm}"/>
+                    <GridViewColumn Width="Auto" Header="ID" DisplayMemberBinding="{Binding ID}"/>
+                </GridView>
+            </ListView.View>
         </ListView>
-        <Button DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+        <Grid DockPanel.Dock="Left" Background="#CC474747">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Row="0" Grid.Column="0" >
+                <TextBlock Text="Category" Height="15"/>
+                <TextBlock Text="ResidentBuildings"  Height="15"/>
+                <TextBlock Text="CommercialBuilding"  Height="15"/>
+                <TextBlock Text="Legal Form"  Height="15"/>
+                <TextBlock Text="ID"  Height="15"/>
+            </ListView>
+            <ListView Grid.Row="0" Grid.Column="1" >
+                <TextBox Text="{Binding Category,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
+                <TextBox Text="{Binding ResidentialBuildings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
+                <TextBox Text="{Binding CommercialBuilding,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
+                <TextBox Text="{Binding LegalForm,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
+                <TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
+            </ListView>
+            <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+
+
+
+
+
+        </Grid>
     </DockPanel>
 </Window>
