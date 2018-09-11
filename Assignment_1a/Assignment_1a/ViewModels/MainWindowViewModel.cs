@@ -54,6 +54,7 @@ namespace Assignment_1a.ViewModels
             set
             {
                 _legalForm = value;
+			        	Console.WriteLine(_legalForm);
                 OnPropertyChanged(nameof(LegalForm));
             }
         }

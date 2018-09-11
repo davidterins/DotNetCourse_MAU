@@ -7,58 +7,73 @@
         xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
-        Title="MainWindow" Height="350" Width="525" >
-    <Window.Resources>
-        <ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
+        Title="MainWindow" Height="700" Width="1000" >
+	<Window.Resources>
+		<ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
 
-        <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="Wheat"/>
-        </Style>
+		<Style TargetType="TextBlock">
+			<Setter Property="Foreground" Value="DarkBlue"/>
+		</Style>
 
-    </Window.Resources>
-    <DockPanel DataContext="{StaticResource MainViewModel}"  Background="#77474747">
-       
-        <ListView DockPanel.Dock="Left" ItemsSource="{Binding Houses}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
-                    <GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
-                    <GridViewColumn Width="Auto" Header="Commercial" DisplayMemberBinding="{Binding CommercialBuilding}"/>
-                    <GridViewColumn Width="Auto" Header="Legal form" DisplayMemberBinding="{Binding LegalForm}"/>
-                    <GridViewColumn Width="Auto" Header="ID" DisplayMemberBinding="{Binding ID}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Grid DockPanel.Dock="Left" Background="#CC474747">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <ListView Grid.Row="0" Grid.Column="0" >
-                <TextBlock Text="Category" Height="15"/>
-                <TextBlock Text="ResidentBuildings"  Height="15"/>
-                <TextBlock Text="CommercialBuilding"  Height="15"/>
-                <TextBlock Text="Legal Form"  Height="15"/>
-                <TextBlock Text="ID"  Height="15"/>
-            </ListView>
-            <ListView Grid.Row="0" Grid.Column="1" >
-                <TextBox Text="{Binding Category,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
-                <TextBox Text="{Binding ResidentialBuildings,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
-                <TextBox Text="{Binding CommercialBuilding,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
-                <TextBox Text="{Binding LegalForm,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
-                <TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="15"/>
-            </ListView>
-            <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+	</Window.Resources>
+	<DockPanel DataContext="{StaticResource MainViewModel}"  Background="#77474747">
+
+		<ListView DockPanel.Dock="Left" ItemsSource="{Binding Houses}">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
+					<GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
+					<GridViewColumn Width="Auto" Header="Commercial" DisplayMemberBinding="{Binding CommercialBuilding}"/>
+					<GridViewColumn Width="Auto" Header="Legal form" DisplayMemberBinding="{Binding LegalForm}"/>
+					<GridViewColumn Width="Auto" Header="ID" DisplayMemberBinding="{Binding ID}"/>
+				</GridView>
+			</ListView.View>
+		</ListView>
+		<Grid Margin="0,30,0,0" DockPanel.Dock="Left" Background="#CC474747">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<ListView Grid.Row="0" Grid.Column="0" >
+				<TextBlock Text="Category" Height="24"/>
+				<TextBlock Text="ResidentBuildings"  Height="24"/>
+				<TextBlock Text="CommercialBuilding"  Height="24"/>
+				<TextBlock Text="Legal Form"  Height="24"/>
+				<TextBlock Text="ID"  Height="24"/>
+			</ListView>
+			<ListView Grid.Row="0" Grid.Column="1">
+				<ComboBox SelectedItem="{Binding Category, Mode=OneWayToSource}" Width="100" Height="24">
+					<ComboBoxItem Content="Residential"/>
+					<ComboBoxItem Content="Commercial"/>
+				</ComboBox>
+				<ComboBox SelectedItem="{Binding ResidentialBuildings, Mode=OneWayToSource}"  Width="100" Height="24" >
+					<ComboBoxItem Content="Houses"/>
+					<ComboBoxItem Content="Villas"/>
+					<ComboBoxItem Content="Appartments"/>
+					<ComboBoxItem Content="Townhouses"/>
+				</ComboBox>
+				<ComboBox SelectedItem="{Binding CommercialBuilding, Mode=OneWayToSource}" Width="100" Height="24" >
+					<ComboBoxItem Content="Shops"/>
+					<ComboBoxItem Content="Warehouse"/>
+				</ComboBox>
+				<ComboBox SelectedValue="{Binding LegalForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
+					<ComboBoxItem Content="Rental"/>
+					<ComboBoxItem Content="Ownership"/>
+					<ComboBoxItem Content="Tenement"/>
+				</ComboBox>
+				<TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+			</ListView>
+			<Button Grid.Row="1" Grid.ColumnSpan="2" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
 
 
 
 
 
-        </Grid>
-    </DockPanel>
+		</Grid>
+	</DockPanel>
 </Window>
