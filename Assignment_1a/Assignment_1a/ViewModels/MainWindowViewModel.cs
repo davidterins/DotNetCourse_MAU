@@ -9,106 +9,153 @@ using Assignment_1a.Models;
 using Assignment_1a.Models.Enums;
 using Assignment_1a.ViewModels.Commands;
 using System.Windows.Input;
+using System.Windows.Data;
 
 namespace Assignment_1a.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
-    {
-        string _category;
-        public string Category
-        {
-            get => _category;
-            set
-            {
-                _category = value;
-                OnPropertyChanged(nameof(Category));
-            }
-        }
+	public class MainWindowViewModel : ViewModelBase
+	{
+		string _category;
+		public string Category
+		{
+			get => _category;
+			set
+			{
+				_category = Helper.ConvertComobboxItemTotext(value);
+				OnPropertyChanged(nameof(Category));
+			}
+		}
 
-        string _residentialBuildings;
-        public string ResidentialBuildings
-        {
-            get => _residentialBuildings;
-            set
-            {
-                _residentialBuildings = value;
-                OnPropertyChanged(nameof(ResidentialBuildings));
-            }
-        }
+		string _residentialBuildings;
+		public string ResidentialBuildings
+		{
+			get => _residentialBuildings;
+			set
+			{
+				_residentialBuildings = Helper.ConvertComobboxItemTotext(value);
+				OnPropertyChanged(nameof(ResidentialBuildings));
+			}
+		}
 
-        string _commercialBuilding;
-        public string CommercialBuilding
-        {
-            get => _commercialBuilding;
-            set
-            {
-                _commercialBuilding = value;
-                OnPropertyChanged(nameof(CommercialBuilding));
-            }
-        }
+		string _commercialBuilding;
+		public string CommercialBuilding
+		{
+			get => _commercialBuilding;
+			set
+			{
+				_commercialBuilding = Helper.ConvertComobboxItemTotext(value);
+				OnPropertyChanged(nameof(CommercialBuilding));
+			}
+		}
 
-        string _legalForm;
-        public string LegalForm
-        {
-            get => _legalForm;
-            set
-            {
-                _legalForm = value;
-			        	Console.WriteLine(_legalForm);
-                OnPropertyChanged(nameof(LegalForm));
-            }
-        }
+		string _legalForm;
+		public string LegalForm
+		{
+			get => _legalForm;
+			set
+			{
+				_legalForm = Helper.ConvertComobboxItemTotext(value);
+				OnPropertyChanged(nameof(LegalForm));
+			}
+		}
 
-        string _id;
-        public string ID
-        {
-            get => _id;
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(ID));
-            }
-        }
+		string _id;
+		public string ID
+		{
+			get => _id;
+			set
+			{
+				_id = value;
+				OnPropertyChanged(nameof(ID));
+			}
+		}
 
-        public Adress HouseAdress { get; set; }
+		string _searchFilter;
+		public string SearchFilter
+		{
+			get => _searchFilter;
+			set
+			{
+				_searchFilter = value;
+				usersCollection.View.Refresh();
+				OnPropertyChanged(nameof(SearchFilter));
+			}
+		}
 
-        public MainWindowViewModel()
-        {
-            houses = new ObservableCollection<BaseHouseModel>();
-            House house = new House("lolID")
-            {
-                HouseAdress = new Adress("lolStreet", 23311, "lolCity", Country.Argentina),
-                Category = "Residential",
-                ResidentialBuldings = "Villas",
-                CommercialBuilding = "Ship",
-                LegalForm = "OwnerShip"
-            };
+		private CollectionViewSource usersCollection;
 
-            houses.Add(house);
+		public Adress HouseAdress { get; set; }
 
-            AddHouseCommand = new ActionCommand(AddHouse);
-        }
+		public MainWindowViewModel()
+		{
+			houses = new ObservableCollection<BaseHouseModel>();
+			House house = new House("lolID")
+			{
+				HouseAdress = new Adress("lolStreet", 23311, "lolCity", Country.Argentina),
+				Category = "Residential",
+				ResidentialBuldings = "Villas",
+				CommercialBuilding = "Ship",
+				LegalForm = "OwnerShip"
+			};
 
-        public ICommand AddHouseCommand { get; set; }
+			houses.Add(house);
 
-        private ObservableCollection<BaseHouseModel> houses;
-        public ObservableCollection<BaseHouseModel> Houses
-        {
-            get => houses;
-            set => houses = value;
-        }
+			usersCollection = new CollectionViewSource();
+			usersCollection.Source = houses;
+			usersCollection.Filter += usersCollection_Filter;
 
-        void AddHouse()
-        {
-            var house = new House(_id)
-            {
-                Category = _category,
-                ResidentialBuldings = _residentialBuildings,
-                CommercialBuilding = _commercialBuilding,
-                LegalForm = _legalForm
-            };
+			AddHouseCommand = new ActionCommand(AddHouse);
+		}
 
-            Houses.Add(house);
-        }
-    }
+		private void usersCollection_Filter(object sender, FilterEventArgs e)
+		{
+			if (string.IsNullOrEmpty(_searchFilter))
+			{
+				e.Accepted = true;
+				return;
+			}
+
+			var usr = e.Item as BaseHouseModel;
+			if (usr.Category.ToUpper().Contains(_searchFilter.ToUpper()))
+			{
+				e.Accepted = true;
+			}
+			else
+			{
+				e.Accepted = false;
+			}
+		}
+
+		public ICommand AddHouseCommand { get; set; }
+
+		List<BaseHouseModel> houseList;
+
+		public ICollectionView CollectionView
+		{
+			get
+			{
+				return this.usersCollection.View;
+			}
+		}
+
+		private ObservableCollection<BaseHouseModel> houses;
+		public ObservableCollection<BaseHouseModel> Houses
+		{
+			get => houses;
+			set => houses = value;
+		}
+
+		void AddHouse()
+		{
+			var house = new House(_id)
+			{
+				Category = _category,
+				ResidentialBuldings = _residentialBuildings,
+				CommercialBuilding = _commercialBuilding,
+				LegalForm = _legalForm
+			};
+
+			Houses.Add(house);
+		}
+	}
 }

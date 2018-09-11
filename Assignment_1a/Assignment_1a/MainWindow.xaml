@@ -17,18 +17,21 @@
 
 	</Window.Resources>
 	<DockPanel DataContext="{StaticResource MainViewModel}"  Background="#77474747">
-
-		<ListView DockPanel.Dock="Left" ItemsSource="{Binding Houses}">
-			<ListView.View>
-				<GridView>
-					<GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
-					<GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
-					<GridViewColumn Width="Auto" Header="Commercial" DisplayMemberBinding="{Binding CommercialBuilding}"/>
-					<GridViewColumn Width="Auto" Header="Legal form" DisplayMemberBinding="{Binding LegalForm}"/>
-					<GridViewColumn Width="Auto" Header="ID" DisplayMemberBinding="{Binding ID}"/>
-				</GridView>
-			</ListView.View>
-		</ListView>
+		<StackPanel Width="400" DockPanel.Dock="Left">
+			<Label Content="Search" Background="#77474747" Height="24" />
+			<TextBox Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<ListView  ItemsSource="{Binding CollectionView}">
+				<ListView.View>
+					<GridView>
+						<GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
+						<GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
+						<GridViewColumn Width="Auto" Header="Commercial" DisplayMemberBinding="{Binding CommercialBuilding}"/>
+						<GridViewColumn Width="Auto" Header="Legal form" DisplayMemberBinding="{Binding LegalForm}"/>
+						<GridViewColumn Width="Auto" Header="ID" DisplayMemberBinding="{Binding ID}"/>
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</StackPanel>
 		<Grid Margin="0,30,0,0" DockPanel.Dock="Left" Background="#CC474747">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
@@ -47,17 +50,17 @@
 				<TextBlock Text="ID"  Height="24"/>
 			</ListView>
 			<ListView Grid.Row="0" Grid.Column="1">
-				<ComboBox SelectedItem="{Binding Category, Mode=OneWayToSource}" Width="100" Height="24">
+				<ComboBox SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24">
 					<ComboBoxItem Content="Residential"/>
 					<ComboBoxItem Content="Commercial"/>
 				</ComboBox>
-				<ComboBox SelectedItem="{Binding ResidentialBuildings, Mode=OneWayToSource}"  Width="100" Height="24" >
+				<ComboBox SelectedItem="{Binding ResidentialBuildings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="100" Height="24" >
 					<ComboBoxItem Content="Houses"/>
 					<ComboBoxItem Content="Villas"/>
 					<ComboBoxItem Content="Appartments"/>
 					<ComboBoxItem Content="Townhouses"/>
 				</ComboBox>
-				<ComboBox SelectedItem="{Binding CommercialBuilding, Mode=OneWayToSource}" Width="100" Height="24" >
+				<ComboBox SelectedItem="{Binding CommercialBuilding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
 					<ComboBoxItem Content="Shops"/>
 					<ComboBoxItem Content="Warehouse"/>
 				</ComboBox>
@@ -69,11 +72,6 @@
 				<TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
 			</ListView>
 			<Button Grid.Row="1" Grid.ColumnSpan="2" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
-
-
-
-
-
 		</Grid>
 	</DockPanel>
 </Window>
