@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Assignment_1a"
         xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
-        Title="MainWindow" Height="700" Width="1000" >
+        Title="MainWindow" Height="700" Width="1000"
+				Background="#77474747">
 	<Window.Resources>
 		<ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
 
@@ -16,11 +16,11 @@
 		</Style>
 
 	</Window.Resources>
-	<DockPanel DataContext="{StaticResource MainViewModel}"  Background="#77474747">
-		<StackPanel Width="400" DockPanel.Dock="Left">
-			<Label Content="Search" Background="#77474747" Height="24" />
-			<TextBox Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-			<ListView  ItemsSource="{Binding CollectionView}">
+	<DockPanel DataContext="{StaticResource MainViewModel}" Margin="0,40,0,0" Background="#77474747">
+		<StackPanel Width="400" DockPanel.Dock="Left" Background="LightGray" Margin="10">
+			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
+			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<ListView ItemsSource="{Binding CollectionView}">
 				<ListView.View>
 					<GridView>
 						<GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
@@ -32,46 +32,50 @@
 				</ListView.View>
 			</ListView>
 		</StackPanel>
-		<Grid Margin="0,30,0,0" DockPanel.Dock="Left" Background="#CC474747">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
-			</Grid.ColumnDefinitions>
-			<ListView Grid.Row="0" Grid.Column="0" >
-				<TextBlock Text="Category" Height="24"/>
-				<TextBlock Text="ResidentBuildings"  Height="24"/>
-				<TextBlock Text="CommercialBuilding"  Height="24"/>
-				<TextBlock Text="Legal Form"  Height="24"/>
-				<TextBlock Text="ID"  Height="24"/>
-			</ListView>
-			<ListView Grid.Row="0" Grid.Column="1">
-				<ComboBox SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24">
-					<ComboBoxItem Content="Residential"/>
-					<ComboBoxItem Content="Commercial"/>
-				</ComboBox>
-				<ComboBox SelectedItem="{Binding ResidentialBuildings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="100" Height="24" >
-					<ComboBoxItem Content="Houses"/>
-					<ComboBoxItem Content="Villas"/>
-					<ComboBoxItem Content="Appartments"/>
-					<ComboBoxItem Content="Townhouses"/>
-				</ComboBox>
-				<ComboBox SelectedItem="{Binding CommercialBuilding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
-					<ComboBoxItem Content="Shops"/>
-					<ComboBoxItem Content="Warehouse"/>
-				</ComboBox>
-				<ComboBox SelectedValue="{Binding LegalForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
-					<ComboBoxItem Content="Rental"/>
-					<ComboBoxItem Content="Ownership"/>
-					<ComboBoxItem Content="Tenement"/>
-				</ComboBox>
-				<TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
-			</ListView>
-			<Button Grid.Row="1" Grid.ColumnSpan="2" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
-		</Grid>
+		<StackPanel Margin="10" DockPanel.Dock="Left" Background="#CC474747" HorizontalAlignment="Left">
+			<Label Content="Add House" Foreground="White" Background="#77474747" Height="24" />
+			<Grid >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<ListView Grid.Row="0" Grid.Column="0" >
+					<TextBlock Text="Category" Height="24"/>
+					<TextBlock Text="ResidentBuildings"  Height="24"/>
+					<TextBlock Text="CommercialBuilding"  Height="24"/>
+					<TextBlock Text="Legal Form"  Height="24"/>
+					<TextBlock Text="ID"  Height="24"/>
+				</ListView>
+				<ListView Grid.Row="0" Grid.Column="1">
+					<ComboBox SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24">
+						<ComboBoxItem Content="Residential"/>
+						<ComboBoxItem Content="Commercial"/>
+					</ComboBox>
+					<ComboBox SelectedItem="{Binding ResidentialBuildings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="100" Height="24" >
+						<ComboBoxItem Content="Houses"/>
+						<ComboBoxItem Content="Villas"/>
+						<ComboBoxItem Content="Appartments"/>
+						<ComboBoxItem Content="Townhouses"/>
+					</ComboBox>
+					<ComboBox SelectedItem="{Binding CommercialBuilding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
+						<ComboBoxItem Content="Shops"/>
+						<ComboBoxItem Content="Warehouse"/>
+					</ComboBox>
+					<ComboBox SelectedValue="{Binding LegalForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
+						<ComboBoxItem Content="Rental"/>
+						<ComboBoxItem Content="Ownership"/>
+						<ComboBoxItem Content="Tenement"/>
+					</ComboBox>
+					<TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+				</ListView>
+				<Button Grid.Row="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Foreground="White" Background="CornflowerBlue" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+			</Grid>
+		</StackPanel>
+
 	</DockPanel>
 </Window>

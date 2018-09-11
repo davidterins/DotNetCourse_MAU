@@ -77,12 +77,12 @@ namespace Assignment_1a.ViewModels
 			set
 			{
 				_searchFilter = value;
-				usersCollection.View.Refresh();
+				houseCollection.View.Refresh();
 				OnPropertyChanged(nameof(SearchFilter));
 			}
 		}
 
-		private CollectionViewSource usersCollection;
+		private CollectionViewSource houseCollection;
 
 		public Adress HouseAdress { get; set; }
 
@@ -100,9 +100,10 @@ namespace Assignment_1a.ViewModels
 
 			houses.Add(house);
 
-			usersCollection = new CollectionViewSource();
-			usersCollection.Source = houses;
-			usersCollection.Filter += usersCollection_Filter;
+			houseCollection = new CollectionViewSource();
+			houseCollection.Source = houses;
+	
+			houseCollection.Filter += usersCollection_Filter;
 
 			AddHouseCommand = new ActionCommand(AddHouse);
 		}
@@ -116,7 +117,8 @@ namespace Assignment_1a.ViewModels
 			}
 
 			var usr = e.Item as BaseHouseModel;
-			if (usr.Category.ToUpper().Contains(_searchFilter.ToUpper()))
+			string totalItemString = usr.Category + usr.CommercialBuilding + usr.ID + usr.LegalForm + usr.ResidentialBuldings;
+			if (totalItemString.ToUpper().Contains(_searchFilter.ToUpper()))
 			{
 				e.Accepted = true;
 			}
@@ -134,7 +136,7 @@ namespace Assignment_1a.ViewModels
 		{
 			get
 			{
-				return this.usersCollection.View;
+				return this.houseCollection.View;
 			}
 		}
 
