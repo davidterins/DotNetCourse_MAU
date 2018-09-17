@@ -82,6 +82,19 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
+		BaseHouseModel _selectedHouse;
+		public BaseHouseModel SelectedHouse
+		{
+			get => _selectedHouse;
+			set
+			{
+				_selectedHouse = value;
+				//houseCollection.View.Refresh();
+				Console.WriteLine(_selectedHouse.ID);
+				OnPropertyChanged(nameof(SelectedHouse));
+			}
+		}
+
 		private CollectionViewSource houseCollection;
 
 		public Adress HouseAdress { get; set; }
@@ -97,12 +110,12 @@ namespace Assignment_1a.ViewModels
 				CommercialBuilding = "Ship",
 				LegalForm = "OwnerShip"
 			};
-
+		
 			houses.Add(house);
 
 			houseCollection = new CollectionViewSource();
 			houseCollection.Source = houses;
-	
+
 			houseCollection.Filter += usersCollection_Filter;
 
 			AddHouseCommand = new ActionCommand(AddHouse);
@@ -127,7 +140,8 @@ namespace Assignment_1a.ViewModels
 				e.Accepted = false;
 			}
 		}
-
+		public ICommand EditHouseCommand { get; set; }
+		public ICommand RemoveHouseCommand { get; set; }
 		public ICommand AddHouseCommand { get; set; }
 
 		List<BaseHouseModel> houseList;
