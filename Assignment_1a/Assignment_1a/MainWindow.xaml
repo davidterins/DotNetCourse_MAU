@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
 			  xmlns:Views="clr-namespace:Assignment_1a.Views"
+        xmlns:Resources="clr-namespace:Assignment_1a.Resources"
         mc:Ignorable="d"
         d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
         Title="MainWindow" Height="700" Width="1000"
@@ -98,7 +99,7 @@
 				<DockPanel Grid.Row="5" Grid.Column="0">
 					<TextBlock DockPanel.Dock="Left"  Text="File" Height="24"/>
 					<Button DockPanel.Dock="Right" Width="20" Height="20" BorderThickness="0" BorderBrush="Transparent" Background="Transparent">
-						<Image Source="\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\Resources\open_file.png"/>
+						<Image Source="/Assignment_1a;open_file.png"/>
 					</Button>
 				</DockPanel>
 

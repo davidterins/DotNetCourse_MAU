@@ -112,9 +112,6 @@
     <Resource Include="Resources\NoImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\OpenFile.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\open_file.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

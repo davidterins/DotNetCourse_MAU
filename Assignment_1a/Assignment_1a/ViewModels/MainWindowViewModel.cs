@@ -85,7 +85,7 @@ namespace Assignment_1a.ViewModels
         public string City { get; set; }
         public int? Zip { get; set; }
         public Country Country_ { get; set; }
-	     	public List<Country> Countries { get { return Enum.GetValues(typeof(Country)).Cast<Country>().ToList(); } }
+	    public List<Country> Countries { get { return Enum.GetValues(typeof(Country)).Cast<Country>().ToList(); } }
         public string Street { get; set; }
 
         HouseRepresentationViewModel _houseViewModel;
