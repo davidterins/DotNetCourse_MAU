@@ -16,7 +16,7 @@
 			<Setter Property="Foreground" Value="DarkBlue"/>
 		</Style>
 
-		<Style TargetType="Button">
+		<Style TargetType="Button" x:Key="AddButtonStyle">
 			<Setter Property="Foreground" Value="White"/>
 			<Setter Property="Background" Value="CornflowerBlue"/>
 		</Style>
@@ -26,61 +26,39 @@
 		<StackPanel Width="Auto" DockPanel.Dock="Left" Background="LightGray" Margin="10">
 			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
 			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-			<ListView ItemsSource="{Binding CollectionView}" SelectedItem="{Binding SelectedHouse, Mode=TwoWay}" >
-				<ListView.ItemTemplate>
-					<DataTemplate DataType="{x:Type Views:HouseRepresentationView}">
-						<Views:HouseRepresentationView DataContext="{Binding }"/>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-		
-				<!--<ListView.View>
-					<GridView>
-						<GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
-						<GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
-						<GridViewColumn Width="Auto" Header="Commercial" DisplayMemberBinding="{Binding CommercialBuilding}"/>
-						<GridViewColumn Width="Auto" Header="Legal form" DisplayMemberBinding="{Binding LegalForm}"/>
-						<GridViewColumn Width="Auto" Header="ID" DisplayMemberBinding="{Binding ID}"/>
-						<GridViewColumn Width="Auto">
-							<GridViewColumn.CellTemplate >
-								<DataTemplate>
-									<Button Opacity="0" Content="Delete" />
-								</DataTemplate>
-							</GridViewColumn.CellTemplate>
-
-						</GridViewColumn>
-						<GridViewColumn Width="Auto">
-							<GridViewColumn.CellTemplate >
-								<DataTemplate>
-									<Button Opacity="0" Content="Edit"/>
-									
-								</DataTemplate>
-							</GridViewColumn.CellTemplate>
-
-						</GridViewColumn>
-					</GridView>
-				</ListView.View>-->
-			</ListView>
+            <ListView  ItemsSource="{Binding CollectionView}" SelectedItem="{Binding HouseViewModel, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="{x:Type Views:HouseRepresentationView}">
+                        <Views:HouseRepresentationView DataContext="{Binding}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 		</StackPanel>
 		<StackPanel Margin="10" DockPanel.Dock="Left" Background="#CC474747" HorizontalAlignment="Left">
 			<Label Content="Add House" Foreground="White" Background="#77474747" Height="24" />
-			<Grid >
+            <Grid Background="White" >
 				<Grid.RowDefinitions>
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
-				</Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-				<ListView Grid.Row="0" Grid.Column="0" >
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Info" Background="#77474747" Height="24"/>
+                <StackPanel Grid.Row="1" Grid.Column="0" >
 					<TextBlock Text="Category" Height="24"/>
 					<TextBlock Text="ResidentBuildings"  Height="24"/>
 					<TextBlock Text="CommercialBuilding"  Height="24"/>
 					<TextBlock Text="Legal Form"  Height="24"/>
 					<TextBlock Text="ID"  Height="24"/>
-				</ListView>
-				<ListView Grid.Row="0" Grid.Column="1">
+				</StackPanel>
+				<StackPanel  Grid.Row="1" Grid.Column="1">
 					<ComboBox SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24">
 						<ComboBoxItem Content="Residential"/>
 						<ComboBoxItem Content="Commercial"/>
@@ -100,9 +78,34 @@
 						<ComboBoxItem Content="Ownership"/>
 						<ComboBoxItem Content="Tenement"/>
 					</ComboBox>
-					<TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
-				</ListView>
-				<Button Grid.Row="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+                    <TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+                </StackPanel>
+                <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="Adress" Background="#77474747" Height="24"/>
+                <StackPanel Grid.Row="3" Grid.Column="0" >
+                    <TextBlock Text="City" Height="24"/>
+                    <TextBlock Text="Street"  Height="24"/>
+                    <TextBlock Text="Zip"  Height="24"/>
+                    <TextBlock Text="Country" Height="24"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <TextBox Text="{Binding Street,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+                    <TextBox Text="{Binding City,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+                    <TextBox Text="{Binding Zip,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+                    <ComboBox SelectedItem="{Binding CommercialBuilding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24" >
+                        <ComboBoxItem Content="Shops"/>
+                        <ComboBoxItem Content="Warehouse"/>
+                    </ComboBox>
+                </StackPanel>
+                <TextBlock  Grid.Row="4" Grid.ColumnSpan="2" Text="Image" Background="#77474747" Height="24"/>
+                <DockPanel Grid.Row="5" Grid.Column="0">
+                    <TextBlock DockPanel.Dock="Left"  Text="File" Height="24"/>
+                    <Button DockPanel.Dock="Right" Width="20" Height="20" BorderThickness="0" BorderBrush="Transparent" Background="Transparent">
+                        <Image Source="\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\Resources\open_file.png"/>
+                    </Button>
+                </DockPanel>
+              
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+                <Button Grid.Row="6" Style="{StaticResource AddButtonStyle}" Grid.ColumnSpan="2" Margin="10,5,10,5" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
 			</Grid>
 		</StackPanel>
 

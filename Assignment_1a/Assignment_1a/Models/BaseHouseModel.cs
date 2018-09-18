@@ -11,7 +11,7 @@ namespace Assignment_1a.Models
     {
         //Residential or commercial
         public string Category { get; set; }
-        //Type of residential buildings - houses, villas, apartments, townhouses(row housed)
+        //Type of residential buildings - houses, villas, apartments, townhouses(row house)
         public string ResidentialBuldings { get; set; }
         //Shops or warehouse, etc
         public string CommercialBuilding { get; set; }
@@ -21,6 +21,8 @@ namespace Assignment_1a.Models
         public string ID { get; }
         //Adress of building
         public Adress HouseAdress { get; set; }
+        //Image
+        public string Image { get; set; }
 
         public BaseHouseModel(string ID)
         {
@@ -31,16 +33,16 @@ namespace Assignment_1a.Models
     public class Adress
     {
         public string StreetName { get; }
-        public int ZipCode { get; }
+        public int? ZipCode { get; }
         public string City { get; }
         public Country Country { get; }
 
-        public Adress(string streetName, int zipCode, string city, Country country)
+        public Adress(string streetName, int? zipCode, string city, Country country)
         {
             StreetName = streetName;
             ZipCode = zipCode;
             City = city;
-			      Country = Country;
+            Country = country;
         }
 
 

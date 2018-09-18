@@ -9,6 +9,6 @@ namespace Assignment_1a.ViewModels
 {
     public class HouseRepresentationViewModel : ViewModelBase
     {
-				public BaseHouseModel HouseBase { get; set; }
+        public BaseHouseModel HouseBase { get; set; }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Assignment_1a.Models;
@@ -25,6 +21,8 @@ namespace Assignment_1a.ViewModels
 				OnPropertyChanged(nameof(Category));
 			}
 		}
+
+
 
 		string _residentialBuildings;
 		public string ResidentialBuildings
@@ -82,7 +80,12 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
-		HouseRepresentationViewModel _houseViewModel;
+        public string City { get; set; }
+        public int? Zip { get; set; }
+        public Country Country_ { get; set; }
+        public string Street { get; set; }
+
+        HouseRepresentationViewModel _houseViewModel;
 		public HouseRepresentationViewModel HouseViewModel
 		{
 			get => _houseViewModel;
@@ -90,8 +93,8 @@ namespace Assignment_1a.ViewModels
 			{
 				_houseViewModel = value;
 				//houseCollection.View.Refresh();
-				Console.WriteLine(_houseViewModel.HouseBase.ID);
-				OnPropertyChanged(nameof(SelectedHouse));
+				//Console.WriteLine(_houseViewModel.HouseBase.ID);
+				OnPropertyChanged(nameof(HouseViewModel));
 			}
 		}
 
@@ -143,8 +146,10 @@ namespace Assignment_1a.ViewModels
 				return;
 			}
 
-			var usr = e.Item as BaseHouseModel;
-			string totalItemString = usr.Category + usr.CommercialBuilding + usr.ID + usr.LegalForm + usr.ResidentialBuldings;
+			var viewModelItem = e.Item as HouseRepresentationViewModel;
+			string totalItemString = viewModelItem.HouseBase.Category + 
+                viewModelItem.HouseBase.CommercialBuilding + viewModelItem.HouseBase.ID +
+                viewModelItem.HouseBase.LegalForm + viewModelItem.HouseBase.ResidentialBuldings;
 			if (totalItemString.ToUpper().Contains(_searchFilter.ToUpper()))
 			{
 				e.Accepted = true;
@@ -176,8 +181,9 @@ namespace Assignment_1a.ViewModels
 		void AddHouse()
 		{
 			var h = new HouseRepresentationViewModel();
-			h.HouseBase = new House(_id)
-			{
+            h.HouseBase = new House(_id)
+            {
+                HouseAdress = new Adress(Street, Zip, City, Country_),
 				Category = _category,
 				ResidentialBuldings = _residentialBuildings,
 				CommercialBuilding = _commercialBuilding,
