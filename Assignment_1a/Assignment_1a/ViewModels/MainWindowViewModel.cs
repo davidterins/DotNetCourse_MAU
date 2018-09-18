@@ -82,6 +82,19 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
+		HouseRepresentationViewModel _houseViewModel;
+		public HouseRepresentationViewModel HouseViewModel
+		{
+			get => _houseViewModel;
+			set
+			{
+				_houseViewModel = value;
+				//houseCollection.View.Refresh();
+				Console.WriteLine(_houseViewModel.HouseBase.ID);
+				OnPropertyChanged(nameof(SelectedHouse));
+			}
+		}
+
 		BaseHouseModel _selectedHouse;
 		public BaseHouseModel SelectedHouse
 		{
@@ -101,8 +114,9 @@ namespace Assignment_1a.ViewModels
 
 		public MainWindowViewModel()
 		{
-			houses = new ObservableCollection<BaseHouseModel>();
-			House house = new House("lolID")
+			houses = new ObservableCollection<HouseRepresentationViewModel>();
+			HouseRepresentationViewModel h = new HouseRepresentationViewModel();
+			h.HouseBase = new House("lolID")
 			{
 				HouseAdress = new Adress("lolStreet", 23311, "lolCity", Country.Argentina),
 				Category = "Residential",
@@ -111,7 +125,7 @@ namespace Assignment_1a.ViewModels
 				LegalForm = "OwnerShip"
 			};
 		
-			houses.Add(house);
+			houses.Add(h);
 
 			houseCollection = new CollectionViewSource();
 			houseCollection.Source = houses;
@@ -144,8 +158,6 @@ namespace Assignment_1a.ViewModels
 		public ICommand RemoveHouseCommand { get; set; }
 		public ICommand AddHouseCommand { get; set; }
 
-		List<BaseHouseModel> houseList;
-
 		public ICollectionView CollectionView
 		{
 			get
@@ -154,8 +166,8 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
-		private ObservableCollection<BaseHouseModel> houses;
-		public ObservableCollection<BaseHouseModel> Houses
+		private ObservableCollection<HouseRepresentationViewModel> houses;
+		public ObservableCollection<HouseRepresentationViewModel> Houses
 		{
 			get => houses;
 			set => houses = value;
@@ -163,7 +175,8 @@ namespace Assignment_1a.ViewModels
 
 		void AddHouse()
 		{
-			var house = new House(_id)
+			var h = new HouseRepresentationViewModel();
+			h.HouseBase = new House(_id)
 			{
 				Category = _category,
 				ResidentialBuldings = _residentialBuildings,
@@ -171,7 +184,7 @@ namespace Assignment_1a.ViewModels
 				LegalForm = _legalForm
 			};
 
-			Houses.Add(house);
+			Houses.Add(h);
 		}
 	}
 }

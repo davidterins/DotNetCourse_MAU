@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
+			  xmlns:Views="clr-namespace:Assignment_1a.Views"
         mc:Ignorable="d"
         d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
         Title="MainWindow" Height="700" Width="1000"
@@ -26,7 +27,13 @@
 			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
 			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 			<ListView ItemsSource="{Binding CollectionView}" SelectedItem="{Binding SelectedHouse, Mode=TwoWay}" >
-				<ListView.View>
+				<ListView.ItemTemplate>
+					<DataTemplate DataType="{x:Type Views:HouseRepresentationView}">
+						<Views:HouseRepresentationView DataContext="{Binding }"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+		
+				<!--<ListView.View>
 					<GridView>
 						<GridViewColumn Width="Auto" Header="Catergory" DisplayMemberBinding="{Binding Category}"/>
 						<GridViewColumn Width="Auto" Header="Residential" DisplayMemberBinding="{Binding ResidentialBuldings}"/>
@@ -51,7 +58,7 @@
 
 						</GridViewColumn>
 					</GridView>
-				</ListView.View>
+				</ListView.View>-->
 			</ListView>
 		</StackPanel>
 		<StackPanel Margin="10" DockPanel.Dock="Left" Background="#CC474747" HorizontalAlignment="Left">

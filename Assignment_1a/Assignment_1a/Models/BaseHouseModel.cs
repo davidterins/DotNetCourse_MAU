@@ -40,6 +40,7 @@ namespace Assignment_1a.Models
             StreetName = streetName;
             ZipCode = zipCode;
             City = city;
+			      Country = Country;
         }
 
 
