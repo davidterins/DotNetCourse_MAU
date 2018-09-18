@@ -47,7 +47,21 @@
 			</ListView>
 		</StackPanel>
 		<StackPanel Margin="10" DockPanel.Dock="Left" Background="#CC474747" HorizontalAlignment="Left">
-			<Label Content="Add House" Foreground="White" Background="#77474747" Height="24" />
+			<Label Height="24">
+				<Label.Style>
+					<Style TargetType="{x:Type Label}">
+						<Setter Property="Content" Value="Add House" />
+						<Setter Property="Foreground" Value="White"/>
+						<Setter Property="Background" Value="#77474747"/>
+						<Style.Triggers>
+							<DataTrigger Binding="{Binding HouseViewModel.EditMode}" Value="true">
+								<Setter Property="Content" Value="Edit House"/>
+								<Setter Property="Background" Value="Green"/>
+							</DataTrigger>
+						</Style.Triggers>
+					</Style>
+				</Label.Style>
+			</Label>
 			<Grid Background="White" >
 				<Grid.RowDefinitions>
 					<RowDefinition Height="Auto" />
@@ -115,7 +129,23 @@
 				</DockPanel>
 
 				<TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding ImageFilePath, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
-				<Button Grid.Row="6" Style="{StaticResource AddButtonStyle}" Grid.ColumnSpan="2" Margin="10,5,10,5" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
+				<Button Grid.Row="6" Grid.ColumnSpan="2" Margin="10,5,10,5"  DataContext="{StaticResource MainViewModel}">
+					<Button.Style>
+						<Style TargetType="{x:Type Button}" BasedOn="{StaticResource AddButtonStyle}">
+							<Setter Property="Command" Value="{Binding AddHouseCommand}"/>
+							<Setter Property="Content" Value="Add House" />
+							<Setter Property="Foreground" Value="White"/>
+							<Setter Property="Background" Value="#77474747"/>
+							<Style.Triggers>
+								<DataTrigger Binding="{Binding HouseViewModel.EditMode}" Value="true">
+									<Setter Property="Command" Value="{Binding FinishEditCommand}"/>
+									<Setter Property="Content" Value="Edit House"/>
+									<Setter Property="Background" Value="Green"/>
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</Button.Style>
+				</Button>
 			</Grid>
 		</StackPanel>
 

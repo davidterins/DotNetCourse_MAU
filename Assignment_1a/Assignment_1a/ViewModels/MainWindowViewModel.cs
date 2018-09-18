@@ -82,13 +82,17 @@ namespace Assignment_1a.ViewModels
 		}
 
 		string _imageFilePath;
-		public string ImageFilePath { get { return _imageFilePath; } set {_imageFilePath = value; OnPropertyChanged(nameof(ImageFilePath)); } }
-
-		public string City { get; set; }
-		public int? Zip { get; set; }
-		public Country Country_ { get; set; }
+		public string ImageFilePath { get { return _imageFilePath; } set { _imageFilePath = value; OnPropertyChanged(nameof(ImageFilePath)); } }
+		string _city;
+		public string City { get { return _city; } set { _city = value; OnPropertyChanged(nameof(City)); } }
+		int? _zip;
+		public int? Zip { get { return _zip; } set { _zip = value; OnPropertyChanged(nameof(Zip)); } }
+		Country _country;
+		public Country Country_ { get { return _country; } set { _country = value; OnPropertyChanged(nameof(Country_)); } }
+		string _street;
+		public string Street { get { return _street; } set { _street = value; OnPropertyChanged(nameof(Street)); } }
 		public List<Country> Countries { get { return Enum.GetValues(typeof(Country)).Cast<Country>().ToList(); } }
-		public string Street { get; set; }
+
 
 		HouseRepresentationViewModel _houseViewModel;
 		public HouseRepresentationViewModel HouseViewModel
@@ -140,10 +144,24 @@ namespace Assignment_1a.ViewModels
 			houseCollection.Filter += usersCollection_Filter;
 			AddImageCommand = new ActionCommand(AddImage);
 			AddHouseCommand = new ActionCommand(AddHouse);
+			FinishEditCommand = new ActionCommand(FinishEdit);
 		}
+
+		public ICommand FinishEditCommand { get; set; }
 
 		private void Houses_OnCollectionItemEdited(object sender, EventArgs e)
 		{
+			var itemToEdit = (HouseRepresentationViewModel)sender;
+			HouseViewModel = itemToEdit;
+			ID = itemToEdit.HouseBase.ID;
+			Category = itemToEdit.HouseBase.Category;
+			CommercialBuilding = itemToEdit.HouseBase.CommercialBuilding;
+			LegalForm = itemToEdit.HouseBase.LegalForm;
+			ResidentialBuildings = itemToEdit.HouseBase.ResidentialBuldings;
+			City = itemToEdit.HouseBase.HouseAdress.City;
+			Country_ = itemToEdit.HouseBase.HouseAdress.Country;
+			Street = itemToEdit.HouseBase.HouseAdress.StreetName;
+			Zip = itemToEdit.HouseBase.HouseAdress.ZipCode;
 			Console.WriteLine("ITEM EDIT");
 		}
 
@@ -168,8 +186,7 @@ namespace Assignment_1a.ViewModels
 				e.Accepted = false;
 			}
 		}
-		public ICommand EditHouseCommand { get; set; }
-		public ICommand RemoveHouseCommand { get; set; }
+
 		public ICommand AddHouseCommand { get; set; }
 		public ICommand AddImageCommand { get; set; }
 
@@ -191,20 +208,18 @@ namespace Assignment_1a.ViewModels
 		void AddImage()
 		{
 			OpenFileDialog fileDialog = new OpenFileDialog();
-			//fileDialog.ShowDialog();
 			Nullable<bool> result = fileDialog.ShowDialog();
-			if(result == true)
+			if (result == true)
 			{
-				
 				ImageFilePath = fileDialog.FileName;
-				Console.WriteLine(ImageFilePath);
 			}
-			//fileDialog.FileOk += FileDialog_FileOk;
 		}
-
-		private void FileDialog_FileOk(object sender, CancelEventArgs e)
+		void FinishEdit()
 		{
-			
+			HouseViewModel.HouseBase.Category = Category;
+			HouseViewModel.HouseBase.ResidentialBuldings = ResidentialBuildings;
+			HouseViewModel.HouseBase.Category = Category;
+			HouseViewModel.HouseBase.Category = Category;
 		}
 
 		void AddHouse()

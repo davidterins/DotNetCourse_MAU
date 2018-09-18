@@ -49,4 +49,3 @@ C:\Users\spellabbet\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1
 C:\Users\spellabbet\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csproj.CoreCompileInputs.cache
 C:\Users\spellabbet\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.exe
 C:\Users\spellabbet\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.pdb
-C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csprojResolveAssemblyReference.cache

@@ -12,6 +12,7 @@ namespace Assignment_1a.ViewModels
 	public class HouseRepresentationViewModel : ViewModelBase
 	{
 		public event EventHandler OnEditHouseHandler;
+		public event EventHandler OnDeleteHouseHandler;
 
 		public BaseHouseModel HouseBase { get; set; }
 
@@ -26,14 +27,11 @@ namespace Assignment_1a.ViewModels
 		{
 			DeleteCommand = new ActionCommand(Delete);
 			EditCommand = new ActionCommand(Edit);
-
-
 		}
-
 
 		void Delete()
 		{
-			
+			OnDeleteHouseHandler.Invoke(this, EventArgs.Empty);
 		}
 		void Edit()
 		{

@@ -16,22 +16,32 @@ namespace Assignment_1a.Models
 		protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
 		{
 			base.OnCollectionChanged(e);
-			var itemChanged = (HouseRepresentationViewModel)e.NewItems[0];
-			if (e.Action == NotifyCollectionChangedAction.Add)
-			{
-				itemChanged.OnEditHouseHandler += OnEditHouseEvent;
-			}
+		
+
+				if (e.Action == NotifyCollectionChangedAction.Add)
+				{
+					var itemChanged = (HouseRepresentationViewModel)e.NewItems[0];
+					itemChanged.OnEditHouseHandler += OnEditHouseEvent;
+					itemChanged.OnDeleteHouseHandler += OnDeleteHouseEvent;
+				}
 			if (e.Action == NotifyCollectionChangedAction.Remove)
 			{
-				itemChanged.OnEditHouseHandler -= OnEditHouseEvent;
+				var itemRemoved = (HouseRepresentationViewModel)e.OldItems[0];
+				itemRemoved.OnEditHouseHandler -= OnEditHouseEvent;
 			}
+		}
+
+		private void OnDeleteHouseEvent(object sender, EventArgs e)
+		{
+			var item = (HouseRepresentationViewModel)sender;
+			item.OnDeleteHouseHandler -= OnDeleteHouseEvent;
+			Remove(item);
 		}
 
 		private void OnEditHouseEvent(object sender, EventArgs e)
 		{
 			OnCollectionItemEdited.Invoke(sender, e);
 			var item = (HouseRepresentationViewModel)sender;
-			Console.WriteLine("HouseEditEvent, houseID " + item.HouseBase.ID);
 		}
 	}
 
