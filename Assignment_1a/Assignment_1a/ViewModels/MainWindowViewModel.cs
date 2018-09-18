@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Data;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Win32;
 
 namespace Assignment_1a.ViewModels
 {
@@ -23,8 +24,6 @@ namespace Assignment_1a.ViewModels
 				OnPropertyChanged(nameof(Category));
 			}
 		}
-
-
 
 		string _residentialBuildings;
 		public string ResidentialBuildings
@@ -82,21 +81,22 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
-        public string City { get; set; }
-        public int? Zip { get; set; }
-        public Country Country_ { get; set; }
-	    public List<Country> Countries { get { return Enum.GetValues(typeof(Country)).Cast<Country>().ToList(); } }
-        public string Street { get; set; }
+		string _imageFilePath;
+		public string ImageFilePath { get { return _imageFilePath; } set {_imageFilePath = value; OnPropertyChanged(nameof(ImageFilePath)); } }
 
-        HouseRepresentationViewModel _houseViewModel;
+		public string City { get; set; }
+		public int? Zip { get; set; }
+		public Country Country_ { get; set; }
+		public List<Country> Countries { get { return Enum.GetValues(typeof(Country)).Cast<Country>().ToList(); } }
+		public string Street { get; set; }
+
+		HouseRepresentationViewModel _houseViewModel;
 		public HouseRepresentationViewModel HouseViewModel
 		{
 			get => _houseViewModel;
 			set
 			{
 				_houseViewModel = value;
-				//houseCollection.View.Refresh();
-				//Console.WriteLine(_houseViewModel.HouseBase.ID);
 				OnPropertyChanged(nameof(HouseViewModel));
 			}
 		}
@@ -130,14 +130,14 @@ namespace Assignment_1a.ViewModels
 				CommercialBuilding = "Ship",
 				LegalForm = "OwnerShip"
 			};
-		
+
 			houses.Add(h);
 
 			houseCollection = new CollectionViewSource();
 			houseCollection.Source = houses;
 
 			houseCollection.Filter += usersCollection_Filter;
-
+			AddImageCommand = new ActionCommand(AddImage);
 			AddHouseCommand = new ActionCommand(AddHouse);
 		}
 
@@ -150,9 +150,9 @@ namespace Assignment_1a.ViewModels
 			}
 
 			var viewModelItem = e.Item as HouseRepresentationViewModel;
-			string totalItemString = viewModelItem.HouseBase.Category + 
-                viewModelItem.HouseBase.CommercialBuilding + viewModelItem.HouseBase.ID +
-                viewModelItem.HouseBase.LegalForm + viewModelItem.HouseBase.ResidentialBuldings;
+			string totalItemString = viewModelItem.HouseBase.Category +
+								viewModelItem.HouseBase.CommercialBuilding + viewModelItem.HouseBase.ID +
+								viewModelItem.HouseBase.LegalForm + viewModelItem.HouseBase.ResidentialBuldings;
 			if (totalItemString.ToUpper().Contains(_searchFilter.ToUpper()))
 			{
 				e.Accepted = true;
@@ -165,6 +165,7 @@ namespace Assignment_1a.ViewModels
 		public ICommand EditHouseCommand { get; set; }
 		public ICommand RemoveHouseCommand { get; set; }
 		public ICommand AddHouseCommand { get; set; }
+		public ICommand AddImageCommand { get; set; }
 
 		public ICollectionView CollectionView
 		{
@@ -181,18 +182,37 @@ namespace Assignment_1a.ViewModels
 			set => houses = value;
 		}
 
+		void AddImage()
+		{
+			OpenFileDialog fileDialog = new OpenFileDialog();
+			//fileDialog.ShowDialog();
+			Nullable<bool> result = fileDialog.ShowDialog();
+			if(result == true)
+			{
+				
+				ImageFilePath = fileDialog.FileName;
+				Console.WriteLine(ImageFilePath);
+			}
+			//fileDialog.FileOk += FileDialog_FileOk;
+		}
+
+		private void FileDialog_FileOk(object sender, CancelEventArgs e)
+		{
+			
+		}
+
 		void AddHouse()
 		{
 			var h = new HouseRepresentationViewModel();
-            h.HouseBase = new House(_id)
-            {
-                HouseAdress = new Adress(Street, Zip, City, Country_),
+			h.HouseBase = new House(_id)
+			{
+				HouseAdress = new Adress(Street, Zip, City, Country_),
+				Image = _imageFilePath,
 				Category = _category,
 				ResidentialBuldings = _residentialBuildings,
 				CommercialBuilding = _commercialBuilding,
 				LegalForm = _legalForm
 			};
-
 			Houses.Add(h);
 		}
 	}

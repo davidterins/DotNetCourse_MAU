@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModels="clr-namespace:Assignment_1a.ViewModels"
 			  xmlns:Views="clr-namespace:Assignment_1a.Views"
-        xmlns:Resources="clr-namespace:Assignment_1a.Resources"
+        
         mc:Ignorable="d"
         d:DataContext="{d:DesignData Type=ViewModels:MainWindowViewModel, IsDesignTimeCreatable=True}"
         Title="MainWindow" Height="700" Width="1000"
@@ -15,6 +15,17 @@
 
 		<Style TargetType="TextBlock">
 			<Setter Property="Foreground" Value="DarkBlue"/>
+			<Setter Property="Margin" Value="2"/>
+		</Style>
+
+		<Style TargetType="ComboBox">
+			<Setter Property="Foreground" Value="DarkBlue"/>
+			<Setter Property="Margin" Value="2"/>
+		</Style>
+
+		<Style TargetType="TextBox">
+			<Setter Property="Foreground" Value="DarkBlue"/>
+			<Setter Property="Margin" Value="2"/>
 		</Style>
 
 		<Style TargetType="Button" x:Key="AddButtonStyle">
@@ -24,7 +35,7 @@
 
 	</Window.Resources>
 	<DockPanel DataContext="{StaticResource MainViewModel}" Margin="0,40,0,0" Background="#77474747">
-		<StackPanel Width="Auto" DockPanel.Dock="Left" Background="LightGray" Margin="10">
+		<StackPanel Width="Auto" MinWidth="500" DockPanel.Dock="Left" Background="LightGray" Margin="10">
 			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
 			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 			<ListView  ItemsSource="{Binding CollectionView}" SelectedItem="{Binding HouseViewModel, Mode=TwoWay}">
@@ -98,12 +109,12 @@
 				<TextBlock  Grid.Row="4" Grid.ColumnSpan="2" Text="Image" Background="#77474747" Height="24"/>
 				<DockPanel Grid.Row="5" Grid.Column="0">
 					<TextBlock DockPanel.Dock="Left"  Text="File" Height="24"/>
-					<Button DockPanel.Dock="Right" Width="20" Height="20" BorderThickness="0" BorderBrush="Transparent" Background="Transparent">
-						<Image Source="/Assignment_1a;open_file.png"/>
+					<Button Command="{Binding AddImageCommand}" DockPanel.Dock="Right" Width="20" Height="20" BorderThickness="0" BorderBrush="Transparent" Background="Transparent">
+						<Image Source="Resources/open_file.png"/>
 					</Button>
 				</DockPanel>
 
-				<TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
+				<TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding ImageFilePath, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
 				<Button Grid.Row="6" Style="{StaticResource AddButtonStyle}" Grid.ColumnSpan="2" Margin="10,5,10,5" Content="Add House" DataContext="{StaticResource MainViewModel}" Command="{Binding AddHouseCommand}"/>
 			</Grid>
 		</StackPanel>
