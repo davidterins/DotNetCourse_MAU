@@ -6,6 +6,8 @@ using Assignment_1a.Models.Enums;
 using Assignment_1a.ViewModels.Commands;
 using System.Windows.Input;
 using System.Windows.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Assignment_1a.ViewModels
 {
@@ -83,6 +85,7 @@ namespace Assignment_1a.ViewModels
         public string City { get; set; }
         public int? Zip { get; set; }
         public Country Country_ { get; set; }
+	     	public List<Country> Countries { get { return Enum.GetValues(typeof(Country)).Cast<Country>().ToList(); } }
         public string Street { get; set; }
 
         HouseRepresentationViewModel _houseViewModel;
