@@ -56,6 +56,7 @@
     </ApplicationDefinition>
     <Compile Include="Helper.cs" />
     <Compile Include="Models\House.cs" />
+    <Compile Include="Models\HouseViewModelCollection.cs" />
     <Compile Include="ViewModels\Commands\ActionCommand.cs" />
     <Compile Include="ViewModels\Converters\ImagePathConverter.cs" />
     <Compile Include="ViewModels\HouseRepresentationViewModel.cs" />

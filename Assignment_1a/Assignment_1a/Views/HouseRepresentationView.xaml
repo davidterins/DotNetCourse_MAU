@@ -21,6 +21,12 @@
 			<ColumnDefinition Width="200"/>
 			<ColumnDefinition Width="200"/>
 		</Grid.ColumnDefinitions>
+		<Grid.ContextMenu>
+			<ContextMenu>
+				<MenuItem Header="Edit" Command="{Binding EditCommand,Mode=TwoWay}"/>
+				<MenuItem Header="Delete" Command="{Binding DeleteCommand, Mode=TwoWay}"/>
+			</ContextMenu>
+		</Grid.ContextMenu>
 		<WrapPanel Background="CornflowerBlue" Grid.Column="0">
 			<Image Source="{Binding HouseBase.Image, Converter={StaticResource ImagePathConverter}}"/>
 		</WrapPanel>

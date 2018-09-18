@@ -120,7 +120,7 @@ namespace Assignment_1a.ViewModels
 
 		public MainWindowViewModel()
 		{
-			houses = new ObservableCollection<HouseRepresentationViewModel>();
+			houses = new HouseViewModelCollection();
 			HouseRepresentationViewModel h = new HouseRepresentationViewModel();
 			h.HouseBase = new House("lolID")
 			{
@@ -136,9 +136,15 @@ namespace Assignment_1a.ViewModels
 			houseCollection = new CollectionViewSource();
 			houseCollection.Source = houses;
 
+			houses.OnCollectionItemEdited += Houses_OnCollectionItemEdited;
 			houseCollection.Filter += usersCollection_Filter;
 			AddImageCommand = new ActionCommand(AddImage);
 			AddHouseCommand = new ActionCommand(AddHouse);
+		}
+
+		private void Houses_OnCollectionItemEdited(object sender, EventArgs e)
+		{
+			Console.WriteLine("ITEM EDIT");
 		}
 
 		private void usersCollection_Filter(object sender, FilterEventArgs e)
@@ -175,8 +181,8 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
-		private ObservableCollection<HouseRepresentationViewModel> houses;
-		public ObservableCollection<HouseRepresentationViewModel> Houses
+		private HouseViewModelCollection houses;
+		public HouseViewModelCollection Houses
 		{
 			get => houses;
 			set => houses = value;
