@@ -14,17 +14,22 @@
 		<ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
 
 		<Style TargetType="TextBlock">
-			<Setter Property="Foreground" Value="DarkBlue"/>
+			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="Margin" Value="2"/>
 		</Style>
 
+		<Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle">
+			<Setter Property="FontSize" Value="15"/>
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+
 		<Style TargetType="ComboBox">
-			<Setter Property="Foreground" Value="DarkBlue"/>
+			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="Margin" Value="2"/>
 		</Style>
 
 		<Style TargetType="TextBox">
-			<Setter Property="Foreground" Value="DarkBlue"/>
+			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="Margin" Value="2"/>
 		</Style>
 
@@ -76,7 +81,7 @@
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-				<TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Info" Background="#77474747" Height="24"/>
+				<TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Info" Background="#77474747" Height="24" Style="{StaticResource HeaderTextBlockStyle}"/>
 				<StackPanel Grid.Row="1" Grid.Column="0" >
 					<TextBlock Text="Category" Height="24"/>
 					<TextBlock Text="ResidentBuildings"  Height="24"/>
@@ -85,7 +90,7 @@
 					<TextBlock Text="ID"  Height="24"/>
 				</StackPanel>
 				<StackPanel  Grid.Row="1" Grid.Column="1">
-					<ComboBox SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24">
+					<ComboBox  SelectedItem="{Binding Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24">
 						<ComboBoxItem Content="Residential"/>
 						<ComboBoxItem Content="Commercial"/>
 					</ComboBox>
@@ -106,7 +111,7 @@
 					</ComboBox>
 					<TextBox Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Height="24"/>
 				</StackPanel>
-				<TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="Adress" Background="#77474747" Height="24"/>
+				<TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="Adress" Background="#77474747" Height="24" Style="{StaticResource HeaderTextBlockStyle}"/>
 				<StackPanel Grid.Row="3" Grid.Column="0" >
 					<TextBlock Text="City" Height="24"/>
 					<TextBlock Text="Street"  Height="24"/>
@@ -120,7 +125,7 @@
 					<ComboBox SelectedItem="{Binding Country_, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Countries}" Width="100" Height="24" />
 
 				</StackPanel>
-				<TextBlock  Grid.Row="4" Grid.ColumnSpan="2" Text="Image" Background="#77474747" Height="24"/>
+				<TextBlock  Grid.Row="4" Grid.ColumnSpan="2" Text="Image" Background="#77474747" Height="24" Style="{StaticResource HeaderTextBlockStyle}"/>
 				<DockPanel Grid.Row="5" Grid.Column="0">
 					<TextBlock DockPanel.Dock="Left"  Text="File" Height="24"/>
 					<Button Command="{Binding AddImageCommand}" DockPanel.Dock="Right" Width="20" Height="20" BorderThickness="0" BorderBrush="Transparent" Background="Transparent">

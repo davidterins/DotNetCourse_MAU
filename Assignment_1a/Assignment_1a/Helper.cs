@@ -11,17 +11,21 @@ namespace Assignment_1a
 		 public static string ConvertComobboxItemTotext(string rawValue)
 		{
 			int index = 0;
-			
-			for (int i = 0; i < rawValue.Length; i++)
+			if(rawValue != null)
 			{
-				if (rawValue[i] == ':')
+				for (int i = 0; i < rawValue.Length; i++)
 				{
-					index = i + 2;
-					break;
+					if (rawValue[i] == ':')
+					{
+						index = i + 2;
+						break;
+					}
+
 				}
-				
+				return rawValue.Substring(index);
 			}
-		  return rawValue.Substring(index);
+			return string.Empty;
+			
 		}
 
     }

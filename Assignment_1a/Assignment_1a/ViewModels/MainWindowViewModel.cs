@@ -112,7 +112,6 @@ namespace Assignment_1a.ViewModels
 			set
 			{
 				_selectedHouse = value;
-				//houseCollection.View.Refresh();
 				Console.WriteLine(_selectedHouse.ID);
 				OnPropertyChanged(nameof(SelectedHouse));
 			}
@@ -147,7 +146,7 @@ namespace Assignment_1a.ViewModels
 			FinishEditCommand = new ActionCommand(FinishEdit);
 		}
 
-		public ICommand FinishEditCommand { get; set; }
+
 
 		private void Houses_OnCollectionItemEdited(object sender, EventArgs e)
 		{
@@ -165,38 +164,44 @@ namespace Assignment_1a.ViewModels
 			Console.WriteLine("ITEM EDIT");
 		}
 
+		List<string> searchWords = new List<string>();
 		private void usersCollection_Filter(object sender, FilterEventArgs e)
 		{
+
 			if (string.IsNullOrEmpty(_searchFilter))
 			{
 				e.Accepted = true;
 				return;
 			}
+			string[] words = _searchFilter.Split(' ');
+
+
 
 			var viewModelItem = e.Item as HouseRepresentationViewModel;
-			string totalItemString = viewModelItem.HouseBase.Category +
-								viewModelItem.HouseBase.CommercialBuilding + viewModelItem.HouseBase.ID +
-								viewModelItem.HouseBase.LegalForm + viewModelItem.HouseBase.ResidentialBuldings;
-			if (totalItemString.ToUpper().Contains(_searchFilter.ToUpper()))
+			string totalItemString = viewModelItem.Category +
+								viewModelItem.CommercialBuilding + viewModelItem.ID +
+								viewModelItem.LegalForm + viewModelItem.ResidentialBuildings + viewModelItem.City + viewModelItem.Country_.ToString() + viewModelItem.Street + viewModelItem.Zip;
+			foreach (var word in words)
 			{
-				e.Accepted = true;
+				Console.WriteLine(word);
+				if (totalItemString.ToUpper().Contains(word.ToUpper()) && word != string.Empty)
+				{
+					e.Accepted = true;
+				
+				}
+				else
+				{
+					e.Accepted = false;
+				}
 			}
-			else
-			{
-				e.Accepted = false;
-			}
+		
 		}
 
+		public ICommand FinishEditCommand { get; set; }
 		public ICommand AddHouseCommand { get; set; }
 		public ICommand AddImageCommand { get; set; }
 
-		public ICollectionView CollectionView
-		{
-			get
-			{
-				return this.houseCollection.View;
-			}
-		}
+		public ICollectionView CollectionView { get => houseCollection.View; }
 
 		private HouseViewModelCollection houses;
 		public HouseViewModelCollection Houses
@@ -216,10 +221,10 @@ namespace Assignment_1a.ViewModels
 		}
 		void FinishEdit()
 		{
-			HouseViewModel.HouseBase.Category = Category;
-			HouseViewModel.HouseBase.ResidentialBuldings = ResidentialBuildings;
-			HouseViewModel.HouseBase.Category = Category;
-			HouseViewModel.HouseBase.Category = Category;
+			Console.WriteLine(HouseViewModel.HouseBase.Category);
+			HouseViewModel.EditValues(_id, _legalForm, _residentialBuildings, _commercialBuilding, _imageFilePath, _category,
+				_street, _zip, _city, _country);
+			HouseViewModel.EditMode = false;
 		}
 
 		void AddHouse()
