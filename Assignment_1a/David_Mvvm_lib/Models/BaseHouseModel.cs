@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assignment_1a.Models.Enums;
-using System.Threading.Tasks;
+﻿using David_Mvvm_lib.Enums;
 
-namespace Assignment_1a.Models
+namespace David_Mvvm_lib.Models
 {
 	public abstract class BaseHouseModel
 	{

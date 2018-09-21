@@ -1,13 +1,9 @@
 ﻿using Assignment_1a.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Assignment_1a.Models
+namespace Assignment_1a.Collections
 {
 	public class HouseViewModelCollection : ObservableCollection<HouseRepresentationViewModel>
 	{
@@ -16,14 +12,14 @@ namespace Assignment_1a.Models
 		protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
 		{
 			base.OnCollectionChanged(e);
-		
 
-				if (e.Action == NotifyCollectionChangedAction.Add)
-				{
-					var itemChanged = (HouseRepresentationViewModel)e.NewItems[0];
-					itemChanged.OnEditHouseHandler += OnEditHouseEvent;
-					itemChanged.OnDeleteHouseHandler += OnDeleteHouseEvent;
-				}
+
+			if (e.Action == NotifyCollectionChangedAction.Add)
+			{
+				var itemChanged = (HouseRepresentationViewModel)e.NewItems[0];
+				itemChanged.OnEditHouseHandler += OnEditHouseEvent;
+				itemChanged.OnDeleteHouseHandler += OnDeleteHouseEvent;
+			}
 			if (e.Action == NotifyCollectionChangedAction.Remove)
 			{
 				var itemRemoved = (HouseRepresentationViewModel)e.OldItems[0];

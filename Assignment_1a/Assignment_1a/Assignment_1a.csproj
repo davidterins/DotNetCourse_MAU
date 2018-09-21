@@ -54,18 +54,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helper.cs" />
-    <Compile Include="Models\House.cs" />
-    <Compile Include="Models\HouseViewModelCollection.cs" />
-    <Compile Include="ViewModels\Commands\ActionCommand.cs" />
+    <Compile Include="Collections\HouseViewModelCollection.cs" />
     <Compile Include="ViewModels\Converters\ImagePathConverter.cs" />
     <Compile Include="ViewModels\HouseRepresentationViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\HouseRepresentationView.xaml.cs">
       <DependentUpon>HouseRepresentationView.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -73,7 +69,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -83,8 +79,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\BaseHouseModel.cs" />
-    <Compile Include="Models\Enums\Countries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -114,7 +108,15 @@
     <Resource Include="Resources\NoImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\open_file.png" />
+    <Resource Include="Resources\open_file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\David_Mvvm_lib\David_Mvvm_lib.csproj">
+      <Project>{f5b64f50-6225-44b5-a4fe-bd74a3e63047}</Project>
+      <Name>David_Mvvm_lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

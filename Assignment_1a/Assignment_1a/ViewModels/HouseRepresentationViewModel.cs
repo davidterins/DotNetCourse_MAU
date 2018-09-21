@@ -1,12 +1,10 @@
-﻿using Assignment_1a.Models;
-using Assignment_1a.Models.Enums;
-using Assignment_1a.ViewModels.Commands;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
+using David_Mvvm_lib.ViewModels.Commands;
+using David_Mvvm_lib.ViewModels;
+using David_Mvvm_lib.Enums;
+using David_Mvvm_lib.Models;
 
 namespace Assignment_1a.ViewModels
 {
@@ -74,6 +72,7 @@ namespace Assignment_1a.ViewModels
 
 		public HouseRepresentationViewModel()
 		{
+
 			DeleteCommand = new ActionCommand(Delete);
 			EditCommand = new ActionCommand(Edit);
 		}

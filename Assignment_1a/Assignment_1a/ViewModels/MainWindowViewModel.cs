@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Collections.ObjectModel;
-using Assignment_1a.Models;
-using Assignment_1a.Models.Enums;
-using Assignment_1a.ViewModels.Commands;
+using David_Mvvm_lib.ViewModels;
+using David_Mvvm_lib.ViewModels.Commands;
+using David_Mvvm_lib.Helpers;
+using David_Mvvm_lib.Models;
+using Assignment_1a.Collections;
+using David_Mvvm_lib.Enums;
 using System.Windows.Input;
 using System.Windows.Data;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ namespace Assignment_1a.ViewModels
 			get => _category;
 			set
 			{
-				_category = Helper.ConvertComobboxItemTotext(value);
+				_category = Wpf_StringHelper.ConvertComobboxItemTotext(value);
 				OnPropertyChanged(nameof(Category));
 			}
 		}
@@ -31,7 +33,7 @@ namespace Assignment_1a.ViewModels
 			get => _residentialBuildings;
 			set
 			{
-				_residentialBuildings = Helper.ConvertComobboxItemTotext(value);
+				_residentialBuildings = Wpf_StringHelper.ConvertComobboxItemTotext(value);
 				OnPropertyChanged(nameof(ResidentialBuildings));
 			}
 		}
@@ -42,7 +44,7 @@ namespace Assignment_1a.ViewModels
 			get => _commercialBuilding;
 			set
 			{
-				_commercialBuilding = Helper.ConvertComobboxItemTotext(value);
+				_commercialBuilding = Wpf_StringHelper.ConvertComobboxItemTotext(value);
 				OnPropertyChanged(nameof(CommercialBuilding));
 			}
 		}
@@ -53,7 +55,7 @@ namespace Assignment_1a.ViewModels
 			get => _legalForm;
 			set
 			{
-				_legalForm = Helper.ConvertComobboxItemTotext(value);
+				_legalForm = Wpf_StringHelper.ConvertComobboxItemTotext(value);
 				OnPropertyChanged(nameof(LegalForm));
 			}
 		}

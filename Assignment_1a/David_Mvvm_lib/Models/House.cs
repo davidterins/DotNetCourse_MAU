@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_1a.Models
+namespace David_Mvvm_lib.Models
 {
-    class House : BaseHouseModel
+    public class House : BaseHouseModel
     {
         public House(string ID) : base(ID)
         {
         }
     }
 }
+
