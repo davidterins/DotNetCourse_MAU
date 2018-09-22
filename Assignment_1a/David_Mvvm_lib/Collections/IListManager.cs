@@ -28,7 +28,7 @@ namespace David_Mvvm_lib.Collections
 		/// </summary>
 		/// <param name="aType">A type.</param>
 		/// <returns>True if successful, false otherwise.</returns>
-		bool Add(T aType);
+		bool AddObject(T aType);
 
 		/// <summary>
 		/// Remove an object from the collection m_list at
@@ -83,5 +83,6 @@ namespace David_Mvvm_lib.Collections
 		bool BinarySerialize(string fileName);
 		bool BinaryDeSerialize(string fileName);
 		bool XMLSerialize(string fileName);
+		bool XMLDeserialize(string fileName);
 	}
 }

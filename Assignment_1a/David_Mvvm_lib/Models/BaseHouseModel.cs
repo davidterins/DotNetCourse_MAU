@@ -1,4 +1,6 @@
 ﻿using David_Mvvm_lib.Enums;
+using System;
+using System.Xml.Serialization;
 
 namespace David_Mvvm_lib.Models
 {
@@ -20,6 +22,8 @@ namespace David_Mvvm_lib.Models
 
 		public BuildingType RealEstateObjectType { get; set; }
 
+		public BaseHouseModel() { }
+
 		public BaseHouseModel(string ID)
 		{
 			this.ID = ID;
@@ -32,6 +36,8 @@ namespace David_Mvvm_lib.Models
 		public int? ZipCode { get; set; }
 		public string City { get; set; }
 		public Country Country { get; set; }
+
+		public Adress() { }
 
 		public Adress(string streetName, int? zipCode, string city, Country country)
 		{

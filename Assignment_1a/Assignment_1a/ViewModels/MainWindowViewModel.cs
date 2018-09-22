@@ -136,6 +136,8 @@ namespace Assignment_1a.ViewModels
 
 			houses.Add(h);
 
+			Console.WriteLine(houses.Count);
+
 			houseCollection = new CollectionViewSource();
 			houseCollection.Source = houses;
 
@@ -236,6 +238,7 @@ namespace Assignment_1a.ViewModels
 			if (result == true)
 			{
 				//ImageFilePath = fileDialog.FileName;
+				houses.XMLDeserialize(fileDialog.FileName);
 				
 			}
 		}

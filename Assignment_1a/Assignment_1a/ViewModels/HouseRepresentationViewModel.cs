@@ -8,6 +8,8 @@ using David_Mvvm_lib.Models;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Xml.Serialization;
+
 
 namespace Assignment_1a.ViewModels
 {
@@ -19,7 +21,7 @@ namespace Assignment_1a.ViewModels
 
 		public string Category
 		{
-			get => HouseBase.Category; private set
+			get => HouseBase.Category;  set
 			{
 				HouseBase.Category = value;
 				OnPropertyChanged(nameof(Category));
@@ -28,7 +30,7 @@ namespace Assignment_1a.ViewModels
 
 		public string BuildingType
 		{
-			get => HouseBase.BuildingType; private set
+			get => HouseBase.BuildingType;  set
 			{
 				HouseBase.BuildingType = value;
 				OnPropertyChanged(nameof(BuildingType));
@@ -37,31 +39,35 @@ namespace Assignment_1a.ViewModels
 
 		public string LegalForm
 		{
-			get => HouseBase.LegalForm; private set
+			get => HouseBase.LegalForm;  set
 			{
 				HouseBase.LegalForm = value; OnPropertyChanged(nameof(LegalForm));
 			}
 		}
 
-		public string ImageFilePath { get { return HouseBase.Image; } private set { HouseBase.Image = value; OnPropertyChanged(nameof(ImageFilePath)); } }
+		public string ImageFilePath { get { return HouseBase.Image; }  set { HouseBase.Image = value; OnPropertyChanged(nameof(ImageFilePath)); } }
 
-		public string City { get { return HouseBase.HouseAdress.City; } private set { HouseBase.HouseAdress.City = value; OnPropertyChanged(nameof(City)); } }
+		public string City { get { return HouseBase.HouseAdress.City; }  set { HouseBase.HouseAdress.City = value; OnPropertyChanged(nameof(City)); } }
 
-		public int? Zip { get { return HouseBase.HouseAdress.ZipCode; } private set { HouseBase.HouseAdress.ZipCode = value; OnPropertyChanged(nameof(Zip)); } }
+		public int? Zip { get { return HouseBase.HouseAdress.ZipCode; }  set { HouseBase.HouseAdress.ZipCode = value; OnPropertyChanged(nameof(Zip)); } }
 
-		public Country Country_ { get { return HouseBase.HouseAdress.Country; } private set { HouseBase.HouseAdress.Country = value; OnPropertyChanged(nameof(Country_)); } }
+		public Country Country_ { get { return HouseBase.HouseAdress.Country; }  set { HouseBase.HouseAdress.Country = value; OnPropertyChanged(nameof(Country_)); } }
 
-		public string Street { get { return HouseBase.HouseAdress.StreetName; } private set { HouseBase.HouseAdress.StreetName = value; OnPropertyChanged(nameof(Street)); } }
+		public string Street { get { return HouseBase.HouseAdress.StreetName; }  set { HouseBase.HouseAdress.StreetName = value; OnPropertyChanged(nameof(Street)); } }
 
 		string _id;
 		public string ID { get => _id; set { _id = value; OnPropertyChanged(nameof(ID)); } }
 
+		
 		public BaseHouseModel HouseBase { get; set; }
 
+		[XmlIgnore]
 		public ICommand DeleteCommand { get; set; }
+		[XmlIgnore]
 		public ICommand EditCommand { get; set; }
 
 		bool _editMode;
+		[XmlIgnore]
 		public bool EditMode { get { return _editMode; } set { _editMode = value; OnPropertyChanged(nameof(EditMode)); } }
 
 

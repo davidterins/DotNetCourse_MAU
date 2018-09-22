@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Xml.Serialization;
+using David_Mvvm_lib.Models;
 
 namespace David_Mvvm_lib.Serialization
 {
@@ -54,11 +55,32 @@ namespace David_Mvvm_lib.Serialization
 
 		public static void XmlFileSerialize<T>(string filePath, T obj)
 		{
-			XmlSerializer s = new XmlSerializer(typeof(T));
+			XmlSerializer s = new XmlSerializer(typeof(T), new Type[] {typeof(ResidentialRealEstateModel), typeof(ComercialRealEstateModel)});
 			TextWriter w = new StreamWriter(filePath);
 			try { s.Serialize(w, obj); }
 			catch { throw; }
 			finally { if (w != null) w.Close(); }
+		}
+
+		public static T XmlFileDeserialize<T>(string filePath)
+		{
+			XmlSerializer s = new XmlSerializer(typeof(T));
+			TextReader r = new StreamReader(filePath);
+			try
+			{
+				return (T)s.Deserialize(r);
+			}
+			catch
+			{
+				throw;
+			}
+			finally
+			{
+				if (r != null)
+				{
+					r.Close();
+				}
+			}
 		}
 	}
 }
