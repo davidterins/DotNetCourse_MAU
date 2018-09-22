@@ -5,9 +5,13 @@ using David_Mvvm_lib.ViewModels.Commands;
 using David_Mvvm_lib.ViewModels;
 using David_Mvvm_lib.Enums;
 using David_Mvvm_lib.Models;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace Assignment_1a.ViewModels
 {
+	[Serializable]
 	public class HouseRepresentationViewModel : ViewModelBase
 	{
 		public event EventHandler OnEditHouseHandler;
@@ -74,13 +78,18 @@ namespace Assignment_1a.ViewModels
 			ImageFilePath = image;
 			LegalForm = legalForm;
 			BuildingType = buildingType;
-	
+
 			Category = category;
 
 			Street = street;
 			Zip = zipCode;
 			City = city;
 			Country_ = country;
+		}
+
+		public override string ToString()
+		{
+			return base.ToString();
 		}
 
 		void Delete()
@@ -92,10 +101,5 @@ namespace Assignment_1a.ViewModels
 			EditMode = true;
 			OnEditHouseHandler.Invoke(this, EventArgs.Empty);
 		}
-
-	
-
-
-
 	}
 }

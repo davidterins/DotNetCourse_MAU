@@ -2,10 +2,11 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using David_Mvvm_lib.Collections;
 
 namespace Assignment_1a.Collections
 {
-	public class HouseViewModelCollection : ObservableCollection<HouseRepresentationViewModel>
+	public class HouseViewModelCollection : ListManager<HouseRepresentationViewModel>
 	{
 		public event EventHandler OnCollectionItemEdited;
 

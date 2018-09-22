@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Win32;
+using David_Mvvm_lib.Serialization;
 
 namespace Assignment_1a.ViewModels
 {
@@ -143,6 +144,8 @@ namespace Assignment_1a.ViewModels
 			AddImageCommand = new ActionCommand(AddImage);
 			AddHouseCommand = new ActionCommand(AddHouse);
 			FinishEditCommand = new ActionCommand(FinishEdit);
+			ExportToXMLCommand = new ActionCommand(ExportToXML);
+			ImportFromXMLCommand = new ActionCommand(ImportFromXML);
 		}
 
 
@@ -196,6 +199,8 @@ namespace Assignment_1a.ViewModels
 		public ICommand FinishEditCommand { get; set; }
 		public ICommand AddHouseCommand { get; set; }
 		public ICommand AddImageCommand { get; set; }
+		public ICommand ExportToXMLCommand { get; set; }
+		public ICommand ImportFromXMLCommand { get; set; }
 
 		public ICollectionView CollectionView { get => houseCollection.View; }
 
@@ -221,6 +226,29 @@ namespace Assignment_1a.ViewModels
 			HouseViewModel.EditValues(_id, _legalForm, _selectedBuildingType,_imageFilePath, _category,
 				_street, _zip, _city, _country);
 			HouseViewModel.EditMode = false;
+		}
+
+		void ImportFromXML()
+		{
+			OpenFileDialog fileDialog = new OpenFileDialog();
+			//fileDialog.Filter = "XML files | *.xml;";
+			Nullable<bool> result = fileDialog.ShowDialog();
+			if (result == true)
+			{
+				//ImageFilePath = fileDialog.FileName;
+				
+			}
+		}
+		void ExportToXML()
+		{
+			SaveFileDialog saveDialog = new SaveFileDialog();
+			Nullable<bool> result = saveDialog.ShowDialog();
+			if (result == true)
+			{
+				//houses.BinarySerialize(saveDialog.FileName);
+				houses.XMLSerialize(saveDialog.FileName);
+				//ImageFilePath = fileDialog.FileName;
+			}
 		}
 
 		void AddHouse()

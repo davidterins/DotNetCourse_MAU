@@ -37,9 +37,24 @@
 			<Setter Property="Foreground" Value="White"/>
 			<Setter Property="Background" Value="CornflowerBlue"/>
 		</Style>
-
+		
 	</Window.Resources>
-	<DockPanel DataContext="{StaticResource MainViewModel}" Margin="0,40,0,0" Background="#77474747">
+
+	<DockPanel DataContext="{StaticResource MainViewModel}" >
+		<Menu DockPanel.Dock="Top" Background="#77474747">
+			<MenuItem Header="_File" Foreground="White">
+				<MenuItem Header="_New" Foreground="Black" />
+				<MenuItem Header="_Open" Foreground="Black" />
+				<MenuItem Header="_Save" Foreground="Black" />
+				<MenuItem Header="_XML" Foreground="Black" >
+					<MenuItem Header="Import from XML file" Command="{Binding ImportFromXMLCommand}" />
+					<MenuItem Header="Export to XML file" Command="{Binding ExportToXMLCommand}" />
+				</MenuItem>
+				<Separator />
+				<MenuItem Header="_Exit" Foreground="Black" />
+			</MenuItem>
+		</Menu>
+		<DockPanel Margin="0,40,0,0" Background="#77474747">
 		<StackPanel Width="Auto" MinWidth="500" DockPanel.Dock="Left" Background="LightGray" Margin="10">
 			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
 			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -157,5 +172,6 @@
 			</Grid>
 		</StackPanel>
 
+	</DockPanel>
 	</DockPanel>
 </Window>
