@@ -22,21 +22,12 @@ namespace Assignment_1a.ViewModels
 			}
 		}
 
-		public string ResidentialBuildings
+		public string BuildingType
 		{
-			get => HouseBase.ResidentialBuldings; private set
+			get => HouseBase.BuildingType; private set
 			{
-				HouseBase.ResidentialBuldings = value;
-				OnPropertyChanged(nameof(ResidentialBuildings));
-			}
-		}
-
-		public string CommercialBuilding
-		{
-			get => HouseBase.CommercialBuilding; private set
-			{
-				HouseBase.CommercialBuilding = value;
-				OnPropertyChanged(nameof(CommercialBuilding));
+				HouseBase.BuildingType = value;
+				OnPropertyChanged(nameof(BuildingType));
 			}
 		}
 
@@ -72,19 +63,18 @@ namespace Assignment_1a.ViewModels
 
 		public HouseRepresentationViewModel()
 		{
-
 			DeleteCommand = new ActionCommand(Delete);
 			EditCommand = new ActionCommand(Edit);
 		}
 
-		public void EditValues(string id, string legalForm, string residentialBuilding, string commercialBuilding, string image, string category,
+		public void EditValues(string id, string legalForm, string buildingType, string image, string category,
 		string street, int? zipCode, string city, Country country)
 		{
 
 			ImageFilePath = image;
 			LegalForm = legalForm;
-			ResidentialBuildings = residentialBuilding;
-			CommercialBuilding = commercialBuilding;
+			BuildingType = buildingType;
+	
 			Category = category;
 
 			Street = street;

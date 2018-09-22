@@ -16,39 +16,36 @@ namespace Assignment_1a.ViewModels
 {
 	public class MainWindowViewModel : ViewModelBase
 	{
-		string _category;
+		public List<BuildingType> _buildingTypesList;
+		public List<BuildingType> BuildingTypesList { get { return _buildingTypesList; } private set { _buildingTypesList = value; OnPropertyChanged(nameof(BuildingTypesList)); } }
+		private readonly Dictionary<string, BuildingType[]> _buildtypeDictionary = new Dictionary<string, BuildingType[]>
+		{
+			{"Residential", new BuildingType[]{BuildingType.Appartment, BuildingType.TownHouse, BuildingType.Villa } },
+			{"Commercial", new BuildingType[]{BuildingType.WareHouse, BuildingType.Store} },
+		};
+
+		string _category = null;
 		public string Category
 		{
 			get => _category;
 			set
 			{
 				_category = Wpf_StringHelper.ConvertComobboxItemTotext(value);
+				BuildingTypesList = _buildtypeDictionary[_category].ToList();
 				OnPropertyChanged(nameof(Category));
 			}
 		}
 
-		string _residentialBuildings;
-		public string ResidentialBuildings
+		string _selectedBuildingType;
+		public string SelectedBuildingType
 		{
-			get => _residentialBuildings;
+			get => _selectedBuildingType;
 			set
 			{
-				_residentialBuildings = Wpf_StringHelper.ConvertComobboxItemTotext(value);
-				OnPropertyChanged(nameof(ResidentialBuildings));
+				_selectedBuildingType = Wpf_StringHelper.ConvertComobboxItemTotext(value);
+				OnPropertyChanged(nameof(SelectedBuildingType));
 			}
 		}
-
-		string _commercialBuilding;
-		public string CommercialBuilding
-		{
-			get => _commercialBuilding;
-			set
-			{
-				_commercialBuilding = Wpf_StringHelper.ConvertComobboxItemTotext(value);
-				OnPropertyChanged(nameof(CommercialBuilding));
-			}
-		}
-
 		string _legalForm;
 		public string LegalForm
 		{
@@ -125,14 +122,14 @@ namespace Assignment_1a.ViewModels
 
 		public MainWindowViewModel()
 		{
+
 			houses = new HouseViewModelCollection();
 			HouseRepresentationViewModel h = new HouseRepresentationViewModel();
-			h.HouseBase = new House("lolID")
+			h.HouseBase = new ResidentialRealEstateModel("lolID")
 			{
-				HouseAdress = new Adress("lolStreet", 23311, "lolCity", Country.Argentina),
-				Category = "Residential",
-				ResidentialBuldings = "Villas",
-				CommercialBuilding = "Ship",
+				RealEstateObjectType = BuildingType.TownHouse,
+				HouseAdress = new Adress("Malmövägen 5", 23311, "Malmö", Country.Sverige),
+				BuildingType = "Villa",
 				LegalForm = "OwnerShip"
 			};
 
@@ -142,7 +139,7 @@ namespace Assignment_1a.ViewModels
 			houseCollection.Source = houses;
 
 			houses.OnCollectionItemEdited += Houses_OnCollectionItemEdited;
-			houseCollection.Filter += usersCollection_Filter;
+			houseCollection.Filter += OnHouseCollectionFilter;
 			AddImageCommand = new ActionCommand(AddImage);
 			AddHouseCommand = new ActionCommand(AddHouse);
 			FinishEditCommand = new ActionCommand(FinishEdit);
@@ -156,9 +153,9 @@ namespace Assignment_1a.ViewModels
 			HouseViewModel = itemToEdit;
 			ID = itemToEdit.HouseBase.ID;
 			Category = itemToEdit.HouseBase.Category;
-			CommercialBuilding = itemToEdit.HouseBase.CommercialBuilding;
+			
 			LegalForm = itemToEdit.HouseBase.LegalForm;
-			ResidentialBuildings = itemToEdit.HouseBase.ResidentialBuldings;
+			SelectedBuildingType = itemToEdit.HouseBase.BuildingType;
 			City = itemToEdit.HouseBase.HouseAdress.City;
 			Country_ = itemToEdit.HouseBase.HouseAdress.Country;
 			Street = itemToEdit.HouseBase.HouseAdress.StreetName;
@@ -167,7 +164,7 @@ namespace Assignment_1a.ViewModels
 		}
 
 		List<string> searchWords = new List<string>();
-		private void usersCollection_Filter(object sender, FilterEventArgs e)
+		private void OnHouseCollectionFilter(object sender, FilterEventArgs e)
 		{
 
 			if (string.IsNullOrEmpty(_searchFilter))
@@ -177,12 +174,10 @@ namespace Assignment_1a.ViewModels
 			}
 			string[] words = _searchFilter.Split(' ');
 
-
-
 			var viewModelItem = e.Item as HouseRepresentationViewModel;
 			string totalItemString = viewModelItem.Category +
-								viewModelItem.CommercialBuilding + viewModelItem.ID +
-								viewModelItem.LegalForm + viewModelItem.ResidentialBuildings + viewModelItem.City + viewModelItem.Country_.ToString() + viewModelItem.Street + viewModelItem.Zip;
+								viewModelItem.ID + viewModelItem.LegalForm + viewModelItem.BuildingType +
+								viewModelItem.City + viewModelItem.Country_.ToString() + viewModelItem.Street + viewModelItem.Zip;
 			foreach (var word in words)
 			{
 				Console.WriteLine(word);
@@ -196,7 +191,6 @@ namespace Assignment_1a.ViewModels
 					e.Accepted = false;
 				}
 			}
-		
 		}
 
 		public ICommand FinishEditCommand { get; set; }
@@ -224,24 +218,31 @@ namespace Assignment_1a.ViewModels
 		void FinishEdit()
 		{
 			Console.WriteLine(HouseViewModel.HouseBase.Category);
-			HouseViewModel.EditValues(_id, _legalForm, _residentialBuildings, _commercialBuilding, _imageFilePath, _category,
+			HouseViewModel.EditValues(_id, _legalForm, _selectedBuildingType,_imageFilePath, _category,
 				_street, _zip, _city, _country);
 			HouseViewModel.EditMode = false;
 		}
 
 		void AddHouse()
 		{
-			var h = new HouseRepresentationViewModel();
-			h.HouseBase = new House(_id)
+			if (!string.IsNullOrEmpty(_category))
 			{
-				HouseAdress = new Adress(Street, Zip, City, Country_),
-				Image = _imageFilePath,
-				Category = _category,
-				ResidentialBuldings = _residentialBuildings,
-				CommercialBuilding = _commercialBuilding,
-				LegalForm = _legalForm
-			};
-			Houses.Add(h);
+				var houseRepViewModel = new HouseRepresentationViewModel();
+
+			if (Category == "Residential")
+			{
+				houseRepViewModel.HouseBase = new ResidentialRealEstateModel(_id);
+			}
+			else if(Category == "Commercial")
+			{
+				houseRepViewModel.HouseBase = new ComercialRealEstateModel(_id);
+			}
+				houseRepViewModel.HouseBase.Image = _imageFilePath;
+				houseRepViewModel.HouseBase.BuildingType = _selectedBuildingType;
+				houseRepViewModel.HouseBase.HouseAdress = new Adress(Street, Zip, City, Country_);
+				houseRepViewModel.HouseBase.LegalForm = _legalForm;
+				Houses.Add(houseRepViewModel);
+			}
 		}
 	}
 }

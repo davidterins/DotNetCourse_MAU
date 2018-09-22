@@ -2,14 +2,13 @@
 
 namespace David_Mvvm_lib.Models
 {
+
 	public abstract class BaseHouseModel
 	{
 		//Residential or commercial
 		public string Category { get; set; }
-		//Type of residential buildings - houses, villas, apartments, townhouses(row house)
-		public string ResidentialBuldings { get; set; }
-		//Shops or warehouse, etc
-		public string CommercialBuilding { get; set; }
+		//Type of residential buildings - houses, villas, apartments, townhouses(row house) //Shops or warehouse
+		public string BuildingType { get; set; }
 		//Ownership, tenement or rental
 		public string LegalForm { get; set; }
 		//Object ID
@@ -18,6 +17,8 @@ namespace David_Mvvm_lib.Models
 		public Adress HouseAdress { get; set; }
 		//Image
 		public string Image { get; set; }
+
+		public BuildingType RealEstateObjectType { get; set; }
 
 		public BaseHouseModel(string ID)
 		{

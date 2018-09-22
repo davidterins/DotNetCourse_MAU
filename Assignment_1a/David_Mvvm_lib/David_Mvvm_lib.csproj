@@ -42,8 +42,9 @@
   <ItemGroup>
     <Compile Include="Models\BaseHouseModel.cs" />
     <Compile Include="Helpers\Wpf_StringHelper.cs" />
-    <Compile Include="Enums\Countries.cs" />
-    <Compile Include="Models\House.cs" />
+    <Compile Include="Enums\Globals.cs" />
+    <Compile Include="Models\ComercialRealEstateModel.cs" />
+    <Compile Include="Models\ResidentialRealEstateModel.cs" />
     <Compile Include="ViewModels\Commands\ActionCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
