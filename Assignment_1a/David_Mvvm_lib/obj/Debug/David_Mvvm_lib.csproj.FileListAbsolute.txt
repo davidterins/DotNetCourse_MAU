@@ -3,4 +3,3 @@ C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csproj.CoreCompileInputs.cache
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.dll
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
-C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csprojResolveAssemblyReference.cache

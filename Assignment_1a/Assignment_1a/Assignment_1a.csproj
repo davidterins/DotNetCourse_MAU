@@ -56,11 +56,19 @@
     </ApplicationDefinition>
     <Compile Include="Collections\HouseViewModelCollection.cs" />
     <Compile Include="ViewModels\Converters\ImagePathConverter.cs" />
+    <Compile Include="ViewModels\HouseEditorViewModel.cs" />
     <Compile Include="ViewModels\HouseRepresentationViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\HouseEditorView.xaml.cs">
+      <DependentUpon>HouseEditorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HouseRepresentationView.xaml.cs">
       <DependentUpon>HouseRepresentationView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\HouseEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

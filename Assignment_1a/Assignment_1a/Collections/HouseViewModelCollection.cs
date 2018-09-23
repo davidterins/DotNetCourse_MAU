@@ -3,6 +3,8 @@ using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using David_Mvvm_lib.Collections;
+using David_Mvvm_lib.Models;
+using David_Mvvm_lib.Serialization;
 
 namespace Assignment_1a.Collections
 {
@@ -18,6 +20,7 @@ namespace Assignment_1a.Collections
 			if (e.Action == NotifyCollectionChangedAction.Add)
 			{
 				var itemChanged = (HouseRepresentationViewModel)e.NewItems[0];
+				
 				itemChanged.OnEditHouseHandler += OnEditHouseEvent;
 				itemChanged.OnDeleteHouseHandler += OnDeleteHouseEvent;
 			}

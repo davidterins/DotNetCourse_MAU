@@ -19,6 +19,7 @@ namespace Assignment_1a.ViewModels
 		public event EventHandler OnEditHouseHandler;
 		public event EventHandler OnDeleteHouseHandler;
 
+		[XmlIgnore]
 		public string Category
 		{
 			get => HouseBase.Category;  set
@@ -27,7 +28,7 @@ namespace Assignment_1a.ViewModels
 				OnPropertyChanged(nameof(Category));
 			}
 		}
-
+		[XmlIgnore]
 		public string BuildingType
 		{
 			get => HouseBase.BuildingType;  set
@@ -36,7 +37,7 @@ namespace Assignment_1a.ViewModels
 				OnPropertyChanged(nameof(BuildingType));
 			}
 		}
-
+		[XmlIgnore]
 		public string LegalForm
 		{
 			get => HouseBase.LegalForm;  set
@@ -44,15 +45,15 @@ namespace Assignment_1a.ViewModels
 				HouseBase.LegalForm = value; OnPropertyChanged(nameof(LegalForm));
 			}
 		}
-
+		[XmlIgnore]
 		public string ImageFilePath { get { return HouseBase.Image; }  set { HouseBase.Image = value; OnPropertyChanged(nameof(ImageFilePath)); } }
-
+		[XmlIgnore]
 		public string City { get { return HouseBase.HouseAdress.City; }  set { HouseBase.HouseAdress.City = value; OnPropertyChanged(nameof(City)); } }
-
+		[XmlIgnore]
 		public int? Zip { get { return HouseBase.HouseAdress.ZipCode; }  set { HouseBase.HouseAdress.ZipCode = value; OnPropertyChanged(nameof(Zip)); } }
-
+		[XmlIgnore]
 		public Country Country_ { get { return HouseBase.HouseAdress.Country; }  set { HouseBase.HouseAdress.Country = value; OnPropertyChanged(nameof(Country_)); } }
-
+		[XmlIgnore]
 		public string Street { get { return HouseBase.HouseAdress.StreetName; }  set { HouseBase.HouseAdress.StreetName = value; OnPropertyChanged(nameof(Street)); } }
 
 		string _id;
@@ -84,9 +85,7 @@ namespace Assignment_1a.ViewModels
 			ImageFilePath = image;
 			LegalForm = legalForm;
 			BuildingType = buildingType;
-
 			Category = category;
-
 			Street = street;
 			Zip = zipCode;
 			City = city;

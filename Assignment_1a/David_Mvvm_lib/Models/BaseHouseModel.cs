@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace David_Mvvm_lib.Models
 {
-
+	[Serializable]
 	public abstract class BaseHouseModel
 	{
 		//Residential or commercial

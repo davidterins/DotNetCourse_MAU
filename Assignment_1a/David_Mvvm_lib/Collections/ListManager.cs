@@ -42,42 +42,6 @@ namespace David_Mvvm_lib.Collections
 			return true;
 		}
 
-		//public bool ChangeAt(T aType, int anIndex)
-		//{
-		//	if (CheckIndex(anIndex))
-		//	{
-		//		m_List[anIndex] = aType;
-		//		return true;
-		//	}
-		//	else return false;
-		
-		//}
-
-		//public bool CheckIndex(int index)
-		//{
-		//	if(m_List.Count > index)
-		//	{
-		//		return true;
-		//	}
-		//	return false;
-		//}
-
-		//public void DeleteAll()
-		//{
-		//	m_List.Clear();
-		//}
-
-		//public bool DeleteAt(int anIndex)
-		//{
-		//	m_List.RemoveAt(anIndex);
-		//	return true;
-		//}
-
-		//public T GetAt(int anIndex)
-		//{
-		//	return m_List[anIndex];
-		//}
-
 		public string[] ToStringArray()
 		{
 			var array = new string[Items.Count];
@@ -98,20 +62,25 @@ namespace David_Mvvm_lib.Collections
 			return list;
 		}
 
-		public bool XMLDeserialize(string fileName)
-		{
-			ClearItems();
-			Serialization.Serialization.XmlFileDeserialize<T>(fileName);
+		//public virtual bool XMLDeserialize(string fileName)
+		//{
+		//	ClearItems();
+		//	//Items.Add(Serialization.Serialization.XmlFileDeserialize<T>(fileName));
+		//	//var s = Serialization.Serialization.XmlFileDeserialize<T>(fileName);
+		//	//Add(s);
 			
-			return true;
-		}
+		//	Serialization.Serialization.XMLDeserializeCollection(fileName, this);
+		//	Console.WriteLine(Items.Count);
+		//	return true;
+		//}
 
-		public bool XMLSerialize(string fileName)
+		public virtual bool XMLSerialize(string fileName)
 		{
-			foreach (T item in Items)
-			{
-				Serialization.Serialization.XmlFileSerialize<T>(fileName, item);
-			}
+			Serialization.Serialization.XMLSearializeCollection(fileName, this);
+			//foreach (T item in Items)
+			//{
+			//	Serialization.Serialization.XmlFileSerialize<T>(fileName, item);
+			//}
 			return true;
 		}
 

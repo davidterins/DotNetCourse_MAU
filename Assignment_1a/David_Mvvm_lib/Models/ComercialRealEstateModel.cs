@@ -12,7 +12,7 @@ namespace David_Mvvm_lib.Models
 		public ComercialRealEstateModel () { }
 		public ComercialRealEstateModel(string ID) : base(ID)
 		{
-			Category = "Comercial";
+			Category = "Commercial";
 		}
 	}
 }

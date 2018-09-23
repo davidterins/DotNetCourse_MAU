@@ -64,7 +64,7 @@ namespace David_Mvvm_lib.Serialization
 
 		public static T XmlFileDeserialize<T>(string filePath)
 		{
-			XmlSerializer s = new XmlSerializer(typeof(T));
+			XmlSerializer s = new XmlSerializer(typeof(T), new Type[] { typeof(ResidentialRealEstateModel), typeof(ComercialRealEstateModel) });
 			TextReader r = new StreamReader(filePath);
 			try
 			{
@@ -82,5 +82,33 @@ namespace David_Mvvm_lib.Serialization
 				}
 			}
 		}
+
+		public static void XMLSearializeCollection<T>(string filePath, T collection)
+		{
+			using (Stream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+			{
+				XmlSerializer xmlformat = new XmlSerializer(typeof(T), new Type[] { typeof(ResidentialRealEstateModel), typeof(ComercialRealEstateModel) });
+				xmlformat.Serialize(stream, collection);
+			}
+		}
+
+		public static T XMLDeserializeCollection<T>(string filePath)
+		{
+			using (Stream stream = File.Open(filePath, FileMode.Open))
+			{
+				XmlSerializer xmlformat = new XmlSerializer(typeof(T), new Type[] { typeof(ResidentialRealEstateModel), typeof(ComercialRealEstateModel) });
+				return (T)xmlformat.Deserialize(stream);
+			}
+		}
+
+		public static void XMLDeserializeCollection<T>(string filePath, ref T collection)
+		{
+			using (Stream stream = File.Open(filePath, FileMode.Open))
+			{
+				XmlSerializer xmlformat = new XmlSerializer(typeof(T), new Type[] { typeof(ResidentialRealEstateModel), typeof(ComercialRealEstateModel) });
+				collection = (T)xmlformat.Deserialize(stream);
+			}
+		}
+
 	}
 }
