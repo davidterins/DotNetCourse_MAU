@@ -59,7 +59,7 @@
 		<StackPanel Width="Auto" MinWidth="500" DockPanel.Dock="Left" Background="LightGray" Margin="10">
 			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
 			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-			<ListView  ItemsSource="{Binding CollectionView, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding HouseViewModel, Mode=TwoWay}">
+			<ListView  ItemsSource="{Binding CollectionView, UpdateSourceTrigger=PropertyChanged}">
 				<ListView.ItemTemplate>
 					<DataTemplate DataType="{x:Type Views:HouseRepresentationView}">
 						<Views:HouseRepresentationView DataContext="{Binding}"/>
