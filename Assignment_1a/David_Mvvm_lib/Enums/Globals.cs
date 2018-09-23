@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace David_Mvvm_lib.Enums
 {
+	/// <summary>
+	/// Types of buildings for a realEstate object.
+	/// </summary>
 	public enum BuildingType
 	{
 		Villa, TownHouse, Appartment, WareHouse, Store,
 	}
-	//Ownership, tenement or rental
+	/// <summary>
+	/// Types of contracts for a realEstate object.
+	/// </summary>
 	public enum ContractType
 	{
 		Ownership, Rental, Tenement

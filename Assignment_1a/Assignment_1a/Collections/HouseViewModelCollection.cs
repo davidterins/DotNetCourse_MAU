@@ -1,21 +1,24 @@
 ﻿using Assignment_1a.ViewModels;
 using System;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using David_Mvvm_lib.Collections;
-using David_Mvvm_lib.Models;
-using David_Mvvm_lib.Serialization;
 
 namespace Assignment_1a.Collections
 {
 	public class HouseViewModelCollection : ListManager<HouseRepresentationViewModel>
 	{
+		/// <summary>
+		/// Event that invokes when an an item in the collection is edited
+		/// </summary>
 		public event EventHandler OnCollectionItemEdited;
 
+		/// <summary>
+		/// Happens every time an object in the collection is changed
+		/// </summary>
+		/// <param name="e">an eventargs which define what type of action occured in the collection (add, remove, replace etc)</param>
 		protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
 		{
 			base.OnCollectionChanged(e);
-
 
 			if (e.Action == NotifyCollectionChangedAction.Add)
 			{
@@ -30,7 +33,11 @@ namespace Assignment_1a.Collections
 				itemRemoved.OnEditHouseHandler -= OnEditHouseEvent;
 			}
 		}
-
+		/// <summary>
+		/// Triggers when an item in the collection is deleted.
+		/// </summary>
+		/// <param name="sender">sender</param>
+		/// <param name="e">empty EventArgs</param>
 		private void OnDeleteHouseEvent(object sender, EventArgs e)
 		{
 			var item = (HouseRepresentationViewModel)sender;
@@ -38,10 +45,14 @@ namespace Assignment_1a.Collections
 			Remove(item);
 		}
 
+		/// <summary>
+		/// Triggers when an item in the collection is edited. 
+		/// </summary>
+		/// <param name="sender">sender</param>
+		/// <param name="e">empty EventArgs</param>
 		private void OnEditHouseEvent(object sender, EventArgs e)
 		{
-			OnCollectionItemEdited.Invoke(sender, e);
-			var item = (HouseRepresentationViewModel)sender;
+			OnCollectionItemEdited?.Invoke(sender, e);
 		}
 	}
 

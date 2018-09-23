@@ -2,14 +2,10 @@
 using System.ComponentModel;
 using David_Mvvm_lib.ViewModels;
 using David_Mvvm_lib.ViewModels.Commands;
-using David_Mvvm_lib.Helpers;
-using David_Mvvm_lib.Models;
 using Assignment_1a.Collections;
-using David_Mvvm_lib.Enums;
 using System.Windows.Input;
 using System.Windows.Data;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Win32;
 using David_Mvvm_lib.Serialization;
 
@@ -31,7 +27,7 @@ namespace Assignment_1a.ViewModels
 		public string SearchFilter
 		{
 			get => _searchFilter;
-			set { _searchFilter = value; _houseCollection.View.Refresh(); OnPropertyChanged(nameof(SearchFilter)); }
+			set { _searchFilter = value; _houseCollectionViewSource.View.Refresh(); OnPropertyChanged(nameof(SearchFilter)); }
 		}
 
 		HouseEditorViewModel _houseEditViewModel;
@@ -41,26 +37,23 @@ namespace Assignment_1a.ViewModels
 			set { _houseEditViewModel = value; OnPropertyChanged(nameof(HouseEditViewModel)); }
 		}
 
+		private CollectionViewSource _houseCollectionViewSource;
+		public ICollectionView CollectionView { get => _houseCollectionViewSource.View; }
+
 		public ICommand ExportToXMLCommand { get; set; }
 		public ICommand ImportFromXMLCommand { get; set; }
 
-		private CollectionViewSource _houseCollection;
-		public ICollectionView CollectionView
-		{
-			get => _houseCollection.View;
-			set { _houseCollection.Source = value; }
-		}
 
 		public MainWindowViewModel()
 		{
 			_houseEditViewModel = new HouseEditorViewModel();
 			_houses = new HouseViewModelCollection();
 
-			_houseCollection = new CollectionViewSource();
-			_houseCollection.Source = _houses;
+			_houseCollectionViewSource = new CollectionViewSource();
+			_houseCollectionViewSource.Source = _houses;
 
 			_houses.OnCollectionItemEdited += Houses_OnCollectionItemEdited;
-			_houseCollection.Filter += OnHouseCollectionFilter;
+			_houseCollectionViewSource.Filter += OnHouseCollectionFilter;
 			_houseEditViewModel.ItemAddedHandler += _houseEditViewModel_ItemAddedHandler;
 
 			ExportToXMLCommand = new ActionCommand(ExportToXML);
@@ -70,7 +63,6 @@ namespace Assignment_1a.ViewModels
 		private void _houseEditViewModel_ItemAddedHandler(object sender, HouseRepresentationViewModel e)
 		{
 			_houses.Add(e);
-			Console.WriteLine("Add house " + e.BuildingType);
 			OnPropertyChanged(nameof(CollectionView));
 		}
 
@@ -84,7 +76,6 @@ namespace Assignment_1a.ViewModels
 
 		private void OnHouseCollectionFilter(object sender, FilterEventArgs e)
 		{
-
 			if (string.IsNullOrEmpty(_searchFilter))
 			{
 				e.Accepted = true;
@@ -118,9 +109,13 @@ namespace Assignment_1a.ViewModels
 			var result = fileDialog.ShowDialog();
 			if (result == true)
 			{
+				_houses.OnCollectionItemEdited -= Houses_OnCollectionItemEdited;
+
 				Serialization.XMLDeserializeCollection(fileDialog.FileName, ref _houses);
-				_houseCollection.Source = _houses;
+				_houseCollectionViewSource.Source = _houses;
 				OnPropertyChanged(nameof(CollectionView));
+
+				_houses.OnCollectionItemEdited += Houses_OnCollectionItemEdited;
 				CurrentFileInUse = fileDialog.FileName;
 			}
 		}

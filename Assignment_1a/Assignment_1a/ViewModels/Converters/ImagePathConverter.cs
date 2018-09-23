@@ -10,6 +10,14 @@ namespace Assignment_1a.ViewModels.Converters
 {
 	class ImagePathConverter : IValueConverter
 	{
+		/// <summary>
+		/// Sets the image path to a default image if there is no image chosen for houseobject.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <param name="targetType"></param>
+		/// <param name="parameter"></param>
+		/// <param name="culture"></param>
+		/// <returns></returns>
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
 			if(value != null)

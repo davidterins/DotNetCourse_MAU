@@ -14,7 +14,6 @@
 	<Window.Resources>
 		<ViewModels:MainWindowViewModel x:Key="MainViewModel"/>
 		
-
 		<Style TargetType="TextBlock">
 			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="Margin" Value="2"/>

@@ -9,24 +9,14 @@ using David_Mvvm_lib.Serialization;
 
 namespace David_Mvvm_lib.Collections
 {
+	/// <summary>
+	/// extension of observable collection to also serialilze its items.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public class ListManager<T> : ObservableCollection<T>
 	{
 
-
-	  //int Count => m_List.Count;
-		//private List<T> m_List;
-
-		public ListManager()
-		{
-		//	m_List = new List<T>();
-			
-		}
-
-		//public bool AddObject(T aType)
-		//{
-		//	m_List.Add(aType);
-		//	return true;
-		//}
+		public ListManager() { }
 
 		public bool BinaryDeSerialize(string fileName)
 		{
@@ -35,7 +25,7 @@ namespace David_Mvvm_lib.Collections
 
 		public bool BinarySerialize(string fileName)
 		{
-			foreach(T item in Items)
+			foreach (T item in Items)
 			{
 				Serialization.Serialization.BinaryFileSerialize(item, fileName);
 			}
@@ -45,7 +35,7 @@ namespace David_Mvvm_lib.Collections
 		public string[] ToStringArray()
 		{
 			var array = new string[Items.Count];
-		  for (int i = 0; i < Items.Count; i++)
+			for (int i = 0; i < Items.Count; i++)
 			{
 				array[i] = Items[i].ToString();
 			}
@@ -55,35 +45,25 @@ namespace David_Mvvm_lib.Collections
 		public List<string> ToStringList()
 		{
 			var list = new List<string>();
-			foreach(T item in Items)
+			foreach (T item in Items)
 			{
 				list.Add(item.ToString());
 			}
 			return list;
 		}
 
-		//public virtual bool XMLDeserialize(string fileName)
-		//{
-		//	ClearItems();
-		//	//Items.Add(Serialization.Serialization.XmlFileDeserialize<T>(fileName));
-		//	//var s = Serialization.Serialization.XmlFileDeserialize<T>(fileName);
-		//	//Add(s);
-			
-		//	Serialization.Serialization.XMLDeserializeCollection(fileName, this);
-		//	Console.WriteLine(Items.Count);
-		//	return true;
-		//}
-
+		/// <summary>
+		/// Serializes the items in the collection and save them to speciefied path
+		/// </summary>
+		/// <param name="fileName">file path</param>
+		/// <returns></returns>
 		public virtual bool XMLSerialize(string fileName)
 		{
 			Serialization.Serialization.XMLSearializeCollection(fileName, this);
-			//foreach (T item in Items)
-			//{
-			//	Serialization.Serialization.XmlFileSerialize<T>(fileName, item);
-			//}
+
 			return true;
 		}
 
-		
+
 	}
 }
