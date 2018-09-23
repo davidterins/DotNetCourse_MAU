@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Collections.Generic;
 using Microsoft.Win32;
 using David_Mvvm_lib.Serialization;
+using System.Windows;
 
 namespace Assignment_1a.ViewModels
 {
@@ -42,7 +43,7 @@ namespace Assignment_1a.ViewModels
 
 		public ICommand ExportToXMLCommand { get; set; }
 		public ICommand ImportFromXMLCommand { get; set; }
-
+		public ICommand SaveCommand { get; set; }
 
 		public MainWindowViewModel()
 		{
@@ -58,6 +59,24 @@ namespace Assignment_1a.ViewModels
 
 			ExportToXMLCommand = new ActionCommand(ExportToXML);
 			ImportFromXMLCommand = new ActionCommand(ImportFromXML);
+		}
+
+		public bool OnClosing()
+		{
+			if (string.IsNullOrEmpty(_currentFileInUse))
+			{
+				if (MessageBox.Show("Continue without saving?", "Close", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+				{
+					return true;
+				}
+				else
+				{
+					ExportToXML();
+					return true;
+				}
+			}
+			return false;
+
 		}
 
 		private void _houseEditViewModel_ItemAddedHandler(object sender, HouseRepresentationViewModel e)

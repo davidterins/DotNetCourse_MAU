@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Assignment_1a.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +17,29 @@ using System.Windows.Shapes;
 
 namespace Assignment_1a.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
+		public MainWindow()
+		{
+			InitializeComponent();
+		}
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			var viewModel = (MainWindowViewModel)DataContext;
+			if(viewModel.OnClosing())
+			{
+				
+				base.OnClosing(e);
+			}
+			else
+			{
+				e.Cancel = true;
+			}
+		
+		}
+
+	}
 }

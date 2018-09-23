@@ -40,7 +40,7 @@
 		</Style>
 		
 	</Window.Resources>
-	
+
 	<DockPanel DataContext="{StaticResource MainViewModel}" >
 		<Menu DockPanel.Dock="Top" Background="#77474747">
 			<MenuItem Header="_File" Foreground="White">

@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:Assignment_1a;assembly=Assignment_1a"
 						 xmlns:Views="clr-namespace:Assignment_1a.Views;assembly=Assignment_1a"
              StartupUri="Views\MainWindow.xaml">
-    <Application.Resources>
+
+	<Application.Resources>
          
     </Application.Resources>
 </Application>
