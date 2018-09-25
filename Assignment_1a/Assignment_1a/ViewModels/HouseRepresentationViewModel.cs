@@ -6,11 +6,12 @@ using David_Mvvm_lib.ViewModels;
 using David_Mvvm_lib.Enums;
 using David_Mvvm_lib.Models;
 using System.Xml.Serialization;
+using David_Mvvm_lib.Helpers;
 
 namespace Assignment_1a.ViewModels
 {
 	[Serializable]
-	public class HouseRepresentationViewModel : ViewModelBase, IComparable
+	public class HouseRepresentationViewModel : ViewModelBase
 	{
 		public event EventHandler OnEditHouseHandler;
 		public event EventHandler OnDeleteHouseHandler;
@@ -77,10 +78,19 @@ namespace Assignment_1a.ViewModels
 			set { _id = value; OnPropertyChanged(nameof(ID)); }
 		}
 
+		int _searchHits = 0;
+		[XmlIgnore]
+		public int SearchHits
+		{
+			get => _searchHits;
+			set { _searchHits = value; OnPropertyChanged(nameof(SearchHits)); }
+		}
+
 		bool _editMode;
 		[XmlIgnore]
 		public bool EditMode
-		{ get { return _editMode; }
+		{
+			get { return _editMode; }
 			set { _editMode = value; OnPropertyChanged(nameof(EditMode)); }
 		}
 
@@ -111,11 +121,6 @@ namespace Assignment_1a.ViewModels
 			Country_ = country;
 		}
 
-		public override string ToString()
-		{
-			return base.ToString();
-		}
-
 		void Delete()
 		{
 			OnDeleteHouseHandler.Invoke(this, EventArgs.Empty);
@@ -125,46 +130,59 @@ namespace Assignment_1a.ViewModels
 			EditMode = true;
 			OnEditHouseHandler.Invoke(this, EventArgs.Empty);
 		}
-        public int SearchHits = 0;
-        public bool SearchHit(string searchString)
-        {
-            SearchHits = 0;
-            bool contains = false;
-            if(searchString.ToUpper().Contains(Category.ToUpper()))
-            {
-                SearchHits++;
-                contains = true;
-            }
-            if(searchString.ToUpper().Contains(LegalForm.ToUpper()))
-            {
-                SearchHits++;
-                contains = true;
-            }
-            if (searchString.ToUpper().Contains(BuildingType.ToUpper()))
-            {
-                SearchHits++;
-                contains = true;
-            }
-            if (contains)
-            {
-                return true;
-            }
-            
-            else
-            {
-                SearchHits = 0;
-                return false;
-            }
 
-
-        }
-
-        public int CompareTo(object other)
-        {
-            var obj = (HouseRepresentationViewModel)other;
-            if (SearchHits > obj.SearchHits) return -1;
-            if (SearchHits == obj.SearchHits) return 0;
-            return 1;
-        }
-    }
+		public bool IsSearchHit(string searchString)
+		{
+			SearchHits = 0;
+			bool contains = false;
+			if (Wpf_StringHelper.IsMatch(searchString, Category))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, LegalForm))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, BuildingType))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, ID))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, Country_.ToString()))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, Street))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, City))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (Wpf_StringHelper.IsMatch(searchString, Zip.ToString()))
+			{
+				SearchHits++;
+				contains = true;
+			}
+			if (contains)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
 }

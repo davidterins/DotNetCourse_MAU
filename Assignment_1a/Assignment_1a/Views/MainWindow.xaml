@@ -60,6 +60,7 @@
 			<Label Content="Search" Foreground="White" Background="#474747" Height="24" />
 			<TextBox Text="{Binding SearchFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 			<ListView  ItemsSource="{Binding CollectionView, UpdateSourceTrigger=PropertyChanged}">
+				
 				<ListView.ItemTemplate>
 					<DataTemplate DataType="{x:Type Views:HouseRepresentationView}">
 						<Views:HouseRepresentationView DataContext="{Binding}"/>

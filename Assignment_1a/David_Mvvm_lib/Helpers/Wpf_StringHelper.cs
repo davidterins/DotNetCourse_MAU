@@ -20,6 +20,20 @@ namespace David_Mvvm_lib.Helpers
 				return rawValue.Substring(index);
 			}
 			return string.Empty;
+		}
+
+		public static bool IsMatch(string seachString, string searchedObject)
+		{
+			if(string.IsNullOrEmpty(searchedObject))
+			{
+				return false;
+			}
+			else if(seachString.ToUpper().Contains(searchedObject.ToUpper()))
+			{
+				return true;
+			}
+			return false;
+
 
 		}
 	}
