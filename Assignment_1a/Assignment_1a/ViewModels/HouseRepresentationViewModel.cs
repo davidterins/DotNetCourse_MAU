@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace Assignment_1a.ViewModels
 {
 	[Serializable]
-	public class HouseRepresentationViewModel : ViewModelBase
+	public class HouseRepresentationViewModel : ViewModelBase, IComparable
 	{
 		public event EventHandler OnEditHouseHandler;
 		public event EventHandler OnDeleteHouseHandler;
@@ -125,5 +125,46 @@ namespace Assignment_1a.ViewModels
 			EditMode = true;
 			OnEditHouseHandler.Invoke(this, EventArgs.Empty);
 		}
-	}
+        public int SearchHits = 0;
+        public bool SearchHit(string searchString)
+        {
+            SearchHits = 0;
+            bool contains = false;
+            if(searchString.ToUpper().Contains(Category.ToUpper()))
+            {
+                SearchHits++;
+                contains = true;
+            }
+            if(searchString.ToUpper().Contains(LegalForm.ToUpper()))
+            {
+                SearchHits++;
+                contains = true;
+            }
+            if (searchString.ToUpper().Contains(BuildingType.ToUpper()))
+            {
+                SearchHits++;
+                contains = true;
+            }
+            if (contains)
+            {
+                return true;
+            }
+            
+            else
+            {
+                SearchHits = 0;
+                return false;
+            }
+
+
+        }
+
+        public int CompareTo(object other)
+        {
+            var obj = (HouseRepresentationViewModel)other;
+            if (SearchHits > obj.SearchHits) return -1;
+            if (SearchHits == obj.SearchHits) return 0;
+            return 1;
+        }
+    }
 }
