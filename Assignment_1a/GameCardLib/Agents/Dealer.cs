@@ -4,7 +4,25 @@ using System.Text;
 
 namespace GameCardLib.Agents
 {
-	public class Dealer
-	{
-	}
+
+    public class Dealer : PlayingAgent
+    {
+        CardDeck _cardDeck;
+
+        public Dealer()
+        {
+            _cardDeck = new CardDeck();
+        }
+
+        void Deal()
+        {
+
+        }
+
+        public override void OnTurn()
+        {
+            base.OnTurn();
+            
+        }
+    }
 }

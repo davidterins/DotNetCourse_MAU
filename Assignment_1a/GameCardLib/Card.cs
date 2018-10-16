@@ -5,13 +5,13 @@ using System.Text;
 namespace GameCardLib
 {
 	public enum Suit { Diamond, Spade, Star, Heart }
-	public class GameCard
+	public class Card
 	{
 		public string ImgPath { get; set; }
 		public int Value { get; set; }
 		public Suit Suit { get; set; }
 
-		public GameCard(int value, Suit suit, string imgPath)
+		public Card(int value, Suit suit, string imgPath)
 		{
 			Value = value;
 			Suit = suit;

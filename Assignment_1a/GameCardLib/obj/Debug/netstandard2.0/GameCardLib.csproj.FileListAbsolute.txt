@@ -1,0 +1,9 @@
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csprojResolveAssemblyReference.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CoreCompileInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfoInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfo.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.deps.json
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.pdb

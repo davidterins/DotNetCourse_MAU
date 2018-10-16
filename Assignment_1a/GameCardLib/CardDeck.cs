@@ -7,11 +7,11 @@ namespace GameCardLib
 
 	public class CardDeck
 	{
-		List<GameCard> _cards;
+		List<Card> _cards;
 
 		public CardDeck()
 		{
-			_cards = new List<GameCard>();
+			_cards = new List<Card>();
 		}
 
 		public void Shuffle()
@@ -19,9 +19,9 @@ namespace GameCardLib
 		  for (int i = 0; i< _cards.Count; i++)
 			{
 				Random rand = new Random();
-				GameCard cardOne = _cards[i];
+				Card cardOne = _cards[i];
 				int randomCardIndex = rand.Next(0, _cards.Count);
-				GameCard cardTwo = _cards[randomCardIndex];
+				Card cardTwo = _cards[randomCardIndex];
 
 				_cards[i] = cardTwo;
 				_cards[randomCardIndex] = cardOne;
@@ -32,9 +32,9 @@ namespace GameCardLib
 
 		public int CardsLeft { get { return _cards.Count; } }
 
-		public GameCard GetTopCard { get { return _cards[0]; } }
+		public Card GetTopCard { get { return _cards[0]; } }
 
-		public void InsertCard(GameCard gameCard)
+		public void InsertCard(Card gameCard)
 		{
 			_cards.Add(gameCard);
 		}
