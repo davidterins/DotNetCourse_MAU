@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\
 Assignment_2b
 none
 false
 DEBUG;TRACE
-\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\App.xaml
-2-530050312
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\App.xaml
+3-1370149558
 
-12-1214900685
-121-209953819
-Views\MainWindow.xaml;Views\PlayerView.xaml;
+13-1536435317
+1211874134581
+Views\HandView.xaml;Views\MainWindow.xaml;Views\PlayerView.xaml;
 
-False
+True
 

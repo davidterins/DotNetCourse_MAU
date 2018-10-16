@@ -4,51 +4,58 @@ using System.Text;
 
 namespace GameCardLib.Agents
 {
-    
-    public class Player : PlayingAgent
-    {
-        public override void OnTurn()
-        {
-            HasTurn = true;
-        }
-    }
 
-    public abstract class PlayingAgent : IPlayingAgent
-    {
-        public int Score;
-        public bool HasTurn;
+	public class Player : PlayingAgent
+	{
+		public override void OnTurn()
+		{
+			HasTurn = true;
+		}
+	}
 
-        public event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
+	public abstract class PlayingAgent : IPlayingAgent
+	{
+		public int Score;
+		public bool HasTurn;
+		
+		public Hand Hand { get; }
 
-        public void FinishTurn(AgentAction agentAction, bool isDealer)
-        {
-            FinishTurnEvent.Invoke(this, new FinishTurnEventArgs(agentAction, isDealer));
-            HasTurn = false;
-        }
+		public PlayingAgent() 
+		{
+			Hand = new Hand();
+		}
 
-        public virtual void OnTurn()
-        {
-            HasTurn = true;
-        }
-    }
+		public event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
 
-    public interface IPlayingAgent
-    {
-        event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
-        void FinishTurn(AgentAction agentAction, bool isDealer);
-        void OnTurn();
-    }
+		public void FinishTurn(AgentAction agentAction, bool isDealer)
+		{
+			FinishTurnEvent.Invoke(this, new FinishTurnEventArgs(agentAction, isDealer));
+			HasTurn = false;
+		}
 
-    public enum AgentAction { Stand, Hit, Deal}
+		public virtual void OnTurn()
+		{
+			HasTurn = true;
+		}
+	}
 
-    public class FinishTurnEventArgs : EventArgs
-    {
-        AgentAction agentAction;
+	public interface IPlayingAgent
+	{
+		event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
+		void FinishTurn(AgentAction agentAction, bool isDealer);
+		void OnTurn();
+	}
 
-        public FinishTurnEventArgs(AgentAction agentAction, bool dealer)
-        {
-            this.agentAction = agentAction;
-        }
-    }
+	public enum AgentAction { Stand, Hit, Deal }
+
+	public class FinishTurnEventArgs : EventArgs
+	{
+		AgentAction agentAction;
+
+		public FinishTurnEventArgs(AgentAction agentAction, bool dealer)
+		{
+			this.agentAction = agentAction;
+		}
+	}
 
 }

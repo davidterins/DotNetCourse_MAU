@@ -33,6 +33,7 @@ namespace Assignment_2b.ViewModels
 
         void StartNewGame()
         {
+		     	P1VM.PlayerHand.Add(new Card(2, Suit.Diamonds, "lol"));
             _blackJackgame.StartGame();
 
         }

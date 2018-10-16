@@ -10,13 +10,18 @@
         Title="MainWindow" Height="450" Width="800"
         DataContext="{DynamicResource MainViewModel}">
 
-    <Window.Resources>
-        <vm:MainWindowViewModel x:Key="MainViewModel"/>
-        
-    </Window.Resources>
-    <DockPanel>
-        <Button Width="50" Height="50" Command="{Binding NewGameCommand}" />
+	<Window.Resources>
+		<vm:MainWindowViewModel x:Key="MainViewModel"/>
 
-        <views:PlayerView DataContext="{Binding P1VM}" />
-    </DockPanel>
+	</Window.Resources>
+	<Grid Background="Gray">
+		<!--<Image Source="/Resources/BlackjackTable.jpg" />-->
+		
+		<DockPanel >
+			<Button DockPanel.Dock="Top" Width="50" Height="50" Command="{Binding NewGameCommand}" />
+			
+			<views:PlayerView DockPanel.Dock="Bottom" DataContext="{Binding P1VM}" />
+			
+		</DockPanel>
+	</Grid>
 </Window>
