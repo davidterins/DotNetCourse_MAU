@@ -1,0 +1,15 @@
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.csprojResolveAssemblyReference.cache
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\MainWindow.g.cs
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\App.g.cs
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b_MarkupCompile.cache
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b_MarkupCompile.lref
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\Assignment_2b.exe.config
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\Assignment_2b.exe
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\Assignment_2b.pdb
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\MainWindow.baml
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.g.resources
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.Properties.Resources.resources
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.csproj.GenerateResource.cache
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.csproj.CoreCompileInputs.cache
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.exe
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Assignment_2b.pdb
