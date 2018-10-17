@@ -10,7 +10,8 @@
 
 	<ListView ScrollViewer.VerticalScrollBarVisibility="Disabled" 
 						ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-						Width="430" Height="105" Background="{x:Null}" ItemsSource="{Binding Cards}">
+						Name="handView"
+						Width="430" Height="105" Background="{x:Null}" ItemsSource="{Binding Cards}" >
 		<ListView.ItemsPanel >
 			<ItemsPanelTemplate>
 				<StackPanel Orientation="Horizontal"/>
@@ -21,6 +22,7 @@
 				<Image Width="70" Height="95" Source="{Binding ImgPath}"/>
 			</DataTemplate>
 		</ListView.ItemTemplate>
+	
 	</ListView>
 
 </UserControl>

@@ -5,13 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Assignment_2b.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="150" Background="{x:Null}">
+             d:DesignHeight="200" d:DesignWidth="430" Background="{x:Null}">
 	<Grid>
-		<StackPanel>
+		<StackPanel Width="430">
 
 			<local:HandView DataContext="{Binding PlayerHand}"/>
+			<TextBlock Text="{Binding PlayerID}" />
+
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+				<Button Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}"/>
+				<Button Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}"/>
+				<Button Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}"/>
+			</StackPanel>
 			
-			<Button Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}"/>
+
 
 		</StackPanel>
 	</Grid>

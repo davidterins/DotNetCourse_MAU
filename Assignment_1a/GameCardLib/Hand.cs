@@ -7,22 +7,28 @@ namespace GameCardLib
 {
 	public class Hand
 	{
-	 // public List<Card> Cards;
+		int _maxCapacity;
 		public ObservableCollection<Card> Cards { get; }
 
-		public Hand()
+		public Hand(int maxCapacity)
 		{
 			Cards = new ObservableCollection<Card>();
+			_maxCapacity = maxCapacity;
 		}
 
 		public void Add(Card newCard)
 		{
-			Cards.Add(newCard);
+			if (Cards.Count + 1 <= _maxCapacity)
+			{
+				Cards.Add(newCard);
+			}
+				
 		}
 
 		public void RemoveLast()
 		{
-			Cards.RemoveAt(Cards.Count - 1);
+			if (Cards.Count > 1)
+				Cards.RemoveAt(Cards.Count - 1);
 		}
 
 		public void Remove(Card card)

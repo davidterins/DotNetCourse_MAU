@@ -7,20 +7,23 @@ using GameCardLib.Agents;
 using System.Windows.Input;
 using GameCardLib;
 using David_Mvvm_lib.ViewModels.Commands;
+using System.Collections.ObjectModel;
+using David_Mvvm_lib.ViewModels;
 
 namespace Assignment_2b.ViewModels
 {
-	public class PlayerViewModel : David_Mvvm_lib.ViewModels.ViewModelBase
+	public class PlayerViewModel : ViewModelBase
 	{
 		Player _player;
 		
 		bool _isDealer;
 
+		int _topCard;
 
-
-		public PlayerViewModel(Player _player)
+		public PlayerViewModel(Player player)
 		{
-			this._player = _player;
+			_player = player;
+
 			HitCommand = new ActionCommand(Hit);
 		}
 
@@ -28,6 +31,15 @@ namespace Assignment_2b.ViewModels
 
 		public Hand PlayerHand { get { return _player.Hand; } }
 
+		public string PlayerID { get { return _player.PlayerID; } }
+
+		//public bool TopCard { get { return _topCard; } set { _topCard = value; } }
+
+		void RecieveCard(Card newCard)
+		{
+			newCard.Visible = true;
+			PlayerHand.Add(newCard);
+		}
 
 		void Hit()
 		{

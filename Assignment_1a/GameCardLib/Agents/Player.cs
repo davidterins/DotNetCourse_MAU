@@ -7,6 +7,12 @@ namespace GameCardLib.Agents
 
 	public class Player : PlayingAgent
 	{
+		public string PlayerID { get; }
+		public Player(string playerID) : base()
+		{
+			PlayerID = playerID;
+		}
+
 		public override void OnTurn()
 		{
 			HasTurn = true;
@@ -22,7 +28,7 @@ namespace GameCardLib.Agents
 
 		public PlayingAgent() 
 		{
-			Hand = new Hand();
+			Hand = new Hand(5);
 		}
 
 		public event EventHandler<FinishTurnEventArgs> FinishTurnEvent;

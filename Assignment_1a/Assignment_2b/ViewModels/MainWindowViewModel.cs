@@ -20,7 +20,7 @@ namespace Assignment_2b.ViewModels
         public MainWindowViewModel()
         {
             _blackJackgame = new BlackJackGame();
-            Player p1 = new Player();
+            Player p1 = new Player("Pedro");
 
             _blackJackgame.AddPlayingAgent(p1);
             P1VM = new PlayerViewModel(p1);

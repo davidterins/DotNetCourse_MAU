@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:Assignment_2b.Views"
         xmlns:vm="clr-namespace:Assignment_2b.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="700" Width="800"
         DataContext="{DynamicResource MainViewModel}">
 
 	<Window.Resources>
@@ -16,12 +16,19 @@
 	</Window.Resources>
 	<Grid Background="Gray">
 		<!--<Image Source="/Resources/BlackjackTable.jpg" />-->
-		
-		<DockPanel >
-			<Button DockPanel.Dock="Top" Width="50" Height="50" Command="{Binding NewGameCommand}" />
-			
-			<views:PlayerView DockPanel.Dock="Bottom" DataContext="{Binding P1VM}" />
-			
-		</DockPanel>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Button Grid.Column="1" Width="50" Height="50" Command="{Binding NewGameCommand}"/>
+
+		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" DataContext="{Binding P1VM}" />
+
 	</Grid>
 </Window>

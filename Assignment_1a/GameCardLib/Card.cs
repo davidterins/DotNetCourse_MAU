@@ -11,6 +11,8 @@ namespace GameCardLib
 		public int Value { get; set; }
 		public Suit Suit { get; set; }
 
+		public bool Visible { get; set; }
+
 		public Card(int value, Suit suit, string imgPath)
 		{
 			Value = value;
