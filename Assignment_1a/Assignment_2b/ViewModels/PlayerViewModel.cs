@@ -12,39 +12,49 @@ using David_Mvvm_lib.ViewModels;
 
 namespace Assignment_2b.ViewModels
 {
-	public class PlayerViewModel : ViewModelBase
-	{
-		Player _player;
-		
-		bool _isDealer;
+  public class PlayerViewModel : ViewModelBase
+  {
+    Player _player;
 
-		int _topCard;
+    bool _isDealer;
+    int _score;
+    int _topCard;
+
+    public Player Player { get { return _player; } }
 
 		public PlayerViewModel(Player player)
 		{
 			_player = player;
 
 			HitCommand = new ActionCommand(Hit);
+      StandCommand = new ActionCommand(Stand);
+      ShuffleCommand = new ActionCommand(RequestShuffle);
 		}
 
-		public ICommand HitCommand { get; }
+    public ICommand ShuffleCommand { get; }
+    public ICommand StandCommand { get; }
+    public ICommand HitCommand { get; }
 
 		public Hand PlayerHand { get { return _player.Hand; } }
 
 		public string PlayerID { get { return _player.PlayerID; } }
 
-		//public bool TopCard { get { return _topCard; } set { _topCard = value; } }
+    public int Score { get { return _player.Score; } }
 
-		void RecieveCard(Card newCard)
-		{
-			newCard.Visible = true;
-			PlayerHand.Add(newCard);
-		}
 
 		void Hit()
 		{
 			_player.FinishTurn(AgentAction.Hit, _isDealer);
-			Console.WriteLine("Player Hit");
 		}
-	}
+
+    void RequestShuffle()
+    {
+      _player.FinishTurn(AgentAction.Shuffle, _isDealer);
+    }
+
+    void Stand()
+    {
+      _player.FinishTurn(AgentAction.Stand, _isDealer);
+    }
+  }
 }

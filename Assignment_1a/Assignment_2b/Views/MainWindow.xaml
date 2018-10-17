@@ -15,7 +15,6 @@
 
 	</Window.Resources>
 	<Grid Background="Gray">
-		<!--<Image Source="/Resources/BlackjackTable.jpg" />-->
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 			<ColumnDefinition/>
@@ -26,9 +25,11 @@
 			<RowDefinition/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-		<Button Grid.Column="1" Width="50" Height="50" Command="{Binding NewGameCommand}"/>
+		<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
 
-		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" DataContext="{Binding P1VM}" />
+		<views:HandView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" DataContext="{Binding DealerVM.DealerHand, UpdateSourceTrigger=PropertyChanged}"/>
+
+		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
 
 	</Grid>
 </Window>

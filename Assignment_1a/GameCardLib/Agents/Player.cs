@@ -1,67 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using David_Mvvm_lib.ViewModels;
 
 namespace GameCardLib.Agents
 {
 
-	public class Player : PlayingAgent
-	{
-		public string PlayerID { get; }
-		public Player(string playerID) : base()
-		{
-			PlayerID = playerID;
-		}
+  public class Player : PlayingAgent
+  {
+    public string PlayerID { get; }
+    public Player(string playerID) : base()
+    {
+      PlayerID = playerID;
+    }
 
-		public override void OnTurn()
-		{
-			HasTurn = true;
-		}
-	}
+    public override void OnTurn()
+    {
+      HasTurn = true;
+    }
+  }
 
-	public abstract class PlayingAgent : IPlayingAgent
-	{
-		public int Score;
-		public bool HasTurn;
-		
-		public Hand Hand { get; }
+  public abstract class PlayingAgent : ViewModelBase, IPlayingAgent
+  {
+    int _score;
+    public int Score { get { return _score; } set { _score = value; OnPropertyChanged(nameof(Score)); } }
+    public bool HasTurn;
 
-		public PlayingAgent() 
-		{
-			Hand = new Hand(5);
-		}
+    public Hand Hand { get; }
 
-		public event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
+    public PlayingAgent()
+    {
+      Hand = new Hand(5);
+    }
 
-		public void FinishTurn(AgentAction agentAction, bool isDealer)
-		{
-			FinishTurnEvent.Invoke(this, new FinishTurnEventArgs(agentAction, isDealer));
-			HasTurn = false;
-		}
+    public event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
 
-		public virtual void OnTurn()
-		{
-			HasTurn = true;
-		}
-	}
+    public void FinishTurn(AgentAction agentAction, bool isDealer)
+    {
+      if (!isDealer)
+      {
+        FinishTurnEvent.Invoke(this, new FinishTurnEventArgs(agentAction, isDealer));
+        HasTurn = false;
+      }
+    }
 
-	public interface IPlayingAgent
-	{
-		event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
-		void FinishTurn(AgentAction agentAction, bool isDealer);
-		void OnTurn();
-	}
+    public void RecieveCard(Card newCard)
+    {
+      newCard.Visible = true;
+      Score += newCard.Value;
+      Hand.Add(newCard);
+    }
 
-	public enum AgentAction { Stand, Hit, Deal }
+    public virtual void OnTurn()
+    {
+      HasTurn = true;
+    }
+  }
 
-	public class FinishTurnEventArgs : EventArgs
-	{
-		AgentAction agentAction;
+  public interface IPlayingAgent
+  {
+    event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
+    void FinishTurn(AgentAction agentAction, bool isDealer);
+    void OnTurn();
+  }
 
-		public FinishTurnEventArgs(AgentAction agentAction, bool dealer)
-		{
-			this.agentAction = agentAction;
-		}
-	}
+  public enum DealerAction { DealOne, DealAll };
+
+  public enum AgentAction { Stand, Hit, Split, Shuffle }
+
+  public class FinishTurnEventArgs : EventArgs
+  {
+    public AgentAction AgentAction { get; }
+
+    public FinishTurnEventArgs(AgentAction agentAction, bool dealer)
+    {
+      this.AgentAction = agentAction;
+    }
+  }
 
 }

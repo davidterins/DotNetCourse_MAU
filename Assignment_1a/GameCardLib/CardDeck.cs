@@ -11,8 +11,21 @@ namespace GameCardLib
 
 		public CardDeck()
 		{
-			_cards = new List<Card>();
-		}
+      _cards = NewDeck();
+    }
+
+    List<Card> NewDeck()
+    {
+      List<Card> cards = new List<Card>();
+      for (int i = 1; i < 15; i++)
+      {
+        cards.Add(new Card(i, Suit.Diamonds, ""));
+        cards.Add(new Card(i, Suit.Hearts, ""));
+        cards.Add(new Card(i, Suit.Clubs, ""));
+        cards.Add(new Card(i, Suit.Spades, ""));
+      }
+      return cards;
+    }
 
 		public void Shuffle()
 		{

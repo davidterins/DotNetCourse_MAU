@@ -25,6 +25,15 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "David_Mvvm_lib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/David_Mvvm_lib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/David_Mvvm_lib.dll": {}
+        }
       }
     }
   },
@@ -169,10 +178,16 @@
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._"
       ]
+    },
+    "David_Mvvm_lib/1.0.0": {
+      "type": "project",
+      "path": "../David_Mvvm_lib/David_Mvvm_lib.csproj",
+      "msbuildProject": "../David_Mvvm_lib/David_Mvvm_lib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "David_Mvvm_lib >= 1.0.0",
       "NETStandard.Library >= 2.0.1"
     ]
   },
@@ -208,7 +223,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\David Terins\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\David_Mvvm_lib\\David_Mvvm_lib.csproj": {
+              "projectPath": "C:\\Users\\David Terins\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\David_Mvvm_lib\\David_Mvvm_lib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

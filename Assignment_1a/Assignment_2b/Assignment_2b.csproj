@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\DealerViewModel.cs" />
     <Compile Include="Views\HandView.xaml.cs">
       <DependentUpon>HandView.xaml</DependentUpon>
     </Compile>
@@ -109,9 +110,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\David_Mvvm_lib\David_Mvvm_lib.csproj">
       <Project>{f5b64f50-6225-44b5-a4fe-bd74a3e63047}</Project>
