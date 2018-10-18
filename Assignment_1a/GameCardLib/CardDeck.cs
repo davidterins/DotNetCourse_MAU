@@ -8,22 +8,30 @@ namespace GameCardLib
 	public class CardDeck
 	{
 		List<Card> _cards;
+    Stack<Card> _deck;
 
 		public CardDeck()
 		{
       _cards = NewDeck();
+      
     }
 
     List<Card> NewDeck()
     {
+      _deck = new Stack<Card>();
       List<Card> cards = new List<Card>();
       for (int i = 1; i < 15; i++)
       {
         cards.Add(new Card(i, Suit.Diamonds, ""));
+        _deck.Push(new Card(i, Suit.Diamonds, ""));
         cards.Add(new Card(i, Suit.Hearts, ""));
+        _deck.Push(new Card(i, Suit.Hearts, ""));
         cards.Add(new Card(i, Suit.Clubs, ""));
+        _deck.Push(new Card(i, Suit.Clubs, ""));
         cards.Add(new Card(i, Suit.Spades, ""));
+        _deck.Push(new Card(i, Suit.Spades, ""));
       }
+   
       return cards;
     }
 
@@ -38,18 +46,21 @@ namespace GameCardLib
 
 				_cards[i] = cardTwo;
 				_cards[randomCardIndex] = cardOne;
+
+        _deck.Push(cardOne);
 			
 			}
 		
 		}
 
-		public int CardsLeft { get { return _cards.Count; } }
+		public int CardsLeft { get { return _deck.Count; } }
 
-		public Card GetTopCard { get { return _cards[0]; } }
+		public Card GetTopCard { get { return _deck.Pop();  } }
 
 		public void InsertCard(Card gameCard)
 		{
 			_cards.Add(gameCard);
+      _deck.Push(gameCard);
 		}
 	}
 }

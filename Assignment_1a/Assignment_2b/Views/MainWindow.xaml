@@ -11,7 +11,7 @@
         DataContext="{DynamicResource MainViewModel}">
 
 	<Window.Resources>
-		<vm:MainWindowViewModel x:Key="MainViewModel"/>
+		<vm:BlackJackGameViewModel x:Key="MainViewModel"/>
 
 	</Window.Resources>
 	<Grid Background="Gray">
@@ -27,7 +27,7 @@
 		</Grid.RowDefinitions>
 		<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
 
-		<views:HandView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" DataContext="{Binding DealerVM.DealerHand, UpdateSourceTrigger=PropertyChanged}"/>
+		<views:HandView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" DataContext="{Binding Dealer.Hand, UpdateSourceTrigger=PropertyChanged}"/>
 
 		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
 

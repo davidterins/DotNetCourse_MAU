@@ -12,49 +12,47 @@ using David_Mvvm_lib.ViewModels;
 
 namespace Assignment_2b.ViewModels
 {
-  public class PlayerViewModel : ViewModelBase
+  public class PlayerViewModel : BlackJackPlayer
   {
-    Player _player;
 
-    bool _isDealer;
-    int _score;
-    int _topCard;
-
-    public Player Player { get { return _player; } }
-
-		public PlayerViewModel(Player player)
-		{
-			_player = player;
-
-			HitCommand = new ActionCommand(Hit);
+    public PlayerViewModel(string _playerID) : base(_playerID)
+    {
+      HitCommand = new ActionCommand(Hit);
       StandCommand = new ActionCommand(Stand);
       ShuffleCommand = new ActionCommand(RequestShuffle);
-		}
+      SplitCommand = new ActionCommand(Split);
+      DoubleCommand = new ActionCommand(Double);
+    }
 
     public ICommand ShuffleCommand { get; }
     public ICommand StandCommand { get; }
     public ICommand HitCommand { get; }
+    public ICommand SplitCommand { get; }
+    public ICommand DoubleCommand { get; }
 
-		public Hand PlayerHand { get { return _player.Hand; } }
-
-		public string PlayerID { get { return _player.PlayerID; } }
-
-    public int Score { get { return _player.Score; } }
-
-
-		void Hit()
-		{
-			_player.FinishTurn(AgentAction.Hit, _isDealer);
-		}
+    void Hit()
+    {
+      DoAction(PlayerAction.Hit);
+    }
 
     void RequestShuffle()
     {
-      _player.FinishTurn(AgentAction.Shuffle, _isDealer);
+      DoAction(PlayerAction.Shuffle);
     }
 
     void Stand()
     {
-      _player.FinishTurn(AgentAction.Stand, _isDealer);
+      DoAction(PlayerAction.Stand);
+    }
+
+    void Split()
+    {
+      DoAction(PlayerAction.Split);
+    }
+
+    void Double()
+    {
+      DoAction(PlayerAction.Double);
     }
   }
 }
