@@ -25,8 +25,15 @@
 			<RowDefinition/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-		<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
+		<StackPanel>
+			<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
+			<Button Grid.Column="0" Content="Next player" Height="50" Command="{Binding NextPlayerCommand}"
+							IsEnabled="{Binding CanMoveOn}"
+							/>
 
+		</StackPanel>
+
+		<views:LogStatusView Grid.Column="2" DataContext="{Binding StatusLogger, UpdateSourceTrigger=PropertyChanged}"/>
 		<views:HandView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" DataContext="{Binding Dealer.Hand, UpdateSourceTrigger=PropertyChanged}"/>
 
 		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />

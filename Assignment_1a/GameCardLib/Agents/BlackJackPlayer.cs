@@ -10,34 +10,29 @@ namespace GameCardLib.Agents
   {
 
     public string PlayerID { get; }
-    public bool IsInGame { get; set; }
+    bool _isInGame = true;
+    public bool IsInGame { get { return _isInGame; } set { _isInGame = value; OnPropertyChanged(nameof(IsInGame)); } }
 
     public BlackJackPlayer(string playerID) : base()
     {
       PlayerID = playerID;
     }
 
-    public override void RecieveCard(Card newCard)
+    public override void ResetScore()
     {
-      base.RecieveCard(newCard);
-      if(Score > 21)
-      {
-        Lost();
-      }
-      else if(Score == 21)
-      {
-        Won();
-      }
+      base.ResetScore();
+      IsInGame = true;
     }
 
     public void Won()
     {
       IsInGame = false;
     }
-    private void Lost()
+    public void Lost()
     {
       IsInGame = false;
     }
+   
   }
 
   public abstract class PlayingAgent : ViewModelBase, IPlayingAgent
@@ -51,10 +46,18 @@ namespace GameCardLib.Agents
     Hand _hand;
     public Hand Hand { get { return _hand; } set { _hand = value; OnPropertyChanged(nameof(Hand)); } }
 
+   
     public PlayingAgent()
     {
       Hand = new Hand(5);
     }
+
+    public virtual void ResetScore()
+    {
+      Hand.Cards.Clear();
+      Score = 0;
+    }
+
 
     public event EventHandler<FinishTurnEventArgs> FinishTurnEvent;
 
@@ -69,7 +72,6 @@ namespace GameCardLib.Agents
       newCard.Visible = true;
       Hand.Add(newCard);
       Score += newCard.Value;
-      
     }
 
     public virtual void OnTurn()

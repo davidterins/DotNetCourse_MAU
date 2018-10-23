@@ -13,7 +13,7 @@ namespace GameCardLib
 		public CardDeck()
 		{
       _cards = NewDeck();
-      
+      Shuffle();
     }
 
     List<Card> NewDeck()
@@ -23,13 +23,13 @@ namespace GameCardLib
       for (int i = 1; i < 15; i++)
       {
         cards.Add(new Card(i, Suit.Diamonds, ""));
-        _deck.Push(new Card(i, Suit.Diamonds, ""));
+        //_deck.Push(new Card(i, Suit.Diamonds, ""));
         cards.Add(new Card(i, Suit.Hearts, ""));
-        _deck.Push(new Card(i, Suit.Hearts, ""));
+        //_deck.Push(new Card(i, Suit.Hearts, ""));
         cards.Add(new Card(i, Suit.Clubs, ""));
-        _deck.Push(new Card(i, Suit.Clubs, ""));
+        //_deck.Push(new Card(i, Suit.Clubs, ""));
         cards.Add(new Card(i, Suit.Spades, ""));
-        _deck.Push(new Card(i, Suit.Spades, ""));
+       // _deck.Push(new Card(i, Suit.Spades, ""));
       }
    
       return cards;
@@ -37,17 +37,19 @@ namespace GameCardLib
 
 		public void Shuffle()
 		{
-		  for (int i = 0; i< _cards.Count; i++)
+      Random rand = new Random();
+      for (int i = 0; i< _cards.Count; i++)
 			{
-				Random rand = new Random();
+				
 				Card cardOne = _cards[i];
 				int randomCardIndex = rand.Next(0, _cards.Count);
+
 				Card cardTwo = _cards[randomCardIndex];
 
 				_cards[i] = cardTwo;
 				_cards[randomCardIndex] = cardOne;
-
-        _deck.Push(cardOne);
+        
+        _deck.Push(cardTwo);
 			
 			}
 		

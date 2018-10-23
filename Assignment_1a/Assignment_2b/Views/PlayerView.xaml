@@ -14,8 +14,8 @@
 				<TextBlock Text="{Binding PlayerID}" />
 				<TextBlock Margin="10,0,0,0" Text="{Binding Score, StringFormat=Score: {0}, UpdateSourceTrigger=PropertyChanged}" />
 			</StackPanel>
-		
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+			<StackPanel  IsEnabled="{Binding IsInGame}"  Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}"/>
 				<Button Margin="5,0,5,0" Height="30" Width="30" Command="{Binding StandCommand, UpdateSourceTrigger=PropertyChanged}"/>
 				<Button Margin="5,0,5,0" Height="30" Width="30" Command="{Binding ShuffleCommand, UpdateSourceTrigger=PropertyChanged}"/>

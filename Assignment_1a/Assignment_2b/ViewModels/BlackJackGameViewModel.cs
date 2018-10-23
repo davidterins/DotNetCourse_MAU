@@ -27,13 +27,20 @@ namespace Assignment_2b.ViewModels
       AddPlayingAgent(p4);
 
       NewGameCommand = new ActionCommand(StartNewGame);
+      NextPlayerCommand = new ActionCommand(NextPlayerTurn);
     }
 
     public ICommand NewGameCommand { get; }
+    public ICommand NextPlayerCommand { get; }
 
     void StartNewGame()
     {
       StartGame();
+    }
+
+    void NextPlayerTurn()
+    {
+      NextTurn();
     }
 
   }
