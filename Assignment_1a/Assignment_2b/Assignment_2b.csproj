@@ -55,6 +55,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\Converters\ToColorConverter.cs" />
+    <Compile Include="Views\DealerView.xaml.cs">
+      <DependentUpon>DealerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HandView.xaml.cs">
       <DependentUpon>HandView.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,10 @@
     <Compile Include="Views\PlayerView.xaml.cs">
       <DependentUpon>PlayerView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\DealerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

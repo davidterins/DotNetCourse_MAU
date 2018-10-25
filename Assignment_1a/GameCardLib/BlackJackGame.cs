@@ -60,7 +60,8 @@ namespace GameCardLib
       if (currentPlayerIndex >= Players.Count)
       {//dealer should compare all scores here.
         StatusLogger.NewStatus("Every player has made their move", LogColor.Gray);
-        NewRound();
+        _dealer.CompareScores(Players);
+       // NewRound();
       }
       else
       {
@@ -84,11 +85,10 @@ namespace GameCardLib
       foreach (BlackJackPlayer player in Players)
       {
         player.ResetScore();
-        foreach(Card card in Dealer.DealNewHand(5,2).Cards)
-        {
-          player.RecieveCard(card);
-        }
+        Dealer.DealPlayer(player, 2);
       }
+      Dealer.ResetScore();
+      Dealer.DealSelf(1);
     }
 
     private void PlayerMadeAChoice(object sender, FinishTurnEventArgs e)

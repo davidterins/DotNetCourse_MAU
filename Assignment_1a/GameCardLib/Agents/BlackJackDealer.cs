@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace GameCardLib.Agents
@@ -32,19 +33,9 @@ namespace GameCardLib.Agents
       _cardDeck.Shuffle();
     }
 
-    public Card DealCard()
+    private Card DealCard()
     {
       return _cardDeck.GetTopCard;
-    }
-
-    public Hand DealNewHand(int maxHandCapacity, int numberOfCardsToDeal)
-    {
-      Hand newHand = new Hand(maxHandCapacity);
-      for (int i = 0; i < numberOfCardsToDeal; i++)
-      {
-        newHand.Add(DealCard());
-      }
-      return newHand;
     }
 
     public void AnswerPlayer(BlackJackPlayer player, PlayerAction action)
@@ -53,7 +44,10 @@ namespace GameCardLib.Agents
       if(player.Score == 21)
       {//
         AskNextPlayerEvent.Invoke(this, new DealerAnswerArgs(DealerAnswer.RemoveWinnerAndNext));
-
+      }
+      else if(player.Score > 21)
+      {
+        AskNextPlayerEvent.Invoke(this, new DealerAnswerArgs(DealerAnswer.RemoveLoserAndNext));
       }
       if (action == PlayerAction.Hit)
       {
@@ -64,7 +58,6 @@ namespace GameCardLib.Agents
       {
         Shuffle();
         AskNextPlayerEvent.Invoke(this, new DealerAnswerArgs(DealerAnswer.Stay));
-
       }
       else if (action == PlayerAction.Stand)
       {
@@ -96,7 +89,7 @@ namespace GameCardLib.Agents
       return DealerAnswer.Next;
     }
 
-    private void CompareScores(List<BlackJackPlayer> players)
+    public void CompareScores(ObservableCollection<BlackJackPlayer> players)
     {
       while (Score < 17)
       {
@@ -114,6 +107,19 @@ namespace GameCardLib.Agents
         }
       }
     }
+
+    public void DealSelf(int numberOfCards)
+    {
+      for (int i = 0; i < numberOfCards; i++)
+        RecieveCard(DealCard());
+    }
+
+    public void DealPlayer(BlackJackPlayer player, int numberOfCards)
+    {
+      for (int i = 0; i < numberOfCards; i++)
+        player.RecieveCard(DealCard());
+    }
+
   }
 
   public enum DealerAnswer { Next, RemoveLoserAndNext, RemoveWinnerAndNext, Stay}

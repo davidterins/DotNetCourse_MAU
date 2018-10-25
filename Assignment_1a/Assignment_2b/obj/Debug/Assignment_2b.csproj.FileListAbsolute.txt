@@ -241,3 +241,5 @@ C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\HandView.baml
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogStatusView.g.cs
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogStatusView.baml
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\DealerView.g.cs
+C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\DealerView.baml
