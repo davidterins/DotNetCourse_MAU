@@ -42,6 +42,7 @@ namespace Assignment_2b.ViewModels
 
     void Stand()
     {
+      IsInGame = false;
       DoAction(PlayerAction.Stand);
     }
 

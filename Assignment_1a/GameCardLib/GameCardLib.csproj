@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Agents\BlackJackDealer.cs~RF1cb17b0d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\David_Mvvm_lib\David_Mvvm_lib.csproj" />
   </ItemGroup>
 

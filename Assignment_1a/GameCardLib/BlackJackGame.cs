@@ -61,6 +61,15 @@ namespace GameCardLib
       {//dealer should compare all scores here.
         StatusLogger.NewStatus("Every player has made their move", LogColor.Gray);
         _dealer.CompareScores(Players);
+        foreach (BlackJackPlayer player in Players)
+        {
+          if (player.Won)
+            StatusLogger.NewStatus(player.PlayerID + " Won with score: " + player.Score + "!", LogColor.Green);
+          else
+            StatusLogger.NewStatus(player.PlayerID + " Lost with score: " + player.Score + "!", LogColor.Red);
+
+          
+        }
        // NewRound();
       }
       else
@@ -69,7 +78,6 @@ namespace GameCardLib
         StatusLogger.NewStatus("Player with turn: " + PlayerWithTurn.PlayerID + " at seat: " + currentPlayerIndex, LogColor.Gray);
         Console.WriteLine("Current player index " + currentPlayerIndex);
       }
-
     }
 
     public void StartGame()
@@ -87,8 +95,7 @@ namespace GameCardLib
         player.ResetScore();
         Dealer.DealPlayer(player, 2);
       }
-      Dealer.ResetScore();
-      Dealer.DealSelf(1);
+      Dealer.NewRound();
     }
 
     private void PlayerMadeAChoice(object sender, FinishTurnEventArgs e)
@@ -110,7 +117,6 @@ namespace GameCardLib
       agent.FinishTurnEvent -= PlayerMadeAChoice;
     }
   }
-
 
 }
 

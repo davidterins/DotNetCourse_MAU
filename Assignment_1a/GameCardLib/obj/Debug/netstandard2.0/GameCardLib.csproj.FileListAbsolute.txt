@@ -31,3 +31,5 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\De
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\David_Mvvm_lib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\David_Mvvm_lib.pdb

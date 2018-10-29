@@ -14,7 +14,8 @@
 		<vm:BlackJackGameViewModel x:Key="MainViewModel"/>
 
 	</Window.Resources>
-	<Grid Background="Gray">
+
+	<Grid Background="Gray" >
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 			<ColumnDefinition/>
@@ -34,11 +35,13 @@
 		</StackPanel>
 
 		<views:LogStatusView Grid.Column="2" DataContext="{Binding StatusLogger, UpdateSourceTrigger=PropertyChanged}"/>
-		<!--<views:HandView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" DataContext="{Binding Dealer.Hand, UpdateSourceTrigger=PropertyChanged}"/>-->
+		
 		<views:DealerView  Grid.Column="0"
 											 Grid.ColumnSpan="3" Grid.Row="1"
 											 DataContext="{Binding Dealer, UpdateSourceTrigger=PropertyChanged}"/>
-		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
+		
+		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
+											 DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
 
 	</Grid>
 </Window>

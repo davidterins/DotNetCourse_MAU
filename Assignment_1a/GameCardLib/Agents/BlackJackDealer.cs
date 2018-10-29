@@ -28,12 +28,19 @@ namespace GameCardLib.Agents
 
     }
 
+    public void NewRound()
+    {
+      _cardDeck = new CardDeck();
+      ResetScore();
+      DealSelf(1);
+    }
+
     public void Shuffle()
     {
       _cardDeck.Shuffle();
     }
 
-    private Card DealCard()
+    private BlackJackCard DealCard()
     {
       return _cardDeck.GetTopCard;
     }
@@ -78,12 +85,12 @@ namespace GameCardLib.Agents
     {
       if (player.Score > 21)
       {
-        player.Lost();
+        player.AgentLost();
         return DealerAnswer.RemoveLoserAndNext;
       }
       else if(player.Score == 21)
       {
-        player.Won();
+        player.AgentWon();
         return DealerAnswer.RemoveWinnerAndNext;
       }
       return DealerAnswer.Next;
@@ -97,13 +104,24 @@ namespace GameCardLib.Agents
       }
       foreach(BlackJackPlayer player in players)
       {
-        if(player.Score > Score && player.IsInGame)
+        if(player.Score <= 21)
         {
-          player.Won();
+          if(Score > 21)
+          {
+            player.AgentWon();
+          }
+          else if(Score > player.Score)
+          {
+            player.AgentLost();
+          }
+          else if(Score == player.Score)
+          {//Tie
+
+          }
         }
         else
         {
-          player.Lost();
+          player.AgentLost();
         }
       }
     }

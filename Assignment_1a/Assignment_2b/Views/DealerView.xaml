@@ -8,7 +8,8 @@
              d:DesignHeight="200" d:DesignWidth="430">
 	<StackPanel Width="430">
 		<local:HandView DataContext="{Binding Hand}" />
-		<TextBlock Margin="10,0,0,0" 
+		<TextBlock FontWeight="Heavy" Foreground="White"
+							 Margin="10,0,0,0" 
 							 Text="{Binding Score, StringFormat=Score: {0},
 							 UpdateSourceTrigger=PropertyChanged}" />
 	</StackPanel>

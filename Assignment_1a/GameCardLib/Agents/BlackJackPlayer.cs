@@ -24,13 +24,15 @@ namespace GameCardLib.Agents
       IsInGame = true;
     }
 
-    public void Won()
+    public void AgentWon()
     {
       IsInGame = false;
+      _won = true;
     }
-    public void Lost()
+    public void AgentLost()
     {
       IsInGame = false;
+      _won = false;
     }
    
   }
@@ -46,6 +48,8 @@ namespace GameCardLib.Agents
     Hand _hand;
     public Hand Hand { get { return _hand; } set { _hand = value; OnPropertyChanged(nameof(Hand)); } }
 
+    protected bool _won;
+    public bool Won { get { return _won; } private set { _won = value; } }
    
     public PlayingAgent()
     {
@@ -67,7 +71,7 @@ namespace GameCardLib.Agents
         HasTurn = false;
     }
 
-    public virtual void RecieveCard(Card newCard)
+    public virtual void RecieveCard(BlackJackCard newCard)
     {
       newCard.Visible = true;
       Hand.Add(newCard);

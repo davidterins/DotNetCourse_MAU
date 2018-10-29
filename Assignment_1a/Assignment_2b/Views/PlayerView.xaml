@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Assignment_2b.Views"
+						 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="430" Background="{x:Null}">
 	<Grid>
@@ -11,24 +12,25 @@
 
 			<local:HandView DataContext="{Binding Hand}"/>
 			<StackPanel Orientation="Horizontal" >
-				<TextBlock Text="{Binding PlayerID}" />
-				<TextBlock Margin="10,0,0,0" Text="{Binding Score, StringFormat=Score: {0}, UpdateSourceTrigger=PropertyChanged}" />
+				<TextBlock FontWeight="Heavy" Foreground="White" Text="{Binding PlayerID}" />
+				<TextBlock FontWeight="Heavy" Foreground="White" Margin="10,0,0,0" Text="{Binding Score, StringFormat=Score: {0}, UpdateSourceTrigger=PropertyChanged}" />
 			</StackPanel>
 
 			<StackPanel  IsEnabled="{Binding IsInGame}"  Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button ToolTip="Hit" Foreground="Wheat" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}">
-					<Image Source="/Resources/AddButton.png" Cursor="Hand" />
+				<Button ToolTip="Hit" Foreground="Wheat" Padding="0"  Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}">
+					<!--<Image Source="/Resources/AddButton.png" Cursor="Hand" />-->
+					<materialDesign:PackIcon Foreground="White" Width="24" Height="24" Kind="Plus"/>
 				</Button>
-				<Button ToolTip="Stand" Margin="5,0,5,0"  Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="30" Command="{Binding StandCommand, UpdateSourceTrigger=PropertyChanged}">
+				<Button ToolTip="Stand" Margin="5,0,5,0"  Height="30" Width="30" Command="{Binding StandCommand, UpdateSourceTrigger=PropertyChanged}">
 					<Image Source="/Resources/HandButton.png" Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Shuffle" Margin="5,0,5,0"  Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="30" Command="{Binding ShuffleCommand, UpdateSourceTrigger=PropertyChanged}">
+				<Button ToolTip="Shuffle" Margin="5,0,5,0" Height="30" Width="30" Command="{Binding ShuffleCommand, UpdateSourceTrigger=PropertyChanged}">
 					<Image Source="/Resources/ShuffleButton.png" Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Split" Margin="5,0,5,0"  Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="30" Command="{Binding SplitCommand, UpdateSourceTrigger=PropertyChanged}">
+				<Button ToolTip="Split" Margin="5,0,5,0"   Height="30" Width="30" Command="{Binding SplitCommand, UpdateSourceTrigger=PropertyChanged}">
 					<Image Source="/Resources/SplitButton.png" Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Double" Margin="5,0,5,0"  Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="30" Command="{Binding DoubleCommand, UpdateSourceTrigger=PropertyChanged}"/>
+				<Button ToolTip="Double" Margin="5,0,5,0"   Height="30" Width="30" Command="{Binding DoubleCommand, UpdateSourceTrigger=PropertyChanged}"/>
 			</StackPanel>
 			
 

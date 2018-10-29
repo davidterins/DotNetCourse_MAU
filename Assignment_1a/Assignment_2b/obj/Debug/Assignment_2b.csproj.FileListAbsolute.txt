@@ -374,3 +374,14 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\App.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\MaterialDesignColors.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\MaterialDesignThemes.Wpf.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\MaterialDesignThemes.Wpf.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\MaterialDesignThemes.Wpf.xml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\DealerView.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\HandView.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogStatusView.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\App.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\DealerView.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\HandView.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogStatusView.baml

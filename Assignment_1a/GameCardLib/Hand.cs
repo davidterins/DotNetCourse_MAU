@@ -53,7 +53,7 @@ namespace GameCardLib
     {
       if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
       {
-        Card newCard = (Card)e.NewItems[0];
+        BlackJackCard newCard = (BlackJackCard)e.NewItems[0];
         if(newCard.Value == 1 || newCard.Value == 11)
         {
           int tempScore = HandValue;
@@ -67,14 +67,14 @@ namespace GameCardLib
       }
     }
 
-    private void UpdateHandScore(Card card)
+    private void UpdateHandScore(BlackJackCard card)
     {
       HandValue += card.Value;// HandCalculator.CalculateBlackJackHandOnNewCard(card);
     }
   }
   public static class HandCalculator
   {
-    public static int CalculateBlackJackHandOnNewCard(Card newCard)
+    public static int CalculateBlackJackHandOnNewCard(BlackJackCard newCard)
     {
 
       return 1;

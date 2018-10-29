@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:Assignment_2b.Views"
 						 xmlns:converters="clr-namespace:Assignment_2b.ViewModels.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="150">
+             d:DesignHeight="200" d:DesignWidth="250">
 	<UserControl.Resources>
 		<converters:ToColorConverter  x:Key="ToColorConverter"/>
 	</UserControl.Resources>
-    <Grid Width="150" Height="200">
+    <Grid Width="250" Height="200">
 		<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Black" Opacity="0.7" Foreground="AliceBlue" ItemsSource="{Binding Logs, UpdateSourceTrigger=PropertyChanged}">
 			<ListView.ItemTemplate>
 				<DataTemplate>

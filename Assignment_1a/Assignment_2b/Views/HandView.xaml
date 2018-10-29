@@ -11,14 +11,16 @@
 	<ListView ScrollViewer.VerticalScrollBarVisibility="Disabled" 
 						ScrollViewer.HorizontalScrollBarVisibility="Disabled"
 						Name="handView"
-						Width="430" Height="105" Background="{x:Null}" ItemsSource="{Binding Cards}" >
+						Padding="0"
+						Margin="0"
+						Width="430" Height="110" Background="{x:Null}" ItemsSource="{Binding Cards}" >
 		<ListView.ItemsPanel >
 			<ItemsPanelTemplate>
 				<StackPanel Orientation="Horizontal"/>
 			</ItemsPanelTemplate>
 		</ListView.ItemsPanel>
 		<ListView.ItemTemplate>
-			<DataTemplate DataType="{x:Type gameLib:Card}">
+			<DataTemplate DataType="{x:Type gameLib:BlackJackCard}">
 				<Image Width="70" Height="95" Source="{Binding ImgPath}"/>
 			</DataTemplate>
 		</ListView.ItemTemplate>
