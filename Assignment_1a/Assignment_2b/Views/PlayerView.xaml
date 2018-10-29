@@ -16,25 +16,24 @@
 				<TextBlock FontWeight="Heavy" Foreground="White" Margin="10,0,0,0" Text="{Binding Score, StringFormat=Score: {0}, UpdateSourceTrigger=PropertyChanged}" />
 			</StackPanel>
 
-			<StackPanel  IsEnabled="{Binding IsInGame}"  Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button ToolTip="Hit" Foreground="Wheat" Padding="0"  Margin="5,0,5,0" Height="30" Width="30" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}">
-					<!--<Image Source="/Resources/AddButton.png" Cursor="Hand" />-->
-					<materialDesign:PackIcon Foreground="White" Width="24" Height="24" Kind="Plus"/>
+			<StackPanel Margin="10"  IsEnabled="{Binding IsInGame}"  Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button ToolTip="Hit" Foreground="Wheat" Padding="0"  Margin="5,0,5,0" Height="40" Width="40" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}">
+					<materialDesign:PackIcon Foreground="White" Width="38" Height="38" Kind="Plus" Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Stand" Margin="5,0,5,0"  Height="30" Width="30" Command="{Binding StandCommand, UpdateSourceTrigger=PropertyChanged}">
-					<Image Source="/Resources/HandButton.png" Cursor="Hand" />
+				<Button ToolTip="Stand" Margin="5,0,5,0" Padding="0"  Height="40" Width="40" Command="{Binding StandCommand, UpdateSourceTrigger=PropertyChanged}">
+					<materialDesign:PackIcon Foreground="White" Width="38" Height="38" Kind="Hand"  Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Shuffle" Margin="5,0,5,0" Height="30" Width="30" Command="{Binding ShuffleCommand, UpdateSourceTrigger=PropertyChanged}">
-					<Image Source="/Resources/ShuffleButton.png" Cursor="Hand" />
+				<Button ToolTip="Shuffle" Margin="5,0,5,0" Padding="0" Height="40" Width="40" Command="{Binding ShuffleCommand, UpdateSourceTrigger=PropertyChanged}">
+					<materialDesign:PackIcon Foreground="White" Width="38" Height="38" Kind="Shuffle"  Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Split" Margin="5,0,5,0"   Height="30" Width="30" Command="{Binding SplitCommand, UpdateSourceTrigger=PropertyChanged}">
-					<Image Source="/Resources/SplitButton.png" Cursor="Hand" />
+				<Button ToolTip="Split" Margin="5,0,5,0" Padding="0"   Height="40" Width="40" Command="{Binding SplitCommand, UpdateSourceTrigger=PropertyChanged}">
+					<materialDesign:PackIcon Foreground="White" Width="38" Height="38" Kind="CallSplit"  Cursor="Hand" />
 				</Button>
-				<Button ToolTip="Double" Margin="5,0,5,0"   Height="30" Width="30" Command="{Binding DoubleCommand, UpdateSourceTrigger=PropertyChanged}"/>
+				<Button ToolTip="Double" Margin="5,0,5,0" Padding="0" Height="40" Width="40" Command="{Binding DoubleCommand, UpdateSourceTrigger=PropertyChanged}">
+					<materialDesign:PackIcon Foreground="White" Width="38" Height="38" Kind="ChevronDoubleUp"  Cursor="Hand" />
+				</Button>
 			</StackPanel>
 			
-
-
 		</StackPanel>
 	</Grid>
 </UserControl>

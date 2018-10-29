@@ -2,6 +2,9 @@
 using System;
 using System.Collections.ObjectModel;
 using David_Mvvm_lib.ViewModels;
+using DataAccessLayer;
+
+
 
 namespace GameCardLib
 {
@@ -30,6 +33,11 @@ namespace GameCardLib
       _dealer = new BlackJackDealer(5);
       _statusLogger = new CardGameStatusLogger();
       _dealer.AskNextPlayerEvent += Dealer_AskNextPlayer;
+
+      //using (var unitOfWork = new DbUnitOfWork(new CasinoContext()))
+      //{
+        
+      //}
     }
 
     private void Dealer_AskNextPlayer(object sender, DealerAnswerArgs e)

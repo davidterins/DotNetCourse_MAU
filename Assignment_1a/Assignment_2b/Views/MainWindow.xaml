@@ -15,7 +15,15 @@
 
 	</Window.Resources>
 
-	<Grid Background="Gray" >
+	<Grid >
+		<Grid.Background>
+			<RadialGradientBrush>
+				<GradientStop Color="Black" Offset="0.976"/>
+				<GradientStop Color="#FF16570C" Offset="0.943"/>
+				<GradientStop Color="#FF000300" Offset="0.935"/>
+				<GradientStop Color="#FF184709" Offset="0.397"/>
+			</RadialGradientBrush>
+		</Grid.Background>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 			<ColumnDefinition/>
@@ -35,11 +43,11 @@
 		</StackPanel>
 
 		<views:LogStatusView Grid.Column="2" DataContext="{Binding StatusLogger, UpdateSourceTrigger=PropertyChanged}"/>
-		
+
 		<views:DealerView  Grid.Column="0"
 											 Grid.ColumnSpan="3" Grid.Row="1"
 											 DataContext="{Binding Dealer, UpdateSourceTrigger=PropertyChanged}"/>
-		
+
 		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
 											 DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
 

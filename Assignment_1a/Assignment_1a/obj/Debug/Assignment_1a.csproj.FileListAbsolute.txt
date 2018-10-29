@@ -60,3 +60,26 @@ C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\MainWindow.g.cs
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\HouseEditorView.baml
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\MainWindow.baml
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\Assignment_1a.exe.config
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\Assignment_1a.exe
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\Assignment_1a.pdb
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\David_Mvvm_lib.dll
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\bin\Debug\David_Mvvm_lib.pdb
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\HouseEditorView.g.cs
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\MainWindow.g.cs
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\HouseRepresentationView.g.cs
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\App.g.cs
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a_MarkupCompile.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a_MarkupCompile.lref
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\HouseEditorView.baml
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\MainWindow.baml
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Views\HouseRepresentationView.baml
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.g.resources
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.exe
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_1a\obj\Debug\Assignment_1a.pdb
