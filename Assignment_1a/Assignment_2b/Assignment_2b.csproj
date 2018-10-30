@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -41,6 +47,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,12 +68,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\Converters\ToColorConverter.cs" />
-    <Compile Include="ViewModels\LobbyViewModel.cs" />
+    <Compile Include="ViewModels\LogInViewModel.cs" />
+    <Compile Include="Views\BlackJackGameView.xaml.cs">
+      <DependentUpon>BlackJackGameView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DealerView.xaml.cs">
       <DependentUpon>DealerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HandView.xaml.cs">
       <DependentUpon>HandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogInScreen.xaml.cs">
+      <DependentUpon>LogInScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LogStatusView.xaml.cs">
       <DependentUpon>LogStatusView.xaml</DependentUpon>
@@ -74,11 +87,19 @@
     <Compile Include="Views\PlayerView.xaml.cs">
       <DependentUpon>PlayerView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\BlackJackGameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DealerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogInScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +157,10 @@
     <Resource Include="Resources\AddButton.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{9c054d58-a2e9-4cdc-b02f-4528db382136}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\David_Mvvm_lib\David_Mvvm_lib.csproj">
       <Project>{f5b64f50-6225-44b5-a4fe-bd74a3e63047}</Project>
       <Name>David_Mvvm_lib</Name>
@@ -316,5 +341,6 @@
   <ItemGroup>
     <Resource Include="Resources\ShuffleButton.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

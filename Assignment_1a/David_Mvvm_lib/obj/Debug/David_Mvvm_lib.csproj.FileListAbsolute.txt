@@ -5,7 +5,6 @@ C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm
 C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\bin\Debug\David_Mvvm_lib.dll
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\bin\Debug\David_Mvvm_lib.pdb
-\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csprojResolveAssemblyReference.cache
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csproj.CoreCompileInputs.cache
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.dll
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
@@ -15,3 +14,4 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\bin
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csprojResolveAssemblyReference.cache

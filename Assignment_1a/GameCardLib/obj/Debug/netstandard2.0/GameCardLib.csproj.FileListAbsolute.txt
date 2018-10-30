@@ -36,3 +36,8 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\De
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.pdb
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\EntityFramework.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\EntityFramework.xml

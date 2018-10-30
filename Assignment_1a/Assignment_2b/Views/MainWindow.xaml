@@ -8,48 +8,17 @@
         xmlns:vm="clr-namespace:Assignment_2b.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800"
-        DataContext="{DynamicResource MainViewModel}">
+        DataContext="{DynamicResource BlackJackGameVM}">
 
-	<Window.Resources>
-		<vm:BlackJackGameViewModel x:Key="MainViewModel"/>
+    <Window.Resources>
+        <vm:BlackJackGameViewModel x:Key="BlackJackGameVM"/>
 
-	</Window.Resources>
+    </Window.Resources>
+    <Grid>
+        
+        <views:BlackJackGameView DataContext="{StaticResource BlackJackGameVM}"/>
+        
+        <views:LogInScreen/>
 
-	<Grid >
-		<Grid.Background>
-			<RadialGradientBrush>
-				<GradientStop Color="Black" Offset="0.976"/>
-				<GradientStop Color="#FF16570C" Offset="0.943"/>
-				<GradientStop Color="#FF000300" Offset="0.935"/>
-				<GradientStop Color="#FF184709" Offset="0.397"/>
-			</RadialGradientBrush>
-		</Grid.Background>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
-		<StackPanel>
-			<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
-			<Button Grid.Column="0" Content="Next player" Height="50" Command="{Binding NextPlayerCommand}"
-							IsEnabled="{Binding CanMoveOn}"
-							/>
-
-		</StackPanel>
-
-		<views:LogStatusView Grid.Column="2" DataContext="{Binding StatusLogger, UpdateSourceTrigger=PropertyChanged}"/>
-
-		<views:DealerView  Grid.Column="0"
-											 Grid.ColumnSpan="3" Grid.Row="1"
-											 DataContext="{Binding Dealer, UpdateSourceTrigger=PropertyChanged}"/>
-
-		<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
-											 DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
-
-	</Grid>
+    </Grid>
 </Window>

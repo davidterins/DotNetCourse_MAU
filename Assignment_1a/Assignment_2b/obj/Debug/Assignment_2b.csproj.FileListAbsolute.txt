@@ -385,3 +385,14 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\DealerView.baml
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\HandView.baml
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogStatusView.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\EntityFramework.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\EntityFramework.SqlServer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\EntityFramework.xml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\EntityFramework.SqlServer.xml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\DataAccessLayer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\DataAccessLayer.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\bin\Debug\DataAccessLayer.dll.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogInScreen.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\LogInScreen.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\BlackJackGameView.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\Views\BlackJackGameView.baml

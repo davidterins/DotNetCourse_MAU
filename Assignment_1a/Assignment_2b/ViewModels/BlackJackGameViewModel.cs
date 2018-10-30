@@ -6,42 +6,65 @@ using System.Threading.Tasks;
 using GameCardLib;
 using System.Windows.Input;
 using David_Mvvm_lib.ViewModels.Commands;
-using GameCardLib.Agents;
-using System.Collections.ObjectModel;
+using DataAccessLayer;
+using DataAccessLayer.DataModels;
+
 
 namespace Assignment_2b.ViewModels
 {
-  public class BlackJackGameViewModel : BlackJackGame
-  {
-
-    public BlackJackGameViewModel() : base()
+    public class BlackJackGameViewModel : BlackJackGame
     {
-      PlayerViewModel p1 = new PlayerViewModel("Pedro");
-      PlayerViewModel p2 = new PlayerViewModel("Lasse");
-      PlayerViewModel p3 = new PlayerViewModel("Sharqeisha");
-      PlayerViewModel p4 = new PlayerViewModel("Latifa");
 
-      AddPlayingAgent(p1);
-      AddPlayingAgent(p2);
-      AddPlayingAgent(p3);
-      AddPlayingAgent(p4);
+        public BlackJackGameViewModel() : base()
+        {
+            PlayerViewModel p1 = new PlayerViewModel("Pedro");
+            PlayerViewModel p2 = new PlayerViewModel("Lasse");
+            PlayerViewModel p3 = new PlayerViewModel("Sharqeisha");
+            PlayerViewModel p4 = new PlayerViewModel("Latifa");
 
-      NewGameCommand = new ActionCommand(StartNewGame);
-      NextPlayerCommand = new ActionCommand(NextPlayerTurn);
+            AddPlayingAgent(p1);
+            AddPlayingAgent(p2);
+            AddPlayingAgent(p3);
+            AddPlayingAgent(p4);
+
+            List<User> test = new List<User>();
+
+
+
+            using (var unitOfWork = new CasinoUnitOfWork(new CasinoContext()))
+            {
+                //var user = new User()
+                //{
+                //    FirstName = "David",
+                //    LastName = "Terins",
+                //    Password = "hej",
+                //    AvatarName = "DTee"
+                //};
+
+                //unitOfWork.Users.Add(user);
+                //unitOfWork.Complete();
+
+               // var k = unitOfWork.Users.GetAll();
+
+               // test.AddRange(k);
+            }
+
+            NewGameCommand = new ActionCommand(StartNewGame);
+            NextPlayerCommand = new ActionCommand(NextPlayerTurn);
+        }
+
+        public ICommand NewGameCommand { get; }
+        public ICommand NextPlayerCommand { get; }
+
+        void StartNewGame()
+        {
+            StartGame();
+        }
+
+        void NextPlayerTurn()
+        {
+            NextTurn();
+        }
+
     }
-
-    public ICommand NewGameCommand { get; }
-    public ICommand NextPlayerCommand { get; }
-
-    void StartNewGame()
-    {
-      StartGame();
-    }
-
-    void NextPlayerTurn()
-    {
-      NextTurn();
-    }
-
-  }
 }
