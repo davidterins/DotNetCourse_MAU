@@ -6,43 +6,77 @@
              xmlns:local="clr-namespace:Assignment_2b"
              xmlns:views="clr-namespace:Assignment_2b.Views"
              xmlns:vm="clr-namespace:Assignment_2b.ViewModels"
+						 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    
-        <Grid>
-            <Grid.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="Black" Offset="0.976"/>
-                    <GradientStop Color="#FF16570C" Offset="0.943"/>
-                    <GradientStop Color="#FF000300" Offset="0.935"/>
-                    <GradientStop Color="#FF184709" Offset="0.397"/>
-                </RadialGradientBrush>
-            </Grid.Background>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <StackPanel>
-                <Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
-                <Button Grid.Column="0" Content="Next player" Height="50" Command="{Binding NextPlayerCommand}"
-			IsEnabled="{Binding CanMoveOn}"/>
 
-            </StackPanel>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
 
-            <views:LogStatusView Grid.Column="2" DataContext="{Binding StatusLogger, UpdateSourceTrigger=PropertyChanged}"/>
+		<Grid Grid.RowSpan="3" Grid.ColumnSpan="3" x:Name="GameGrid">
+			<Grid.Background>
+				<RadialGradientBrush>
+					<GradientStop Color="Black" Offset="0.976"/>
+					<GradientStop Color="#FF16570C" Offset="0.943"/>
+					<GradientStop Color="#FF000300" Offset="0.935"/>
+					<GradientStop Color="#FF184709" Offset="0.397"/>
+				</RadialGradientBrush>
+			</Grid.Background>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<StackPanel>
+				<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
+				<!--<Button Grid.Column="0" Content="Next player" Height="50" Command="{Binding NextPlayerCommand}"
+			IsEnabled="{Binding CanMoveOn}"/>-->
 
-            <views:DealerView  Grid.Column="0"
+			</StackPanel>
+
+			<views:LogStatusView Grid.Column="2" DataContext="{Binding StatusLogger, UpdateSourceTrigger=PropertyChanged}"/>
+
+			<views:DealerView  Grid.Column="0"
 											 Grid.ColumnSpan="3" Grid.Row="1"
 											 DataContext="{Binding Dealer, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
+			<views:PlayerView  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
 											 DataContext="{Binding PlayerWithTurn, UpdateSourceTrigger=PropertyChanged}" />
 
-        </Grid>
+		</Grid>
+
+		<Grid Grid.Column="2" Grid.Row="2" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Button Padding="0" Height="60" Width="60" Background="{x:Null}" BorderBrush="White" Grid.Row="1"  Grid.Column="1"
+							ToolTip="Next player" Command="{Binding NextPlayerCommand}" IsEnabled="{Binding CanMoveOn}">
+				<materialDesign:PackIcon Kind="ArrowRight" Foreground="#FF6EFF6E" Width="54" Height="54"/>
+			</Button>
+
+
+		</Grid>
+	</Grid>
 </UserControl>

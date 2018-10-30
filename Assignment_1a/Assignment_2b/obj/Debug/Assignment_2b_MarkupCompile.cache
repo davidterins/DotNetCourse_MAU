@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\obj\Debug\
 Assignment_2b
 none
 false
 DEBUG;TRACE
-\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\App.xaml
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\App.xaml
 7-211272126
 
 15506011360
-127-139973489
+1271335611467
 Views\BlackJackGameView.xaml;Views\DealerView.xaml;Views\HandView.xaml;Views\LogInScreen.xaml;Views\LogStatusView.xaml;Views\MainWindow.xaml;Views\PlayerView.xaml;
 
 False

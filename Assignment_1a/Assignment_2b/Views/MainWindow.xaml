@@ -6,19 +6,110 @@
         xmlns:local="clr-namespace:Assignment_2b"
         xmlns:views="clr-namespace:Assignment_2b.Views"
         xmlns:vm="clr-namespace:Assignment_2b.ViewModels"
+				xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800"
         DataContext="{DynamicResource BlackJackGameVM}">
 
-    <Window.Resources>
-        <vm:BlackJackGameViewModel x:Key="BlackJackGameVM"/>
+	<Window.Resources>
+		<vm:BlackJackGameViewModel x:Key="BlackJackGameVM"/>
 
-    </Window.Resources>
-    <Grid>
-        
-        <views:BlackJackGameView DataContext="{StaticResource BlackJackGameVM}"/>
-        
-        <views:LogInScreen/>
+	</Window.Resources>
+	<Grid Background="Black">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
 
-    </Grid>
+
+		<Menu>
+			<MenuItem Header="Options">
+				<MenuItem.HeaderTemplate>
+					<DataTemplate>
+						<materialDesign:PackIcon Foreground="White" Kind="DotsHorizontal" Height="40" Width="40"/>
+					</DataTemplate>
+				</MenuItem.HeaderTemplate>
+				<MenuItem.Items>
+					
+
+					<MenuItem  Header="Logout">
+						<MenuItem.Icon>
+							<materialDesign:PackIcon Kind="Logout"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem.Items>
+				
+			</MenuItem>
+
+			<MenuItem   Header="Game">
+				<MenuItem.Icon>
+					<materialDesign:PackIcon Kind="Games"/>
+				</MenuItem.Icon>
+				<MenuItem.Items>
+					<MenuItem>
+						<MenuItem.Template>
+							<ControlTemplate>
+								<StackPanel>
+									<StackPanel Orientation="Horizontal">
+										<Label Content="Players: " />
+										<TextBox Width="50" />
+									</StackPanel>
+									<StackPanel Orientation="Horizontal">
+										<Label Content="Decks: " />
+										<TextBox Width="50" />
+									</StackPanel>
+									<Button Content="Start Game" BorderBrush="{x:Null}" Margin="15" Background="#FF24A624"/>
+								</StackPanel>
+							</ControlTemplate>
+						</MenuItem.Template>
+					</MenuItem>
+				</MenuItem.Items>
+			</MenuItem>
+		</Menu>
+		<!--<ToolBarTray>
+		<ToolBar Padding="0" Header="lol" Grid.Row="0" Background="#FF1F1C1C">
+			
+		</ToolBar>
+		</ToolBarTray>-->
+
+		<views:BlackJackGameView Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2"
+																 DataContext="{StaticResource BlackJackGameVM}"/>
+
+		<!--<views:LogInScreen/>-->
+
+		<!--<Grid Grid.RowSpan="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="250"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50"/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>-->
+
+			
+			<!--<DockPanel Background="#FF080807" Grid.ColumnSpan="3">
+
+				<Button Background="{x:Null}" BorderBrush="{x:Null}"  Height="50"  DockPanel.Dock="Right" HorizontalAlignment="Right">
+					<Button.ContentTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal">
+								<Label Padding="0" Content="Logout" Height="30" VerticalContentAlignment="Center" Margin="0,0,5,0"/>
+								<materialDesign:PackIcon Kind="Logout" Height="24" Width="24" VerticalAlignment="Center"/>
+							</StackPanel>
+						</DataTemplate>
+					</Button.ContentTemplate>
+				</Button>
+
+			
+				<Label  HorizontalAlignment="Left" Margin="0,0,10,0" DockPanel.Dock="Left" Content="PlayerName" VerticalAlignment="Center" />
+				<Label HorizontalAlignment="Left" Margin="0,0,10,0" DockPanel.Dock="Left" Content="Currency: 0" VerticalAlignment="Center" />
+				
+			</DockPanel>-->
+
+			
+		<!--</Grid>-->
+
+	</Grid>
 </Window>
