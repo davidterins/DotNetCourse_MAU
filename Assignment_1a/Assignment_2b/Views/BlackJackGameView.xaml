@@ -42,7 +42,7 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 			<StackPanel>
-				<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>
+				<!--<Button Grid.Column="0" Content="Start game" Height="50" Command="{Binding NewGameCommand}"/>-->
 				<!--<Button Grid.Column="0" Content="Next player" Height="50" Command="{Binding NextPlayerCommand}"
 			IsEnabled="{Binding CanMoveOn}"/>-->
 

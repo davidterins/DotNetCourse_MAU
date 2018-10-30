@@ -68,7 +68,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\Converters\ToColorConverter.cs" />
+    <Compile Include="ViewModels\Converters\VisibilityConverter.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
+    <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="Views\BlackJackGameView.xaml.cs">
       <DependentUpon>BlackJackGameView.xaml</DependentUpon>
     </Compile>
