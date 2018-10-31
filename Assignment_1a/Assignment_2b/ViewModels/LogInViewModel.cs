@@ -24,11 +24,17 @@ namespace Assignment_2b.ViewModels
     string _userName;
     public string UserName { get { return _userName; } set { _userName = value; OnPropertyChanged(nameof(UserName)); } }
 
+    public string NewPassword { get; set; }
+
+    string _newUserName;
+    public string NewUserName { get { return _newUserName; } set { _newUserName = value; OnPropertyChanged(nameof(NewUserName)); } }
+
     public LogInViewModel()
     {
-      UserName = "DTee";
       
       LoginCommand = new ActionCommand(LogIn);
+      SignUpCommand = new ActionCommand(SignUp);
+      DeleteDBCommand = new ActionCommand(DeleteDB);
     }
 
     private void SignUp()
@@ -37,24 +43,55 @@ namespace Assignment_2b.ViewModels
       {
         FirstName = this.FirstName,
         LastName = this.LastName,
-        Password = this.Password,
-        AvatarName = this.UserName
+        Password = NewPassword,
+        AvatarName = _newUserName,
+        Avatar = new Avatar()
       };
+
+      using (var unitOfWork = new CasinoUnitOfWork(new CasinoContext()))
+      {
+        unitOfWork.Users.Add(_user);
+        unitOfWork.Complete();
+      }
+
     }
+
+    public ICommand DeleteDBCommand { get; }
+
+    public ICommand SignUpCommand { get; }
 
     public ICommand LoginCommand { get; }
 
-    private void LogIn()
+    private void DeleteDB()
     {
-      
       using (var unitOfWork = new CasinoUnitOfWork(new CasinoContext()))
       {
-        if(unitOfWork.Users.UserExist(UserName, Password));
-        {
-          var user = unitOfWork.Users.Get(1);
-          LoggedInEvent.Invoke(this,  new PlayerLoggedInEventArgs(user));
-        }
+        unitOfWork.Users.Delete();
+        unitOfWork.Complete(); 
+      }
+    }
+
+    private async void LogIn()
+    {
+
+      Console.WriteLine("Attempt to log in");
+
+      using (var unitOfWork = new CasinoUnitOfWork(new CasinoContext()))
+      {
+        string userName = UserName;
+
+        var logInSuccessFull = await Task.Run(() => unitOfWork.Users.ValidLogInCredentials(userName, Password));
+
         unitOfWork.Complete();
+
+        if (logInSuccessFull)
+        {
+          var user = unitOfWork.Users.Get(userName);
+          unitOfWork.Complete();
+          LoggedInEvent.Invoke(this, new PlayerLoggedInEventArgs(user));
+        }
+
+
       }
     }
   }

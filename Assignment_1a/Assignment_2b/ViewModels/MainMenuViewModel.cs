@@ -1,4 +1,5 @@
-﻿using David_Mvvm_lib.ViewModels;
+﻿using DataAccessLayer.DataModels;
+using David_Mvvm_lib.ViewModels;
 using David_Mvvm_lib.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,11 @@ namespace Assignment_2b.ViewModels
 {
   public class MainMenuViewModel : ViewModelBase
   {
+    User _loggedInUser;
+    public User LoggedInUser { get { return _loggedInUser; } set { _loggedInUser = value; OnPropertyChanged(nameof(LoggedInUser)); } }
 
-    public BlackJackGameViewModel BlackJackViewModel { get; private set; }
+    BlackJackGameViewModel _blackJackViewModel;
+    public BlackJackGameViewModel BlackJackViewModel { get { return _blackJackViewModel; } set { _blackJackViewModel = value; OnPropertyChanged(nameof(BlackJackViewModel)); } }
     public LogInViewModel LogInViewModel { get; private set; }
 
     public int Players { get; set; }
@@ -23,9 +27,6 @@ namespace Assignment_2b.ViewModels
 
     bool _loggedOut;
     public bool LoggedOut { get { return _loggedOut; } set { _loggedOut = value; OnPropertyChanged(nameof(LoggedOut)); } }
-
-
-
 
     public MainMenuViewModel()
     {
@@ -38,19 +39,25 @@ namespace Assignment_2b.ViewModels
       LogInViewModel.LoggedInEvent += HandleLoggedIn;
 
       LogoutCommand = new ActionCommand(Logout);
-      StartGameCommand = BlackJackViewModel.NewGameCommand;
-
+      StartGameCommand = new ActionCommand(StartNewGame);
     }
 
     private void HandleLoggedIn(object sender, PlayerLoggedInEventArgs e)
     {
+      BlackJackViewModel = new BlackJackGameViewModel(e.User.AvatarName);
       LoggedIn = true;
       LoggedOut = false;
+      LoggedInUser = e.User;
     }
 
     public ICommand StartGameCommand { get; }
 
     public ICommand LogoutCommand { get; }
+
+    void StartNewGame()
+    {
+      BlackJackViewModel.StartGame(Players, Decks, new PlayerViewModel(LoggedInUser.AvatarName));
+    }
 
     void Logout()
     {//Change view to logIn

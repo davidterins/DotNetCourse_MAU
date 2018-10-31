@@ -31,5 +31,11 @@ namespace Assignment_2b.Views
       var vm = (LogInViewModel)DataContext;
       vm.Password = PasswordBox.Password;
     }
+
+    private void NewPassword_PasswordChanged(object sender, RoutedEventArgs e)
+    {
+      var vm = (LogInViewModel)DataContext;
+      vm.NewPassword = NewPassword.Password;
+    }
   }
 }

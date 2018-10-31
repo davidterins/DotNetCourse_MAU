@@ -9,21 +9,19 @@
 				xmlns:converters="clr-namespace:Assignment_2b.ViewModels.Converters"
 				xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="800"
+        Title="Black Jack Application" Height="700" Width="800"
         DataContext="{DynamicResource MainMenuVM}">
 
 	<Window.Resources>
 		<vm:MainMenuViewModel x:Key="MainMenuVM"/>
 		<converters:VisibilityConverter x:Key="VisibiltyConverter"/>
-
-
+		
 	</Window.Resources>
 	<Grid Background="Black">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="50"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-
 
 		<Menu>
 			<MenuItem Header="Options">
@@ -55,11 +53,11 @@
 								<StackPanel Margin="10">
 									<StackPanel Orientation="Horizontal">
 										<Label Width="80" Content="Players: " />
-										<TextBox Width="50" />
+										<TextBox Width="50" Text="{Binding Players}" />
 									</StackPanel>
 									<StackPanel Orientation="Horizontal">
 										<Label Width="80" Content="Decks: " />
-										<TextBox Width="50" />
+										<TextBox Width="50" Text="{Binding Decks}" />
 									</StackPanel>
 									<Button Content="Start Game" BorderBrush="{x:Null}"
 													Margin="15" Background="#FF24A624" Command="{Binding StartGameCommand}" />
@@ -70,64 +68,25 @@
 				</MenuItem.Items>
 			</MenuItem>
 		</Menu>
-		<!--<ToolBarTray>
-		<ToolBar Padding="0" Header="lol" Grid.Row="0" Background="#FF1F1C1C">
-			
-		</ToolBar>
-		</ToolBarTray>-->
+
 
 		<Grid  Visibility="{Binding LoggedIn, Converter={StaticResource VisibiltyConverter},
 												         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
 					                       Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2">
 			<views:BlackJackGameView
 														     Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2"
-																 DataContext="{Binding BlackJackViewModel}"/>
+																 DataContext="{Binding BlackJackViewModel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 		</Grid>
 
 
-		<Grid Background="Gray" Opacity="0.9" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding LoggedOut, Converter={StaticResource VisibiltyConverter},
+		<Grid  Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding LoggedOut, Converter={StaticResource VisibiltyConverter},
 																 Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+			<Grid.Background>
+				<ImageBrush ImageSource="C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\Resources\BlackJackBackGround.jpg" />
+			</Grid.Background>
+
 			<views:LogInScreen Margin="0,100,0,0"  DataContext="{Binding LogInViewModel}"/>
-			
+
 		</Grid>
-		
-		<!--<views:LogInScreen  />-->
-
-		<!--<views:LogInScreen/>-->
-
-		<!--<Grid Grid.RowSpan="2">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="250"/>
-				<ColumnDefinition/>
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="50"/>	
-				<RowDefinition/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>-->
-
-
-		<!--<DockPanel Background="#FF080807" Grid.ColumnSpan="3">
-
-				<Button Background="{x:Null}" BorderBrush="{x:Null}"  Height="50"  DockPanel.Dock="Right" HorizontalAlignment="Right">
-					<Button.ContentTemplate>
-						<DataTemplate>
-							<StackPanel Orientation="Horizontal">
-								<Label Padding="0" Content="Logout" Height="30" VerticalContentAlignment="Center" Margin="0,0,5,0"/>
-								<materialDesign:PackIcon Kind="Logout" Height="24" Width="24" VerticalAlignment="Center"/>
-							</StackPanel>
-						</DataTemplate>
-					</Button.ContentTemplate>
-				</Button>
-
-			
-				<Label  HorizontalAlignment="Left" Margin="0,0,10,0" DockPanel.Dock="Left" Content="PlayerName" VerticalAlignment="Center" />
-				<Label HorizontalAlignment="Left" Margin="0,0,10,0" DockPanel.Dock="Left" Content="Currency: 0" VerticalAlignment="Center" />
-				
-			</DockPanel>-->
-
-
-		<!--</Grid>-->
-
 	</Grid>
 </Window>

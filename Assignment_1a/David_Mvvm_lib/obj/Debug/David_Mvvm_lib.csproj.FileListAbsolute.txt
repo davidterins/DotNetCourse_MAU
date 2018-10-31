@@ -15,3 +15,4 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\bin
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csprojAssemblyReference.cache

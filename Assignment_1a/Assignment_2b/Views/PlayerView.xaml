@@ -16,7 +16,7 @@
 				<TextBlock FontWeight="Heavy" Foreground="White" Margin="10,0,0,0" Text="{Binding Score, StringFormat=Score: {0}, UpdateSourceTrigger=PropertyChanged}" />
 			</StackPanel>
 
-			<StackPanel Margin="10"  IsEnabled="{Binding IsInGame}"  Orientation="Horizontal" HorizontalAlignment="Center">
+			<StackPanel Margin="10"  IsEnabled="{Binding IsInGame,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button ToolTip="Hit" Foreground="Wheat" Padding="0"  Margin="5,0,5,0" Height="40" Width="40" Command="{Binding HitCommand, UpdateSourceTrigger=PropertyChanged}">
 					<materialDesign:PackIcon Foreground="White" Width="38" Height="38" Kind="Plus" Cursor="Hand" />
 				</Button>

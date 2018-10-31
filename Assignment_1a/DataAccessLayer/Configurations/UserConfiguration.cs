@@ -12,7 +12,7 @@ namespace DataAccessLayer.Configurations
     {
         public UserConfiguration()
         {
-            Property(u => u.UserId).IsRequired();
+           // Property(u => u.UserId).IsRequired();
 
             Property(u => u.FirstName).HasMaxLength(50);
 
@@ -20,7 +20,7 @@ namespace DataAccessLayer.Configurations
 
             Property(u => u.Password).HasMaxLength(50);
 
-            Property(u => u.AvatarName).HasMaxLength(50);
+            Property(u => u.AvatarName).HasMaxLength(50) .IsRequired();
         }
     }
 }

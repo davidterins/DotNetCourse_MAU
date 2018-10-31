@@ -26,6 +26,10 @@ C:\Users\David Terins\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLi
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.pdb
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll.config
 \\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\EntityFramework.xml
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfo.cs
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.deps.json
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.pdb
@@ -36,10 +40,6 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\De
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll.config
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\David_Mvvm_lib.pdb
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\bin\Debug\netstandard2.0\EntityFramework.xml
-C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csprojAssemblyReference.cache
-C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfoInputs.cache
-C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfo.cs
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.pdb
