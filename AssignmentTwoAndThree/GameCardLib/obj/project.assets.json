@@ -212,11 +212,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\GameCardLib\\GameCardLib.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\GameCardLib\\GameCardLib.csproj",
       "projectName": "GameCardLib",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\GameCardLib\\GameCardLib.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\GameCardLib\\GameCardLib.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\GameCardLib\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\GameCardLib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -235,11 +235,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\David_Mvvm_lib\\David_Mvvm_lib.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DotNetCourse_MAU\\Assignment_1a\\David_Mvvm_lib\\David_Mvvm_lib.csproj"
+            "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\David_Mvvm_lib\\David_Mvvm_lib.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\David_Mvvm_lib\\David_Mvvm_lib.csproj"
             }
           }
         }

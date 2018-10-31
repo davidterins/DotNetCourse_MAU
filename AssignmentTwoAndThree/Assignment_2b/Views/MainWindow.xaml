@@ -82,7 +82,7 @@
 		<Grid  Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding LoggedOut, Converter={StaticResource VisibiltyConverter},
 																 Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
 			<Grid.Background>
-				<ImageBrush ImageSource="C:\Users\User\Documents\GitHub\DotNetCourse_MAU\Assignment_1a\Assignment_2b\Resources\BlackJackBackGround.jpg" />
+				<ImageBrush ImageSource="/Resources/BlackJackBackGround.jpg" />
 			</Grid.Background>
 
 			<views:LogInScreen Margin="0,100,0,0"  DataContext="{Binding LogInViewModel}"/>

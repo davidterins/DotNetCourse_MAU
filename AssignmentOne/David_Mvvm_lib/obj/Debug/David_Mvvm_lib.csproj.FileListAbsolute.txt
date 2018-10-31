@@ -27,3 +27,9 @@ C:\Users\User\Documents\GitHub\DotNetCourse_MAU\AssignmentOne\David_Mvvm_lib\obj
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.dll
 C:\Users\User\Documents\GitHub\DotNetCourse_MAU\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
+C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\David_Mvvm_lib\bin\Debug\David_Mvvm_lib.dll
+C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\David_Mvvm_lib\bin\Debug\David_Mvvm_lib.pdb
+C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.dll
+C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\David_Mvvm_lib\obj\Debug\David_Mvvm_lib.pdb
