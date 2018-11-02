@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Microsoft.Win32;
 using David_Mvvm_lib.Serialization;
 using System.Windows;
+using David_Mvvm_lib.Models;
 
 namespace Assignment_1a.ViewModels
 {
@@ -66,9 +67,10 @@ namespace Assignment_1a.ViewModels
             _houseCollectionViewSource.SortDescriptions.Add(
                         new SortDescription("SearchHits", ListSortDirection.Descending));
 
-            ImportSavedCommand = new ActionCommand(ImportSavedFile);
+            ImportSavedCommand = new ActionCommand(ImportSavedBinFile);
             ExportToXMLCommand = new ActionCommand(ExportToXML);
             ImportFromXMLCommand = new ActionCommand(ImportFromXML);
+            SaveCommand = new ActionCommand(SaveFile);
         }
 
 
@@ -86,7 +88,6 @@ namespace Assignment_1a.ViewModels
                 }
                 else
                 {
-                    ///ExportToXML();
                     SaveFile();
                     return true;
                 }
@@ -146,9 +147,9 @@ namespace Assignment_1a.ViewModels
 
 
         /// <summary>
-        /// Import an xml file
+        /// Import a saved binary file file
         /// </summary>
-        void ImportSavedFile()
+        void ImportSavedBinFile()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Binary files | *.bin;";
@@ -158,8 +159,15 @@ namespace Assignment_1a.ViewModels
                 string err;
                 _houses.OnCollectionItemEdited -= Houses_OnCollectionItemEdited;
 
-                HouseRepresentationViewModel v = Serialization.BinaryFileDeSerialize<HouseRepresentationViewModel>(fileDialog.FileName, out err);
-               // _houses = Serialization.BinaryFileDeSerialize<HouseViewModelCollection>(fileDialog.FileName, out err);
+
+                var s = new HouseRepresentationViewModel();
+                var sd = new ResidentialRealEstateModel();
+                sd.Category = "adssad";
+                s.HouseDataModel = sd;
+
+          
+                //HouseRepresentationViewModel v = Serialization.BinaryFileDeSerialize<HouseRepresentationViewModel>(fileDialog.FileName, out err);
+                 var k = Serialization.BinaryFileDeSerialize<HouseViewModelCollection>(fileDialog.FileName, out err);
 
                 _houseCollectionViewSource.Source = _houses;
                 OnPropertyChanged(nameof(CollectionView));
@@ -175,7 +183,10 @@ namespace Assignment_1a.ViewModels
             var result = saveDialog.ShowDialog();
             if (result == true)
             {
+
                 _houses.BinarySerialize(saveDialog.FileName + ".bin");
+               // Serialization.BinaryFileSerialize(_houses, saveDialog.FileName + ".bin");
+               // _houses.BinarySerialize(saveDialog.FileName + ".bin");
             }
         }
 

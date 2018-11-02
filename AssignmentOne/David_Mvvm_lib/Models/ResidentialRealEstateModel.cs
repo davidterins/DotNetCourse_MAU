@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace David_Mvvm_lib.Models
 {
-	
+	[Serializable]
 	public class ResidentialRealEstateModel : BaseHouseModel
 	{
 		protected BuildingType ResBuildingType { get; set; }

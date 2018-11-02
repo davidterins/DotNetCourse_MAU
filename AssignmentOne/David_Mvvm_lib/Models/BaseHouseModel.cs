@@ -30,6 +30,7 @@ namespace David_Mvvm_lib.Models
 		}
 	}
 
+    [Serializable]
 	public class Adress
 	{
 		public string StreetName { get; set; }

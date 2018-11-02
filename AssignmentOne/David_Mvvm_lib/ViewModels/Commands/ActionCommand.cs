@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace David_Mvvm_lib.ViewModels.Commands
 {
+    [Serializable]
 	public class ActionCommand : ICommand
 	{
 		private readonly Action _execute;

@@ -7,7 +7,8 @@ using David_Mvvm_lib.Enums;
 
 namespace David_Mvvm_lib.Models
 {
-	public class ComercialRealEstateModel : BaseHouseModel
+    [Serializable]
+    public class ComercialRealEstateModel : BaseHouseModel
 	{
 		public ComercialRealEstateModel () { }
 		public ComercialRealEstateModel(string ID) : base(ID)

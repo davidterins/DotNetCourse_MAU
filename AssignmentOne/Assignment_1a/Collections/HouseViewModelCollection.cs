@@ -5,6 +5,7 @@ using David_Mvvm_lib.Collections;
 
 namespace Assignment_1a.Collections
 {
+    [Serializable]
 	public class HouseViewModelCollection : ListManager<HouseRepresentationViewModel>
 	{
 		/// <summary>

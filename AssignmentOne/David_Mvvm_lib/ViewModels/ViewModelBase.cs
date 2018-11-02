@@ -1,10 +1,12 @@
 ﻿
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 
 namespace David_Mvvm_lib.ViewModels
 {
+    [Serializable]
 	public abstract class ViewModelBase : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;

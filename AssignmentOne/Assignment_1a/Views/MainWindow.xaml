@@ -46,7 +46,7 @@
 			<MenuItem Header="_File" Foreground="White">
 				<MenuItem Header="_New" Foreground="Black" />
                 <MenuItem Header="_Open" Foreground="Black" Command="{Binding ImportSavedCommand}" />
-				<MenuItem Header="_Save" Foreground="Black" />
+				<MenuItem Header="_Save" Foreground="Black" Command="{Binding SaveCommand}" />
 				<MenuItem Header="_XML" Foreground="Black" >
 					<MenuItem Header="Import from XML file" Command="{Binding ImportFromXMLCommand}" />
 					<MenuItem Header="Export to XML file" Command="{Binding ExportToXMLCommand}" />

@@ -13,6 +13,7 @@ namespace David_Mvvm_lib.Collections
 	/// extension of observable collection to also serialilze its items.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
+    [Serializable]
 	public class ListManager<T> : ObservableCollection<T>
 	{
 
@@ -20,11 +21,11 @@ namespace David_Mvvm_lib.Collections
 
 		public bool BinarySerialize(string fileName)
 		{
-			foreach (T item in Items)
-			{
-				Serialization.Serialization.BinaryFileSerialize(item, fileName);
-			}
-			return true;
+            string err;
+            var copy = new ListManager<T>();
+            copy = this;
+            Serialization.Serialization.BinaryFileSerialize(this, fileName);
+            return true;
 		}
 
 		public string[] ToStringArray()
