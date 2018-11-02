@@ -41,7 +41,9 @@ namespace David_Mvvm_lib.Serialization
 					errorMessage = $"The file {filePath}  was not found. ";
 					throw (new FileNotFoundException(errorMessage));
 				}
-				fileStream = new FileStream(filePath, FileMode.Open); BinaryFormatter b = new BinaryFormatter(); obj = b.Deserialize(fileStream);
+				fileStream = new FileStream(filePath, FileMode.Open);
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                obj = binaryFormatter.Deserialize(fileStream);
 			}
 			catch (Exception e)
 			{

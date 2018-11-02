@@ -18,11 +18,6 @@ namespace David_Mvvm_lib.Collections
 
 		public ListManager() { }
 
-		public bool BinaryDeSerialize(string fileName)
-		{
-			throw new NotImplementedException();
-		}
-
 		public bool BinarySerialize(string fileName)
 		{
 			foreach (T item in Items)

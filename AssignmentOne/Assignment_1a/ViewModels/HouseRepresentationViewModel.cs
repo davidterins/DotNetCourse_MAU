@@ -107,6 +107,18 @@ namespace Assignment_1a.ViewModels
 			EditCommand = new ActionCommand(Edit);
 		}
 
+        /// <summary>
+        /// Edits the values for a selected house
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="legalForm"></param>
+        /// <param name="buildingType"></param>
+        /// <param name="image"></param>
+        /// <param name="category"></param>
+        /// <param name="street"></param>
+        /// <param name="zipCode"></param>
+        /// <param name="city"></param>
+        /// <param name="country"></param>
 		public void EditValues(string id, string legalForm, string buildingType, string image, string category,
 		string street, int? zipCode, string city, Country country)
 		{
@@ -121,16 +133,28 @@ namespace Assignment_1a.ViewModels
 			Country_ = country;
 		}
 
+        /// <summary>
+        /// Deletes a house
+        /// </summary>
 		void Delete()
 		{
 			OnDeleteHouseHandler.Invoke(this, EventArgs.Empty);
 		}
+
+        /// <summary>
+        /// Edit house
+        /// </summary>
 		void Edit()
 		{
 			EditMode = true;
 			OnEditHouseHandler.Invoke(this, EventArgs.Empty);
 		}
 
+        /// <summary>
+        /// Gives a score of how many search hits it has
+        /// </summary>
+        /// <param name="searchString"></param>
+        /// <returns></returns>
 		public bool IsSearchHit(string searchString)
 		{
 			SearchHits = 0;

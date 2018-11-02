@@ -112,6 +112,9 @@ namespace Assignment_1a.ViewModels
 		public ICommand AddHouseCommand { get; set; }
 		public ICommand AddImageCommand { get; set; }
 
+        /// <summary>
+        /// ctr
+        /// </summary>
 		public HouseEditorViewModel()
 		{
 			AddImageCommand = new ActionCommand(AddImage);
@@ -119,12 +122,19 @@ namespace Assignment_1a.ViewModels
 			FinishEditCommand = new ActionCommand(FinishEdit);
 		}
 
+        /// <summary>
+        /// Edit am item
+        /// </summary>
+        /// <param name="itemToEdit"></param>
 		public void EditItem(HouseRepresentationViewModel itemToEdit)
 		{
 			HouseViewModel = itemToEdit;
 			InEditMode = true;
 		}
 
+        /// <summary>
+        /// Adds an Image
+        /// </summary>
 		void AddImage()
 		{
 			OpenFileDialog fileDialog = new OpenFileDialog();
@@ -134,6 +144,10 @@ namespace Assignment_1a.ViewModels
 				ImageFilePath = fileDialog.FileName;
 			}
 		}
+
+        /// <summary>
+        /// Finish edits
+        /// </summary>
 		void FinishEdit()
 		{
 			HouseViewModel.EditValues(_id, _legalForm, _selectedBuildingType, _imageFilePath,
@@ -143,6 +157,9 @@ namespace Assignment_1a.ViewModels
 			InEditMode = false;
 		}
 
+        /// <summary>
+        /// Adds a house
+        /// </summary>
 		void AddHouse()
 		{
 			if (!string.IsNullOrEmpty(_category))

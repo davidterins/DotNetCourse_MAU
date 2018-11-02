@@ -60,3 +60,19 @@ C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\Game
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.dll
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.deps.json
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\GameCardLib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\David_Mvvm_lib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\EntityFramework.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\DataAccessLayer.dll.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\David_Mvvm_lib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\bin\Debug\netstandard2.0\EntityFramework.xml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csprojResolveAssemblyReference.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.csproj.CoreCompileInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfoInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.AssemblyInfo.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\GameCardLib\obj\Debug\netstandard2.0\GameCardLib.pdb

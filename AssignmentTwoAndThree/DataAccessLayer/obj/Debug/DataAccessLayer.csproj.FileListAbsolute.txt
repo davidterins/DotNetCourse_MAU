@@ -33,3 +33,14 @@ C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\Data
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\EntityFramework.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\EntityFramework.xml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentTwoAndThree\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

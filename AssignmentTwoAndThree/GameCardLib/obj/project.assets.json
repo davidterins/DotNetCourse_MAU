@@ -11,7 +11,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "NETStandard.Library/2.0.3": {
+      "NETStandard.Library/2.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -60,13 +60,14 @@
         "runtime.json"
       ]
     },
-    "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+    "NETStandard.Library/2.0.0": {
+      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
       "type": "package",
-      "path": "netstandard.library/2.0.3",
+      "path": "netstandard.library/2.0.0",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -183,7 +184,7 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.3.nupkg.sha512",
+        "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
@@ -202,27 +203,30 @@
     ".NETStandard,Version=v2.0": [
       "DataAccessLayer >= 1.0.0",
       "David_Mvvm_lib >= 1.0.0",
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\ag8027\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\GameCardLib\\GameCardLib.csproj",
+      "projectUniqueName": "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\GameCardLib\\GameCardLib.csproj",
       "projectName": "GameCardLib",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\GameCardLib\\GameCardLib.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\GameCardLib\\obj\\",
+      "projectPath": "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\GameCardLib\\GameCardLib.csproj",
+      "packagesPath": "C:\\Users\\ag8027\\.nuget\\packages\\",
+      "outputPath": "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\GameCardLib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ag8027\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -235,11 +239,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\DataAccessLayer\\DataAccessLayer.csproj"
+            "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\David_Mvvm_lib\\David_Mvvm_lib.csproj": {
+              "projectPath": "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\David_Mvvm_lib\\David_Mvvm_lib.csproj"
             },
-            "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\David_Mvvm_lib\\David_Mvvm_lib.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DoTNetCourseRefactored\\AssignmentTwoAndThree\\David_Mvvm_lib\\David_Mvvm_lib.csproj"
+            "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "\\\\netapp01.mah.se\\home\\ag8027\\My Documents\\GitHub\\DotNetCourse_MAU\\AssignmentTwoAndThree\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -256,7 +260,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.3, )",
+            "version": "2.0.0",
             "autoReferenced": true
           }
         },

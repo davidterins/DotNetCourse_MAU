@@ -45,7 +45,7 @@
 		<Menu DockPanel.Dock="Top" Background="#77474747">
 			<MenuItem Header="_File" Foreground="White">
 				<MenuItem Header="_New" Foreground="Black" />
-				<MenuItem Header="_Open" Foreground="Black" />
+                <MenuItem Header="_Open" Foreground="Black" Command="{Binding ImportSavedCommand}" />
 				<MenuItem Header="_Save" Foreground="Black" />
 				<MenuItem Header="_XML" Foreground="Black" >
 					<MenuItem Header="Import from XML file" Command="{Binding ImportFromXMLCommand}" />

@@ -67,3 +67,25 @@ C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\Assignment_1
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\Assignment_1a\obj\Debug\RealEstateApplication.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a.exe
 C:\Users\User\Documents\GitHub\DoTNetCourseRefactored\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\bin\Debug\Assignment_1a.exe.config
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\bin\Debug\Assignment_1a.exe
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\bin\Debug\Assignment_1a.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\bin\Debug\David_Mvvm_lib.dll
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\bin\Debug\David_Mvvm_lib.pdb
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\RealEstateApplication.csprojResolveAssemblyReference.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Views\HouseEditorView.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Views\MainWindow.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Views\HouseRepresentationView.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\App.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\GeneratedInternalTypeHelper.g.cs
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a_MarkupCompile.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a_MarkupCompile.lref
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Views\HouseEditorView.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Views\MainWindow.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Views\HouseRepresentationView.baml
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a.g.resources
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a.Properties.Resources.resources
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\RealEstateApplication.csproj.GenerateResource.Cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\RealEstateApplication.csproj.CoreCompileInputs.cache
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a.exe
+\\netapp01.mah.se\home\ag8027\My Documents\GitHub\DotNetCourse_MAU\AssignmentOne\Assignment_1a\obj\Debug\Assignment_1a.pdb
